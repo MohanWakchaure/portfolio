@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohan Wakchaure — Data Analyst (AI & Automation)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B3560;
+  --navy-deep: #0F1F3D;
+  --navy-light: #2A4F87;
+  --orange: #F57224;
+  --orange-light: #FF8C45;
+  --orange-soft: #FFF3EC;
+  --teal: #0D9488;
+  --green: #16A34A;
+  --purple: #7C3AED;
+  --white: #FFFFFF;
+  --off-white: #F8FAFC;
+  --light: #F0F4F8;
+  --border: #E2E8F0;
+  --text: #1E293B;
+  --muted: #64748B;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(15, 31, 61, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 40px;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.nav-brand span { color: var(--orange); }
+.nav-links { display: flex; gap: 6px; }
+.nav-links a {
+  padding: 6px 14px; border-radius: 6px;
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.nav-cta {
+  background: var(--orange) !important;
+  color: var(--white) !important;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--orange-light) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy-deep);
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 80px 60px;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245,114,36,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(27,53,96,0.8) 0%, transparent 60%);
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: rgba(245,114,36,0.4);
+  border-radius: 50%;
+  animation: float-up linear infinite;
+}
+@keyframes float-up {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-20px) scale(1); opacity: 0; }
+}
+
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 420px;
+  gap: 60px; align-items: center;
+  max-width: 1200px; margin: 0 auto;
+  position: relative; z-index: 1; width: 100%;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fade-in-up 0.8s ease both;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 2px; background: var(--orange);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 24px;
+  animation: fade-in-up 0.8s ease 0.1s both;
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--orange);
+}
+.hero-desc {
+  font-size: 17px; line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  max-width: 540px;
+  margin-bottom: 36px;
+  animation: fade-in-up 0.8s ease 0.2s both;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; animation: fade-in-up 0.8s ease 0.3s both; }
+.tag {
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  font-size: 13px; color: rgba(255,255,255,0.7);
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+}
+.tag:hover { background: rgba(245,114,36,0.15); border-color: rgba(245,114,36,0.3); color: var(--orange); }
+.hero-btns { display: flex; gap: 12px; animation: fade-in-up 0.8s ease 0.4s both; }
+.btn-primary {
+  padding: 14px 28px;
+  background: var(--orange); border-radius: 8px;
+  font-size: 15px; font-weight: 600; color: var(--white);
+  text-decoration: none; transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,114,36,0.4); }
+.btn-outline {
+  padding: 14px 28px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-size: 15px; font-weight: 500; color: var(--white);
+  text-decoration: none; transition: all 0.2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+/* Hero card panel */
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  animation: fade-in-right 0.9s ease 0.3s both;
+}
+.hero-card-title {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-stat-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-bottom: 20px;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 16px;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
+.hero-stat:hover { transform: scale(1.03); background: rgba(255,255,255,0.08); }
+.hero-stat .num {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 800;
+  line-height: 1;
+}
+.hero-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+.hero-stat.c1 .num { color: var(--orange); }
+.hero-stat.c2 .num { color: var(--teal); }
+.hero-stat.c3 .num { color: #A78BFA; }
+.hero-stat.c4 .num { color: var(--green); }
+.stack-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.stack-chip {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.15s;
+}
+.stack-chip:hover { background: rgba(245,114,36,0.15); color: var(--orange); border-color: rgba(245,114,36,0.3); }
+
+/* ── KEYFRAMES ── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── SECTIONS ── */
+section { padding: 90px 80px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-label::before { content: ''; width: 20px; height: 2px; background: var(--orange); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--navy-deep);
+  margin-bottom: 12px;
+}
+.section-sub {
+  font-size: 16px; color: var(--muted); line-height: 1.6;
+  max-width: 580px; margin-bottom: 48px;
+}
+
+/* ── ABOUT / CAREER ── */
+.about-section { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.career-timeline { display: flex; flex-direction: column; gap: 0; }
+.career-item {
+  display: flex; gap: 20px;
+  padding-bottom: 36px;
+  position: relative;
+}
+.career-item:last-child { padding-bottom: 0; }
+.career-item::before {
+  content: ''; position: absolute;
+  left: 19px; top: 40px; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.career-item:last-child::before { display: none; }
+.career-dot {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.career-dot.printo { background: rgba(245,114,36,0.12); border: 2px solid var(--orange); }
+.career-dot.meesho { background: rgba(124,58,237,0.12); border: 2px solid var(--purple); }
+.career-dot.skylex { background: rgba(13,148,136,0.12); border: 2px solid var(--teal); }
+.career-body {}
+.career-role {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 2px;
+}
+.career-company {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--orange); margin-bottom: 6px;
+}
+.career-period { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.career-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.career-bullets li {
+  font-size: 13.5px; color: var(--text); line-height: 1.5;
+  padding-left: 14px; position: relative;
+}
+.career-bullets li::before {
+  content: '→'; position: absolute; left: 0;
+  color: var(--orange); font-size: 11px;
+}
+.about-right {}
+.about-intro {
+  font-size: 16px; line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+.skills-block { margin-bottom: 28px; }
+.skills-block-title {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.skills-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-chip {
+  padding: 6px 14px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 13px; color: var(--text);
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+}
+.skill-chip:hover {
+  background: var(--orange-soft);
+  border-color: rgba(245,114,36,0.3);
+  color: var(--orange);
+  transform: translateY(-1px);
+}
+.contact-card {
+  background: var(--navy-deep);
+  border-radius: 14px; padding: 24px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.contact-row {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  transition: color 0.15s;
+  padding: 8px 10px; border-radius: 8px;
+  border: 1px solid transparent;
+}
+.contact-row:hover { color: var(--white); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+.contact-icon { font-size: 18px; width: 28px; text-align: center; }
+.contact-label { font-family: var(--font-mono); font-size: 11px; color: var(--orange); margin-right: 4px; }
+
+/* ── PROJECTS ── */
+.projects-bg { background: var(--off-white); }
+.project-cards { display: flex; flex-direction: column; gap: 24px; }
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid; grid-template-columns: 4px 1fr;
+  transition: box-shadow 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card:hover { box-shadow: 0 16px 48px rgba(27,53,96,0.12); transform: translateY(-4px); }
+.project-accent { background: var(--orange); }
+.project-accent.teal { background: var(--teal); }
+.project-accent.purple { background: var(--purple); }
+.project-body { padding: 28px 32px; }
+.project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.project-title-wrap {}
+.project-emoji { font-size: 26px; margin-bottom: 6px; display: block; }
+.project-title {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  color: var(--navy-deep); letter-spacing: -0.02em;
+}
+.project-sub { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-top: 4px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
+.ptag {
+  padding: 4px 10px; border-radius: 6px;
+  font-size: 12px; font-weight: 500;
+  background: var(--light); color: var(--muted);
+  font-family: var(--font-mono);
+}
+.project-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+.project-block { padding: 16px; border-radius: 10px; }
+.project-block.prob { background: #FFF1F2; border: 1px solid #FFE4E6; }
+.project-block.sol { background: #F0FDF4; border: 1px solid #BBFCD0; }
+.project-block.impact { background: #EFF6FF; border: 1px solid #BFDBFE; }
+.project-block-label {
+  font-family: var(--font-mono); font-size: 10px;
+  font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.project-block.prob .project-block-label { color: #BE123C; }
+.project-block.sol .project-block-label { color: #15803D; }
+.project-block.impact .project-block-label { color: #1D4ED8; }
+.project-block-text { font-size: 13.5px; line-height: 1.55; color: var(--text); }
+
+/* ML Projects extra */
+.ml-project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid; grid-template-columns: 4px 1fr;
+  transition: box-shadow 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.ml-project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ml-project-card:hover { box-shadow: 0 16px 48px rgba(27,53,96,0.12); transform: translateY(-4px); }
+.ml-accent-green { background: var(--green); }
+.ml-accent-teal { background: var(--teal); }
+.ml-accent-red { background: #E11D48; }
+.ml-body { padding: 28px 32px; }
+.ml-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.ml-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.ml-bullets li {
+  font-size: 13.5px; color: var(--text); line-height: 1.5;
+  padding-left: 18px; position: relative;
+}
+.ml-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 11px; }
+
+/* ── STATS ── */
+.stats-section { background: var(--navy-deep); }
+.stats-section .section-title { color: var(--white); }
+.stats-section .section-sub { color: rgba(255,255,255,0.5); }
+.stats-section .section-label { color: var(--orange); }
+.stats-section .section-label::before { background: var(--orange); }
+.stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.stat-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px 16px;
+  text-align: center;
+  position: relative; overflow: hidden;
+  transition: background 0.2s, transform 0.2s;
+}
+.stat-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.stat-box.o::before { background: var(--orange); }
+.stat-box.t::before { background: var(--teal); }
+.stat-box.p::before { background: var(--purple); }
+.stat-box.g::before { background: var(--green); }
+.stat-box.r::before { background: #E11D48; }
+.stat-box.y::before { background: #F59E0B; }
+.stat-box:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 800; line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-box.o .stat-num { color: var(--orange); }
+.stat-box.t .stat-num { color: #2DD4BF; }
+.stat-box.p .stat-num { color: #A78BFA; }
+.stat-box.g .stat-num { color: #4ADE80; }
+.stat-box.r .stat-num { color: #FB7185; }
+.stat-box.y .stat-num { color: #FCD34D; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+/* ── ETA SECTION ── */
+.eta-section { background: var(--white); }
+.eta-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
+.eta-box { padding: 28px; border-radius: 14px; }
+.eta-box.prob { background: #FFF1F2; border: 1px solid #FFE4E6; }
+.eta-box.sol { background: #F0FDF4; border: 1px solid #BBF7D0; }
+.eta-box-head {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700;
+  margin-bottom: 16px;
+}
+.eta-box.prob .eta-box-head { color: #9F1239; }
+.eta-box.sol .eta-box-head { color: #14532D; }
+.eta-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.eta-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; }
+.eta-list li .ic { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+/* Flow */
+.eta-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-bottom: 32px; }
+.flow-step {
+  position: relative; text-align: center; padding: 20px 12px;
+  background: var(--light); border: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.flow-step:hover { background: var(--orange-soft); }
+.flow-step:first-child { border-radius: 10px 0 0 10px; }
+.flow-step:last-child { border-radius: 0 10px 10px 0; }
+.flow-step::after {
+  content: '→'; position: absolute; right: -13px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px; color: var(--orange); font-weight: 700; z-index: 2;
+}
+.flow-step:last-child::after { display: none; }
+.flow-emoji { font-size: 24px; margin-bottom: 8px; }
+.flow-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--navy-deep); margin-bottom: 4px; }
+.flow-sub { font-size: 11.5px; color: var(--muted); }
+/* Tech table */
+.tech-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+.tech-table thead tr { background: var(--navy-deep); }
+.tech-table thead th { padding: 12px 16px; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; text-align: left; font-weight: 500; }
+.tech-table tbody tr:nth-child(odd) { background: var(--off-white); }
+.tech-table tbody tr:nth-child(even) { background: var(--white); }
+.tech-table tbody tr { transition: background 0.15s; }
+.tech-table tbody tr:hover { background: var(--orange-soft) !important; }
+.tech-table td { padding: 13px 16px; font-size: 13.5px; }
+.tech-table td:first-child { font-family: var(--font-mono); font-size: 12px; color: var(--navy); font-weight: 500; }
+.tech-table td:nth-child(2) { color: var(--text); }
+.tech-table td:last-child { color: var(--muted); font-size: 12.5px; }
+
+/* Timeline */
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.tl-step {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  border-top: 3px solid var(--orange);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.tl-step:hover { box-shadow: 0 8px 24px rgba(27,53,96,0.1); transform: translateY(-2px); }
+.tl-week { font-family: var(--font-mono); font-size: 11px; color: var(--orange); font-weight: 500; margin-bottom: 6px; }
+.tl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--navy-deep); margin-bottom: 6px; }
+.tl-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+/* ── WHY ME ── */
+.why-section { background: var(--light); }
+.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.why-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.why-card:hover { box-shadow: 0 12px 36px rgba(27,53,96,0.1); transform: translateY(-3px); }
+.why-icon { font-size: 28px; margin-bottom: 12px; }
+.why-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
+.why-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.why-highlight {
+  grid-column: span 2;
+  background: var(--navy-deep);
+  border-radius: 14px; padding: 32px;
+  display: flex; align-items: center; gap: 32px;
+}
+.why-highlight-quote {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: var(--white); line-height: 1.4;
+  flex: 1;
+}
+.why-highlight-quote em { font-style: normal; color: var(--orange); }
+.why-highlight-meta { flex-shrink: 0; text-align: right; }
+.why-highlight-meta .role { font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.why-highlight-meta .loc { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--navy-deep); text-align: center; }
+.contact-section .section-title { color: var(--white); }
+.contact-section .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 40px; }
+.contact-pills {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center; margin-bottom: 32px;
+}
+.contact-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  font-size: 14px; color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.contact-pill:hover { background: rgba(245,114,36,0.15); border-color: rgba(245,114,36,0.3); color: var(--white); transform: translateY(-2px); }
+.pill-icon { font-size: 16px; }
+.footer-note { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 40px; font-family: var(--font-mono); }
+
+/* ── TYPING ANIMATION ── */
+.typed-word {
+  display: inline-block;
+  border-right: 3px solid var(--orange);
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ── COUNTER ANIMATION ── */
+.count-up { display: inline-block; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { padding: 80px 30px 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  section { padding: 60px 30px; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .eta-split { grid-template-columns: 1fr; }
+  .eta-flow { grid-template-columns: repeat(2, 1fr); }
+  .flow-step:nth-child(2)::after, .flow-step:nth-child(4)::after { display: none; }
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .why-highlight { grid-column: span 1; flex-direction: column; text-align: center; }
+  .why-highlight-meta { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">mohan<span>.dev</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#impact">Impact</a>
+    <a href="#tracking">ETA Model</a>
+    <a href="#why">Why Me</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <!-- Floating particles -->
+  <div class="particle" style="left:10%;animation-duration:8s;animation-delay:0s;width:4px;height:4px;"></div>
+  <div class="particle" style="left:20%;animation-duration:11s;animation-delay:2s;width:2px;height:2px;opacity:0.3;"></div>
+  <div class="particle" style="left:35%;animation-duration:9s;animation-delay:1s;background:rgba(13,148,136,0.4);"></div>
+  <div class="particle" style="left:50%;animation-duration:13s;animation-delay:3s;width:5px;height:5px;"></div>
+  <div class="particle" style="left:65%;animation-duration:7s;animation-delay:0.5s;background:rgba(124,58,237,0.4);width:2px;height:2px;"></div>
+  <div class="particle" style="left:80%;animation-duration:10s;animation-delay:4s;"></div>
+  <div class="particle" style="left:90%;animation-duration:12s;animation-delay:1.5s;width:3px;height:3px;background:rgba(13,148,136,0.3);"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Data Analyst (AI &amp; Automation)</div>
+      <h1 class="hero-title">
+        Hi, I'm <em>Mohan</em><br>I Turn <em>Data</em> into<br>Decisions
+      </h1>
+      <p class="hero-desc">
+        Data Analyst at Printo with 1.5+ years of experience building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. Deployed 3 production tools eliminating hours of manual work daily.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Python · ML</span>
+        <span class="tag">SQL (Advanced)</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Google Sheets API</span>
+        <span class="tag">ETA Modelling</span>
+        <span class="tag">Bengaluru, India</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work →</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Production Stats</div>
+      <div class="hero-stat-row">
+        <div class="hero-stat c1"><div class="num" data-target="100000" data-suffix="L+">1L+</div><div class="lbl">PO Records Monitored</div></div>
+        <div class="hero-stat c2"><div class="num">6</div><div class="lbl">Teams Coordinated</div></div>
+        <div class="hero-stat c3"><div class="num">20</div><div class="lbl">Launch Tasks Automated</div></div>
+        <div class="hero-stat c4"><div class="num">0</div><div class="lbl">Manual Daily Checks Needed</div></div>
+      </div>
+      <div class="stack-list">
+        <span class="stack-chip">Python</span>
+        <span class="stack-chip">SQL</span>
+        <span class="stack-chip">scikit-learn</span>
+        <span class="stack-chip">Node.js</span>
+        <span class="stack-chip">Supabase</span>
+        <span class="stack-chip">gspread</span>
+        <span class="stack-chip">Pandas</span>
+        <span class="stack-chip">Chart.js</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT & CAREER -->
+<section id="about" class="about-section">
+  <div class="section-inner">
+    <div class="section-label reveal">About Me</div>
+    <h2 class="section-title reveal">Data Analyst, Builder & Automation Thinker</h2>
+    <p class="section-sub reveal">From demand forecasting to ML-based route optimization — I work at the intersection of data science and operational impact.</p>
+
+    <div class="about-grid">
+      <!-- Career timeline left -->
+      <div>
+        <div class="section-label reveal" style="margin-bottom:24px;">Career Journey</div>
+        <div class="career-timeline">
+          <div class="career-item reveal">
+            <div class="career-dot printo">🟠</div>
+            <div class="career-body">
+              <div class="career-role">Data Analyst (Applied Data Science &amp; ML)</div>
+              <div class="career-company">Printo.in · Bangalore</div>
+              <div class="career-period">Mar 2026 – Present</div>
+              <ul class="career-bullets">
+                <li>Designed and deployed a role-based product launch system — reduced operational errors and improved process control across 6 teams.</li>
+                <li>Built an ML-based logistics optimization model for fastest delivery route selection, improving SLA adherence and fulfillment efficiency.</li>
+                <li>Developed Python automation to monitor low-inventory SKUs in real-time, preventing stockouts across 5 cities.</li>
+                <li>Led migration from Google Sheets to a scalable AI + rule-based system — reduced manual reporting effort by ~60%.</li>
+                <li>Applied time-series forecasting and regression analysis to predict demand fluctuations, improving inventory planning accuracy by ~20%.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="career-item reveal">
+            <div class="career-dot meesho">🟣</div>
+            <div class="career-body">
+              <div class="career-role">Fulfillment Analyst</div>
+              <div class="career-company">Meesho · Bangalore</div>
+              <div class="career-period">May 2025 – Mar 2026</div>
+              <ul class="career-bullets">
+                <li>Analyzed large-scale datasets using SQL to track order lifecycle, delivery performance, and return rates.</li>
+                <li>Built automated dashboards and KPI trackers reducing stakeholder reporting time by ~40%.</li>
+                <li>Led third-party vendor risk management, coordinating a cross-functional team of 43 members.</li>
+                <li>Conducted A/B testing and statistical significance analysis on fulfillment process changes before company-wide rollout.</li>
+                <li>Built SQL + Excel-based risk trackers to monitor vendor compliance, SLA breaches, and performance deviations.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="career-item reveal">
+            <div class="career-dot skylex">🔵</div>
+            <div class="career-body">
+              <div class="career-role">Software Engineer (Data &amp; Analytics)</div>
+              <div class="career-company">Skylex Technology · Pune</div>
+              <div class="career-period">Aug 2024 – Nov 2024</div>
+              <ul class="career-bullets">
+                <li>Analyzed campaign performance data (CTR, conversion rates) to identify underperforming segments.</li>
+                <li>Built reporting systems and trackers for budget utilization and campaign optimization.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: bio + skills + contact -->
+      <div class="about-right">
+        <p class="about-intro reveal">
+          I'm a data scientist and analyst who builds tools that make invisible operational problems visible — and then eliminates them. With an MS in AI/ML from MIT-ADT University (2025) and hands-on production deployments, I combine statistical rigor with engineering execution.
+        </p>
+        <p class="about-intro reveal" style="margin-top:-12px;">
+          My background spans supply chain analytics, demand forecasting, ML model development, and full-stack automation. I speak the language of operations teams — not just code.
+        </p>
+
+        <div class="skills-block reveal">
+          <div class="skills-block-title">Data & Analytics</div>
+          <div class="skills-chips">
+            <span class="skill-chip">SQL (Advanced)</span>
+            <span class="skill-chip">Python · Pandas · NumPy</span>
+            <span class="skill-chip">Power BI</span>
+            <span class="skill-chip">Tableau</span>
+            <span class="skill-chip">Google Sheets</span>
+            <span class="skill-chip">A/B Testing</span>
+            <span class="skill-chip">Time-Series Forecasting</span>
+          </div>
+        </div>
+        <div class="skills-block reveal">
+          <div class="skills-block-title">Machine Learning</div>
+          <div class="skills-chips">
+            <span class="skill-chip">scikit-learn</span>
+            <span class="skill-chip">XGBoost</span>
+            <span class="skill-chip">Random Forest</span>
+            <span class="skill-chip">Regression Analysis</span>
+            <span class="skill-chip">Anomaly Detection</span>
+            <span class="skill-chip">Feature Engineering</span>
+          </div>
+        </div>
+        <div class="skills-block reveal">
+          <div class="skills-block-title">Engineering & Tools</div>
+          <div class="skills-chips">
+            <span class="skill-chip">Node.js · Express</span>
+            <span class="skill-chip">Supabase (PostgreSQL)</span>
+            <span class="skill-chip">gspread · Sheets API</span>
+            <span class="skill-chip">Notion · Slack</span>
+          </div>
+        </div>
+
+        <!-- Contact card -->
+        <div class="contact-card reveal">
+          <a href="mailto:mohanwakchaure1@gmail.com" class="contact-row">
+            <span class="contact-icon">📧</span>
+            <span><span class="contact-label">EMAIL</span>mohanwakchaure1@gmail.com</span>
+          </a>
+          <a href="tel:+918805548797" class="contact-row">
+            <span class="contact-icon">📱</span>
+            <span><span class="contact-label">PHONE</span>+91 88055 48797</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-icon">💼</span>
+            <span><span class="contact-label">LINKEDIN</span>mohan-wakchaure-994b1a224</span>
+          </a>
+          <span class="contact-row" style="cursor:default;">
+            <span class="contact-icon">📍</span>
+            <span><span class="contact-label">LOCATION</span>Bengaluru, India</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">My Work at Printo</div>
+    <h2 class="section-title reveal">3 Tools. Real Teams. Real Impact.</h2>
+    <p class="section-sub reveal">Every tool was built to solve a genuine operational pain — not a side project, but a production deployment used daily by real teams.</p>
+
+    <div class="project-cards">
+
+      <!-- P1 -->
+      <div class="project-card" data-delay="0">
+        <div class="project-accent teal"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title-wrap">
+              <span class="project-emoji">📦</span>
+              <div class="project-title">Low-Stock Alert Automation</div>
+              <div class="project-sub">Python · gspread · Gmail SMTP · Google Chat Webhook</div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Automation</span>
+              <span class="ptag">Supply Chain</span>
+              <span class="ptag">Monitoring</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div class="project-block prob">
+              <div class="project-block-label">❌ Problem</div>
+              <div class="project-block-text">Procurement team had to manually scan 1 lakh+ rows daily to check if discontinuing materials were running low — missed stockouts were costly.</div>
+            </div>
+            <div class="project-block sol">
+              <div class="project-block-label">✅ My Solution</div>
+              <div class="project-block-text">Python script that connects to Google Sheets via Service Account, filters items marked 'will be discontinued later', flags stock below 10% of consumption, and fires email + Google Chat alerts automatically.</div>
+            </div>
+            <div class="project-block impact">
+              <div class="project-block-label">🎯 Impact</div>
+              <div class="project-block-text">Zero missed stockouts on phased-out materials since deployment. Daily check that took 30–45 minutes now happens in seconds with zero human involvement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="project-card" data-delay="150">
+        <div class="project-accent"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title-wrap">
+              <span class="project-emoji">🗂️</span>
+              <div class="project-title">Printo Materials Operations Dashboard</div>
+              <div class="project-sub">Vanilla JS · Supabase · Chart.js · CSS Grid</div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Dashboard</span>
+              <span class="ptag">Real-time</span>
+              <span class="ptag">Multi-city</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div class="project-block prob">
+              <div class="project-block-label">❌ Problem</div>
+              <div class="project-block-text">Material data was scattered across spreadsheets with no unified view — teams couldn't see stock, vendor, lead time, or consumption for all 5 cities in one place.</div>
+            </div>
+            <div class="project-block sol">
+              <div class="project-block-label">✅ My Solution</div>
+              <div class="project-block-text">Single-page dashboard connected to Supabase — live filters by city, category, and priority; expandable rows with per-city vendor + reorder data; 6-chart analytics view; CSV export; add-record modal.</div>
+            </div>
+            <div class="project-block impact">
+              <div class="project-block-label">🎯 Impact</div>
+              <div class="project-block-text">Full visibility across BLR, CHN, HYD, PUN, NCR instantly for all teams. No more hunting through spreadsheets — one URL, all data, always live.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="project-card" data-delay="300">
+        <div class="project-accent purple"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title-wrap">
+              <span class="project-emoji">🚀</span>
+              <div class="project-title">Printo Product Launch Portal</div>
+              <div class="project-sub">Node.js · Express · Nodemailer · Vanilla JS · Custom Auth</div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Full-Stack</span>
+              <span class="ptag">State Machine</span>
+              <span class="ptag">6 Teams</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div class="project-block prob">
+              <div class="project-block-label">❌ Problem</div>
+              <div class="project-block-text">New product launches stalled constantly because teams didn't know when the previous step was done. Coordination happened over chat with no accountability or tracking.</div>
+            </div>
+            <div class="project-block sol">
+              <div class="project-block-label">✅ My Solution</div>
+              <div class="project-block-text">Role-based web portal with a 20-task state machine — tasks auto-unlock when prerequisites complete, each team sees only their work, and automated emails trigger on every handoff.</div>
+            </div>
+            <div class="project-block impact">
+              <div class="project-block-label">🎯 Impact</div>
+              <div class="project-block-text">6 teams (Category, Procurement, Production, Commercial, Inventory, SKU) coordinated in one place. Zero missed handoffs. Full launch audit trail with timestamps.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ML Projects sub-section -->
+    <div style="margin-top:60px;">
+      <div class="section-label reveal" style="margin-bottom:16px;">ML &amp; Analytics Projects</div>
+      <h3 class="reveal" style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;letter-spacing:-0.02em;color:var(--navy-deep);margin-bottom:8px;">Independent &amp; Cross-Company Projects</h3>
+      <p class="section-sub reveal" style="margin-bottom:32px;">ML-first projects built to drive measurable operational outcomes.</p>
+
+      <div style="display:flex;flex-direction:column;gap:20px;">
+
+        <div class="ml-project-card" data-delay="0">
+          <div class="ml-accent-green"></div>
+          <div class="ml-body">
+            <div class="ml-header">
+              <div class="project-title-wrap">
+                <span class="project-emoji">🔧</span>
+                <div class="project-title">Predictive Maintenance Model</div>
+                <div class="project-sub">scikit-learn · XGBoost · Random Forest · Pandas · NumPy</div>
+              </div>
+              <div class="project-tags">
+                <span class="ptag">Machine Learning</span>
+                <span class="ptag">Classification</span>
+                <span class="ptag">Industrial IoT</span>
+              </div>
+            </div>
+            <ul class="ml-bullets">
+              <li>Built a classification model to predict equipment failure using historical sensor data with feature engineering and class imbalance handling.</li>
+              <li>Trained and compared Random Forest vs XGBoost — evaluated using F1-score, precision, and recall optimized for early failure detection.</li>
+              <li>Improved prediction accuracy by ~10% and reduced false positive rate using statistical hypothesis testing for feature significance.</li>
+              <li>Simulated industrial IoT sensor pipelines to test model robustness under noisy and missing-data conditions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ml-project-card" data-delay="150">
+          <div class="ml-accent-teal"></div>
+          <div class="ml-body">
+            <div class="ml-header">
+              <div class="project-title-wrap">
+                <span class="project-emoji">🗺️</span>
+                <div class="project-title">ML-Based Logistics Optimization Model</div>
+                <div class="project-sub">Python · Pandas · NumPy · Heuristic Algorithms</div>
+              </div>
+              <div class="project-tags">
+                <span class="ptag">Optimization</span>
+                <span class="ptag">Logistics</span>
+                <span class="ptag">Printo</span>
+              </div>
+            </div>
+            <ul class="ml-bullets">
+              <li>Developed a route optimization model using ML + heuristic algorithms to minimize delivery time and improve SLA adherence at Printo.</li>
+              <li>Performed distance-based optimization for route selection with full data preprocessing and feature engineering pipeline.</li>
+              <li>Reduced average delivery time by ~10–15% with scalable logic designed for real-time decision support.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ml-project-card" data-delay="300">
+          <div class="ml-accent-red"></div>
+          <div class="ml-body">
+            <div class="ml-header">
+              <div class="project-title-wrap">
+                <span class="project-emoji">🏢</span>
+                <div class="project-title">Third-Party Vendor Risk Management</div>
+                <div class="project-sub">SQL · Excel · Cross-functional coordination (Oct 2025)</div>
+              </div>
+              <div class="project-tags">
+                <span class="ptag">Risk Analysis</span>
+                <span class="ptag">Meesho</span>
+                <span class="ptag">43-member team</span>
+              </div>
+            </div>
+            <ul class="ml-bullets">
+              <li>Led data analysis for third-party vendor risk management across fulfilment partners — acted as primary point of contact for a 43-member cross-functional team.</li>
+              <li>Built Excel and SQL-based risk trackers to monitor vendor compliance, performance deviations, SLA breaches, and operational risks.</li>
+              <li>Analyzed historical vendor performance data to identify high-risk vendors and recurring issue patterns for procurement and finance teams.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="impact" class="stats-section">
+  <div class="section-inner">
+    <div class="section-label reveal">By the Numbers</div>
+    <h2 class="section-title reveal">The Impact Across All 3 Tools</h2>
+    <p class="section-sub reveal">Every metric below reflects production systems, not demos.</p>
+    <div class="stats-grid">
+      <div class="stat-box o reveal"><div class="stat-num">1L+</div><div class="stat-label">PO records monitored daily</div></div>
+      <div class="stat-box t reveal"><div class="stat-num">6</div><div class="stat-label">Teams coordinated in one portal</div></div>
+      <div class="stat-box p reveal"><div class="stat-num">20</div><div class="stat-label">Launch tasks automated</div></div>
+      <div class="stat-box g reveal"><div class="stat-num">5</div><div class="stat-label">Cities tracked in dashboard</div></div>
+      <div class="stat-box r reveal"><div class="stat-num">0</div><div class="stat-label">Manual daily stock checks needed</div></div>
+      <div class="stat-box y reveal"><div class="stat-num">3</div><div class="stat-label">Production tools built from scratch</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ETA MODEL -->
+<section id="tracking" class="eta-section">
+  <div class="section-inner">
+    <div class="section-label reveal">New Proposal</div>
+    <h2 class="section-title reveal">What I Can Build for You:<br>Live Tracking + ETA Prediction Model</h2>
+    <p class="section-sub reveal">E-commerce operations waste hours on 'where is my order?' — I'll eliminate that with a proactive, ML-powered shipment intelligence system.</p>
+
+    <div class="eta-split reveal">
+      <div class="eta-box prob">
+        <div class="eta-box-head">❌ The Problem Today</div>
+        <ul class="eta-list">
+          <li><span class="ic">→</span> Customers call support asking "Where is my order?"</li>
+          <li><span class="ic">→</span> Ops team manually checks each courier portal separately</li>
+          <li><span class="ic">→</span> No single view of all shipments across courier partners</li>
+          <li><span class="ic">→</span> Delivery delays only caught after customer complaint</li>
+          <li><span class="ic">→</span> ETA shown at checkout is static — never updated live</li>
+        </ul>
+      </div>
+      <div class="eta-box sol">
+        <div class="eta-box-head">✅ What I'll Build</div>
+        <ul class="eta-list">
+          <li><span class="ic">✓</span> Live tracking dashboard — every order, every courier, one screen</li>
+          <li><span class="ic">✓</span> Automated courier API polling (Delhivery / Shiprocket / Ecom Express)</li>
+          <li><span class="ic">✓</span> ML-based ETA model trained on your historical delivery data</li>
+          <li><span class="ic">✓</span> Proactive delay alerts to ops team T-12hrs before breach</li>
+          <li><span class="ic">✓</span> Customer-facing dynamic ETA widget embeddable on your site</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-label reveal" style="margin-bottom:16px;">How It Works</div>
+    <div class="eta-flow reveal">
+      <div class="flow-step">
+        <div class="flow-emoji">🛒</div>
+        <div class="flow-title">Order Placed</div>
+        <div class="flow-sub">AWB captured from order system</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-emoji">🔄</div>
+        <div class="flow-title">Courier Poll</div>
+        <div class="flow-sub">API fetches live status every 15 mins</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-emoji">🧠</div>
+        <div class="flow-title">ETA Engine</div>
+        <div class="flow-sub">ML model predicts delivery window</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-emoji">📱</div>
+        <div class="flow-title">Push Update</div>
+        <div class="flow-sub">Customer + ops notified instantly</div>
+      </div>
+    </div>
+
+    <div class="section-label reveal" style="margin: 32px 0 16px;">Tech Stack</div>
+    <table class="tech-table reveal">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Data Ingestion</td><td>Python + Courier APIs (Delhivery, Shiprocket, Ecom Express)</td><td>Fetch live shipment status</td></tr>
+        <tr><td>Data Store</td><td>PostgreSQL via Supabase</td><td>Orders, status events, ETA predictions</td></tr>
+        <tr><td>ETA Model</td><td>scikit-learn — Random Forest / XGBoost</td><td>Predict delivery window from historical data</td></tr>
+        <tr><td>Live Dashboard</td><td>React or Vanilla JS</td><td>Real-time order map + delay alerts for ops</td></tr>
+        <tr><td>Notifications</td><td>Gmail SMTP + Twilio SMS + optional WhatsApp</td><td>Proactive delay alerts</td></tr>
+        <tr><td>Hosting</td><td>Node.js API on Render / Railway</td><td>Free tier to start, scales as needed</td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-label reveal" style="margin: 40px 0 16px;">Delivery Timeline</div>
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="tl-week">Week 1–2</div>
+        <div class="tl-title">API Integration</div>
+        <div class="tl-desc">Connect courier APIs, set up PostgreSQL schema, build polling pipeline</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-week">Week 3–4</div>
+        <div class="tl-title">ETA Model</div>
+        <div class="tl-desc">Train on historical delivery data, validate predictions by lane & courier</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-week">Week 5–6</div>
+        <div class="tl-title">Dashboard + Alerts</div>
+        <div class="tl-desc">Build live ops dashboard, customer ETA widget, delay notification system</div>
+      </div>
+      <div class="tl-step reveal">
+        <div class="tl-week">Week 7–8</div>
+        <div class="tl-title">Testing + Go-live</div>
+        <div class="tl-desc">Parallel run against manual process, A/B test ETA accuracy, deploy to production</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why" class="why-section">
+  <div class="section-inner">
+    <div class="section-label reveal">Why Hire Me</div>
+    <h2 class="section-title reveal">What You're Actually Getting</h2>
+    <p class="section-sub reveal">Not just an analyst — an operations professional who understands the problem before writing a single line of code or query.</p>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">I Ship in Production</div>
+        <div class="why-desc">3 tools already live and used by real teams every single day. Not side projects — actual deployments that replaced manual processes entirely at Printo.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🔁</div>
+        <div class="why-title">End-to-End Builder</div>
+        <div class="why-desc">I handle everything: problem scoping → data analysis → ML modelling → deployment → maintenance. No handoffs, no dropped context, no finger-pointing.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📦</div>
+        <div class="why-title">Operations Domain Depth</div>
+        <div class="why-desc">Hands-on at Printo (supply chain, inventory, product launch) and Meesho (fulfillment, vendor risk, SLA management). I speak your team's language — not just code.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🧠</div>
+        <div class="why-title">AI + Automation Thinking</div>
+        <div class="why-desc">I combine ML intelligence (predictive models, forecasting, anomaly detection) with process automation (Python, Node.js) to build systems that are proactive, not reactive.</div>
+      </div>
+      <div class="why-highlight reveal">
+        <div class="why-highlight-quote">
+          "I don't just analyze data — I find the <em>manual process</em> that's costing your team 2 hours a day and make it take <em>2 seconds</em>."
+        </div>
+        <div class="why-highlight-meta">
+          <div class="role">Data Analyst (AI & Automation)</div>
+          <div class="loc">Mohan Wakchaure · Bengaluru, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <div class="section-label reveal" style="color:var(--orange); justify-content:center;">Let's Talk</div>
+    <h2 class="section-title reveal">Let's Build Something Together</h2>
+    <p class="section-sub reveal">I'm ready to bring the same data-first, automation thinking to your team — and ship real, production impact fast.</p>
+    <div class="contact-pills reveal">
+      <a href="mailto:mohanwakchaure1@gmail.com" class="contact-pill">
+        <span class="pill-icon">📧</span> mohanwakchaure1@gmail.com
+      </a>
+      <a href="tel:+918805548797" class="contact-pill">
+        <span class="pill-icon">📱</span> +91 88055 48797
+      </a>
+      <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" rel="noopener" class="contact-pill">
+        <span class="pill-icon">💼</span> LinkedIn Profile
+      </a>
+      <span class="contact-pill" style="cursor:default;">
+        <span class="pill-icon">📍</span> Bengaluru, India
+      </span>
+      <span class="contact-pill" style="cursor:default;">
+        <span class="pill-icon">🚀</span> Open to Opportunities
+      </span>
+    </div>
+    <p class="footer-note reveal">Built from scratch by Mohan Wakchaure — the same way I build every tool: with care, precision, and zero manual work.</p>
+  </div>
+</section>
+
+<script>
+// ── Scroll reveal (standard .reveal elements)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ── Staggered project card animations
+const projectCardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const delay = parseInt(e.target.dataset.delay || 0);
+      setTimeout(() => {
+        e.target.style.transition = `opacity 0.6s ease, transform 0.6s ease`;
+        e.target.classList.add('visible');
+      }, delay);
+      projectCardObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.project-card, .ml-project-card').forEach(card => {
+  projectCardObserver.observe(card);
+});
+
+// ── Stat counter animation
+function animateCounter(el, target, duration = 1500, suffix = '') {
+  let start = 0;
+  const step = target / (duration / 16);
+  const tick = () => {
+    start = Math.min(start + step, target);
+    if (target >= 1000) {
+      el.textContent = (start / 100000).toFixed(0) + 'L+';
+    } else {
+      el.textContent = Math.floor(start) + suffix;
+    }
+    if (start < target) requestAnimationFrame(tick);
+  };
+  tick();
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stat-num').forEach(numEl => {
+        const text = numEl.textContent.trim();
+        if (text === '1L+') {
+          animateCounter(numEl, 100000, 1800, '');
+        } else if (!isNaN(parseInt(text))) {
+          const val = parseInt(text);
+          animateCounter(numEl, val, 1000, text.replace(/[0-9]/g,''));
+        }
+      });
+      statObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const statsGrid = document.querySelector('.stats-grid');
+if (statsGrid) statObserver.observe(statsGrid);
+
+// ── Hero particle random positioning
+document.querySelectorAll('.particle').forEach(p => {
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDuration = (7 + Math.random() * 8) + 's';
+  p.style.animationDelay = (Math.random() * 5) + 's';
+});
+
+// ── Smooth nav highlight on scroll
+const sections = document.querySelectorAll('section[id], #hero');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(link => {
+    link.style.color = '';
+    if (link.getAttribute('href') === '#' + current) {
+      link.style.color = 'var(--white)';
+    }
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
