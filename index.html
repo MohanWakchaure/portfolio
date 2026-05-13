@@ -393,6 +393,7 @@ section { padding: 90px 80px; }
 .project-accent { background: var(--orange); }
 .project-accent.teal { background: var(--teal); }
 .project-accent.purple { background: var(--purple); }
+.project-accent.green { background: var(--green); }
 .project-body { padding: 28px 32px; }
 .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
 .project-title-wrap {}
@@ -670,10 +671,10 @@ section { padding: 90px 80px; }
     <div class="hero-content">
       <div class="hero-eyebrow">Data Analyst (AI &amp; Automation)</div>
       <h1 class="hero-title">
-        Hi, I'm <em>Mohan Wakchaure</em><br>I Turn <em>Data</em> into<br>Decisions
+        Hi, I'm <em>Mohan</em><br>I Turn <em>Data</em> into<br>Decisions
       </h1>
       <p class="hero-desc">
-        Data Analyst at Printo with 1.5+ years of experience building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. Deployed 3 production tools eliminating hours of manual work daily.
+        Data Analyst at Printo with 1.5+ years of experience building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. Deployed 5 production tools eliminating hours of manual work daily.
       </p>
       <div class="hero-tags">
         <span class="tag">Python · ML</span>
@@ -770,7 +771,7 @@ section { padding: 90px 80px; }
       <!-- Right side: bio + skills + contact -->
       <div class="about-right">
         <p class="about-intro reveal">
-          I'm a Data analyst who builds tools that make invisible operational problems visible — and then eliminates them. With an MS in AI/ML from MIT-ADT University (2025) and hands-on production deployments, I combine statistical rigor with engineering execution.
+          I'm a data scientist and analyst who builds tools that make invisible operational problems visible — and then eliminates them. With an MS in AI/ML from MIT-ADT University (2025) and hands-on production deployments, I combine statistical rigor with engineering execution.
         </p>
         <p class="about-intro reveal" style="margin-top:-12px;">
           My background spans supply chain analytics, demand forecasting, ML model development, and full-stack automation. I speak the language of operations teams — not just code.
@@ -837,7 +838,7 @@ section { padding: 90px 80px; }
 <section id="projects" class="projects-bg">
   <div class="section-inner">
     <div class="section-label reveal">My Work at Printo</div>
-    <h2 class="section-title reveal">3 Tools. Real Teams. Real Impact.</h2>
+    <h2 class="section-title reveal">5 Tools. Real Teams. Real Impact.</h2>
     <p class="section-sub reveal">Every tool was built to solve a genuine operational pain — not a side project, but a production deployment used daily by real teams.</p>
 
     <div class="project-cards">
@@ -940,6 +941,72 @@ section { padding: 90px 80px; }
           </div>
         </div>
       </div>
+
+      <!-- P4 -->
+      <div class="project-card" data-delay="450">
+        <div class="project-accent green"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title-wrap">
+              <span class="project-emoji">📊</span>
+              <div class="project-title">In-House Excel Tool (Printo Desktop Spreadsheet)</div>
+              <div class="project-sub">Electron.js · Node.js · SQLite · IPC · REST &amp; WebSocket Sync</div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Desktop App</span>
+              <span class="ptag">Department Access</span>
+              <span class="ptag">Live Sync</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div class="project-block prob">
+              <div class="project-block-label">❌ Problem</div>
+              <div class="project-block-text">Teams were using Excel and shared sheets with no access control, no audit trail, and no way to push changes live to other systems (website, Slack, CRM). Every edit had to be manually copied across tools.</div>
+            </div>
+            <div class="project-block sol">
+              <div class="project-block-label">✅ My Solution</div>
+              <div class="project-block-text">Built a custom Excel-like desktop app in Electron — full editable spreadsheet grid, department-wise access for 6 teams, local SQLite database, integration manager (webhook / REST / WebSocket), CSV export, and a full audit log tracking every cell change with user + timestamp.</div>
+            </div>
+            <div class="project-block impact">
+              <div class="project-block-label">🎯 Impact</div>
+              <div class="project-block-text">Native Windows / Mac / Linux installer. Every cell edit pushes live to connected APIs — DB, website, Slack, CRM stay in sync without manual copy-paste. Full accountability with audit log of every change.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <div class="project-card" data-delay="600">
+        <div class="project-accent"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title-wrap">
+              <span class="project-emoji">🤖</span>
+              <div class="project-title">Google Sheets → AI + Rule-Based In-House System</div>
+              <div class="project-sub">Python · Supabase · ML Models · Node.js · Custom Web UI</div>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Migration</span>
+              <span class="ptag">AI + Rules</span>
+              <span class="ptag">~60% Effort Saved</span>
+            </div>
+          </div>
+          <div class="project-grid">
+            <div class="project-block prob">
+              <div class="project-block-label">❌ Problem</div>
+              <div class="project-block-text">Critical operational reporting ran entirely on Google Sheets — fragile formulas, broken links, manual daily updates, and no intelligence layer. Reporting was reactive, slow, and consumed hours of analyst time every week.</div>
+            </div>
+            <div class="project-block sol">
+              <div class="project-block-label">✅ My Solution</div>
+              <div class="project-block-text">Led the end-to-end migration from Google Sheets to an in-house AI + rule-based system. Combined deterministic business rules with ML models for anomaly detection and trend prediction — backed by a proper database, a live web dashboard, and automated daily reports.</div>
+            </div>
+            <div class="project-block impact">
+              <div class="project-block-label">🎯 Impact</div>
+              <div class="project-block-text">Manual reporting effort cut by <strong>~60%</strong>. Reports are now scalable, reliable, and version-controlled — no more broken formulas or stale sheets. Teams get proactive insights instead of static numbers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ML Projects sub-section -->
@@ -1030,15 +1097,15 @@ section { padding: 90px 80px; }
 <section id="impact" class="stats-section">
   <div class="section-inner">
     <div class="section-label reveal">By the Numbers</div>
-    <h2 class="section-title reveal">The Impact Across All 3 Tools</h2>
+    <h2 class="section-title reveal">The Impact Across All 5 Tools</h2>
     <p class="section-sub reveal">Every metric below reflects production systems, not demos.</p>
     <div class="stats-grid">
       <div class="stat-box o reveal"><div class="stat-num">1L+</div><div class="stat-label">PO records monitored daily</div></div>
       <div class="stat-box t reveal"><div class="stat-num">6</div><div class="stat-label">Teams coordinated in one portal</div></div>
       <div class="stat-box p reveal"><div class="stat-num">20</div><div class="stat-label">Launch tasks automated</div></div>
-      <div class="stat-box g reveal"><div class="stat-num">5</div><div class="stat-label">Cities tracked in dashboard</div></div>
+      <div class="stat-box g reveal"><div class="stat-num">~60%</div><div class="stat-label">Manual reporting effort reduced</div></div>
       <div class="stat-box r reveal"><div class="stat-num">0</div><div class="stat-label">Manual daily stock checks needed</div></div>
-      <div class="stat-box y reveal"><div class="stat-num">3</div><div class="stat-label">Production tools built from scratch</div></div>
+      <div class="stat-box y reveal"><div class="stat-num">5</div><div class="stat-label">Production tools built from scratch</div></div>
     </div>
   </div>
 </section>
@@ -1152,7 +1219,7 @@ section { padding: 90px 80px; }
       <div class="why-card reveal">
         <div class="why-icon">⚡</div>
         <div class="why-title">I Ship in Production</div>
-        <div class="why-desc">3 tools already live and used by real teams every single day. Not side projects — actual deployments that replaced manual processes entirely at Printo.</div>
+        <div class="why-desc">5 tools already live and used by real teams every single day. Not side projects — actual deployments that replaced manual processes entirely at Printo.</div>
       </div>
       <div class="why-card reveal">
         <div class="why-icon">🔁</div>
