@@ -1,1367 +1,734 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohan Wakchaure — Data Analyst (AI & Automation)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --navy: #1B3560;
-  --navy-deep: #0F1F3D;
-  --navy-light: #2A4F87;
-  --orange: #F57224;
-  --orange-light: #FF8C45;
-  --orange-soft: #FFF3EC;
-  --teal: #0D9488;
-  --green: #16A34A;
-  --purple: #7C3AED;
-  --white: #FFFFFF;
-  --off-white: #F8FAFC;
-  --light: #F0F4F8;
-  --border: #E2E8F0;
-  --text: #1E293B;
-  --muted: #64748B;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  background: var(--white);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(15, 31, 61, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 0 40px;
-  height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-brand {
-  font-family: var(--font-display);
-  font-size: 18px; font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.02em;
-  text-decoration: none;
-}
-.nav-brand span { color: var(--orange); }
-.nav-links { display: flex; gap: 6px; }
-.nav-links a {
-  padding: 6px 14px; border-radius: 6px;
-  font-size: 13px; font-weight: 500;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  transition: all 0.15s;
-}
-.nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
-.nav-cta {
-  background: var(--orange) !important;
-  color: var(--white) !important;
-  font-weight: 600 !important;
-}
-.nav-cta:hover { background: var(--orange-light) !important; }
-
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  background: var(--navy-deep);
-  display: flex; align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 80px 80px 60px;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245,114,36,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(27,53,96,0.8) 0%, transparent 60%);
-}
-
-/* Floating particles */
-.particle {
-  position: absolute;
-  width: 3px; height: 3px;
-  background: rgba(245,114,36,0.4);
-  border-radius: 50%;
-  animation: float-up linear infinite;
-}
-@keyframes float-up {
-  0% { transform: translateY(100vh) scale(0); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 0.6; }
-  100% { transform: translateY(-20px) scale(1); opacity: 0; }
-}
-
-.hero-grid {
-  display: grid; grid-template-columns: 1fr 420px;
-  gap: 60px; align-items: center;
-  max-width: 1200px; margin: 0 auto;
-  position: relative; z-index: 1; width: 100%;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 12px;
-  color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 20px;
-  animation: fade-in-up 0.8s ease both;
-}
-.hero-eyebrow::before {
-  content: ''; width: 24px; height: 2px; background: var(--orange);
-}
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(42px, 5vw, 68px);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  color: var(--white);
-  margin-bottom: 24px;
-  animation: fade-in-up 0.8s ease 0.1s both;
-}
-.hero-title em {
-  font-style: normal;
-  color: var(--orange);
-}
-.hero-desc {
-  font-size: 17px; line-height: 1.7;
-  color: rgba(255,255,255,0.65);
-  max-width: 540px;
-  margin-bottom: 36px;
-  animation: fade-in-up 0.8s ease 0.2s both;
-}
-.hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; animation: fade-in-up 0.8s ease 0.3s both; }
-.tag {
-  padding: 6px 14px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 100px;
-  font-size: 13px; color: rgba(255,255,255,0.7);
-  font-family: var(--font-mono);
-  transition: all 0.2s;
-}
-.tag:hover { background: rgba(245,114,36,0.15); border-color: rgba(245,114,36,0.3); color: var(--orange); }
-.hero-btns { display: flex; gap: 12px; animation: fade-in-up 0.8s ease 0.4s both; }
-.btn-primary {
-  padding: 14px 28px;
-  background: var(--orange); border-radius: 8px;
-  font-size: 15px; font-weight: 600; color: var(--white);
-  text-decoration: none; transition: all 0.2s;
-  border: 2px solid transparent;
-}
-.btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,114,36,0.4); }
-.btn-outline {
-  padding: 14px 28px;
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 8px;
-  font-size: 15px; font-weight: 500; color: var(--white);
-  text-decoration: none; transition: all 0.2s;
-}
-.btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
-
-/* Hero card panel */
-.hero-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 16px;
-  padding: 28px;
-  backdrop-filter: blur(10px);
-  animation: fade-in-right 0.9s ease 0.3s both;
-}
-.hero-card-title {
-  font-family: var(--font-mono); font-size: 11px;
-  color: var(--orange); letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.hero-stat-row {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px; margin-bottom: 20px;
-}
-.hero-stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px; padding: 16px;
-  text-align: center;
-  transition: transform 0.2s, background 0.2s;
-}
-.hero-stat:hover { transform: scale(1.03); background: rgba(255,255,255,0.08); }
-.hero-stat .num {
-  font-family: var(--font-display);
-  font-size: 32px; font-weight: 800;
-  line-height: 1;
-}
-.hero-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
-.hero-stat.c1 .num { color: var(--orange); }
-.hero-stat.c2 .num { color: var(--teal); }
-.hero-stat.c3 .num { color: #A78BFA; }
-.hero-stat.c4 .num { color: var(--green); }
-.stack-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack-chip {
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 6px;
-  font-family: var(--font-mono); font-size: 11px;
-  color: rgba(255,255,255,0.6);
-  transition: all 0.15s;
-}
-.stack-chip:hover { background: rgba(245,114,36,0.15); color: var(--orange); border-color: rgba(245,114,36,0.3); }
-
-/* ── KEYFRAMES ── */
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fade-in-right {
-  from { opacity: 0; transform: translateX(32px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-/* ── REVEAL ANIMATIONS ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* ── SECTIONS ── */
-section { padding: 90px 80px; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
-.section-label {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 11px;
-  color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.section-label::before { content: ''; width: 20px; height: 2px; background: var(--orange); }
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(30px, 3.5vw, 46px);
-  font-weight: 800; line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--navy-deep);
-  margin-bottom: 12px;
-}
-.section-sub {
-  font-size: 16px; color: var(--muted); line-height: 1.6;
-  max-width: 580px; margin-bottom: 48px;
-}
-
-/* ── ABOUT / CAREER ── */
-.about-section { background: var(--white); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.career-timeline { display: flex; flex-direction: column; gap: 0; }
-.career-item {
-  display: flex; gap: 20px;
-  padding-bottom: 36px;
-  position: relative;
-}
-.career-item:last-child { padding-bottom: 0; }
-.career-item::before {
-  content: ''; position: absolute;
-  left: 19px; top: 40px; bottom: 0;
-  width: 2px; background: var(--border);
-}
-.career-item:last-child::before { display: none; }
-.career-dot {
-  width: 40px; height: 40px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
-  position: relative; z-index: 1;
-}
-.career-dot.printo { background: rgba(245,114,36,0.12); border: 2px solid var(--orange); }
-.career-dot.meesho { background: rgba(124,58,237,0.12); border: 2px solid var(--purple); }
-.career-dot.skylex { background: rgba(13,148,136,0.12); border: 2px solid var(--teal); }
-.career-body {}
-.career-role {
-  font-family: var(--font-display);
-  font-size: 17px; font-weight: 700;
-  color: var(--navy-deep);
-  margin-bottom: 2px;
-}
-.career-company {
-  font-family: var(--font-mono); font-size: 12px;
-  color: var(--orange); margin-bottom: 6px;
-}
-.career-period { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
-.career-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.career-bullets li {
-  font-size: 13.5px; color: var(--text); line-height: 1.5;
-  padding-left: 14px; position: relative;
-}
-.career-bullets li::before {
-  content: '→'; position: absolute; left: 0;
-  color: var(--orange); font-size: 11px;
-}
-.about-right {}
-.about-intro {
-  font-size: 16px; line-height: 1.75;
-  color: var(--text);
-  margin-bottom: 28px;
-}
-.skills-block { margin-bottom: 28px; }
-.skills-block-title {
-  font-family: var(--font-mono); font-size: 11px;
-  color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.skills-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-chip {
-  padding: 6px 14px;
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 13px; color: var(--text);
-  font-family: var(--font-mono);
-  transition: all 0.2s;
-}
-.skill-chip:hover {
-  background: var(--orange-soft);
-  border-color: rgba(245,114,36,0.3);
-  color: var(--orange);
-  transform: translateY(-1px);
-}
-.contact-card {
-  background: var(--navy-deep);
-  border-radius: 14px; padding: 24px;
-  display: flex; flex-direction: column; gap: 12px;
-}
-.contact-row {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none; color: rgba(255,255,255,0.75);
-  font-size: 14px;
-  transition: color 0.15s;
-  padding: 8px 10px; border-radius: 8px;
-  border: 1px solid transparent;
-}
-.contact-row:hover { color: var(--white); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
-.contact-icon { font-size: 18px; width: 28px; text-align: center; }
-.contact-label { font-family: var(--font-mono); font-size: 11px; color: var(--orange); margin-right: 4px; }
-
-/* ── PROJECTS ── */
-.projects-bg { background: var(--off-white); }
-.project-cards { display: flex; flex-direction: column; gap: 24px; }
-.project-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  display: grid; grid-template-columns: 4px 1fr;
-  transition: box-shadow 0.3s, transform 0.3s;
-  opacity: 0;
-  transform: translateY(40px);
-}
-.project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.project-card:hover { box-shadow: 0 16px 48px rgba(27,53,96,0.12); transform: translateY(-4px); }
-.project-accent { background: var(--orange); }
-.project-accent.teal { background: var(--teal); }
-.project-accent.purple { background: var(--purple); }
-.project-accent.green { background: var(--green); }
-.project-body { padding: 28px 32px; }
-.project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
-.project-title-wrap {}
-.project-emoji { font-size: 26px; margin-bottom: 6px; display: block; }
-.project-title {
-  font-family: var(--font-display);
-  font-size: 22px; font-weight: 700;
-  color: var(--navy-deep); letter-spacing: -0.02em;
-}
-.project-sub { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-top: 4px; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; }
-.ptag {
-  padding: 4px 10px; border-radius: 6px;
-  font-size: 12px; font-weight: 500;
-  background: var(--light); color: var(--muted);
-  font-family: var(--font-mono);
-}
-.project-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
-.project-block { padding: 16px; border-radius: 10px; }
-.project-block.prob { background: #FFF1F2; border: 1px solid #FFE4E6; }
-.project-block.sol { background: #F0FDF4; border: 1px solid #BBFCD0; }
-.project-block.impact { background: #EFF6FF; border: 1px solid #BFDBFE; }
-.project-block-label {
-  font-family: var(--font-mono); font-size: 10px;
-  font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.project-block.prob .project-block-label { color: #BE123C; }
-.project-block.sol .project-block-label { color: #15803D; }
-.project-block.impact .project-block-label { color: #1D4ED8; }
-.project-block-text { font-size: 13.5px; line-height: 1.55; color: var(--text); }
-
-/* ML Projects extra */
-.ml-project-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  display: grid; grid-template-columns: 4px 1fr;
-  transition: box-shadow 0.3s, transform 0.3s;
-  opacity: 0;
-  transform: translateY(40px);
-}
-.ml-project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.ml-project-card:hover { box-shadow: 0 16px 48px rgba(27,53,96,0.12); transform: translateY(-4px); }
-.ml-accent-green { background: var(--green); }
-.ml-accent-teal { background: var(--teal); }
-.ml-accent-red { background: #E11D48; }
-.ml-body { padding: 28px 32px; }
-.ml-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
-.ml-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
-.ml-bullets li {
-  font-size: 13.5px; color: var(--text); line-height: 1.5;
-  padding-left: 18px; position: relative;
-}
-.ml-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 11px; }
-
-/* ── STATS ── */
-.stats-section { background: var(--navy-deep); }
-.stats-section .section-title { color: var(--white); }
-.stats-section .section-sub { color: rgba(255,255,255,0.5); }
-.stats-section .section-label { color: var(--orange); }
-.stats-section .section-label::before { background: var(--orange); }
-.stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-.stat-box {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; padding: 24px 16px;
-  text-align: center;
-  position: relative; overflow: hidden;
-  transition: background 0.2s, transform 0.2s;
-}
-.stat-box::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
-}
-.stat-box.o::before { background: var(--orange); }
-.stat-box.t::before { background: var(--teal); }
-.stat-box.p::before { background: var(--purple); }
-.stat-box.g::before { background: var(--green); }
-.stat-box.r::before { background: #E11D48; }
-.stat-box.y::before { background: #F59E0B; }
-.stat-box:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 36px; font-weight: 800; line-height: 1;
-  margin-bottom: 8px;
-}
-.stat-box.o .stat-num { color: var(--orange); }
-.stat-box.t .stat-num { color: #2DD4BF; }
-.stat-box.p .stat-num { color: #A78BFA; }
-.stat-box.g .stat-num { color: #4ADE80; }
-.stat-box.r .stat-num { color: #FB7185; }
-.stat-box.y .stat-num { color: #FCD34D; }
-.stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.4; }
-
-/* ── ETA SECTION ── */
-.eta-section { background: var(--white); }
-.eta-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 48px; }
-.eta-box { padding: 28px; border-radius: 14px; }
-.eta-box.prob { background: #FFF1F2; border: 1px solid #FFE4E6; }
-.eta-box.sol { background: #F0FDF4; border: 1px solid #BBF7D0; }
-.eta-box-head {
-  font-family: var(--font-display);
-  font-size: 18px; font-weight: 700;
-  margin-bottom: 16px;
-}
-.eta-box.prob .eta-box-head { color: #9F1239; }
-.eta-box.sol .eta-box-head { color: #14532D; }
-.eta-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.eta-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; }
-.eta-list li .ic { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
-/* Flow */
-.eta-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-bottom: 32px; }
-.flow-step {
-  position: relative; text-align: center; padding: 20px 12px;
-  background: var(--light); border: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.flow-step:hover { background: var(--orange-soft); }
-.flow-step:first-child { border-radius: 10px 0 0 10px; }
-.flow-step:last-child { border-radius: 0 10px 10px 0; }
-.flow-step::after {
-  content: '→'; position: absolute; right: -13px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px; color: var(--orange); font-weight: 700; z-index: 2;
-}
-.flow-step:last-child::after { display: none; }
-.flow-emoji { font-size: 24px; margin-bottom: 8px; }
-.flow-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--navy-deep); margin-bottom: 4px; }
-.flow-sub { font-size: 11.5px; color: var(--muted); }
-/* Tech table */
-.tech-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-.tech-table thead tr { background: var(--navy-deep); }
-.tech-table thead th { padding: 12px 16px; font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; text-align: left; font-weight: 500; }
-.tech-table tbody tr:nth-child(odd) { background: var(--off-white); }
-.tech-table tbody tr:nth-child(even) { background: var(--white); }
-.tech-table tbody tr { transition: background 0.15s; }
-.tech-table tbody tr:hover { background: var(--orange-soft) !important; }
-.tech-table td { padding: 13px 16px; font-size: 13.5px; }
-.tech-table td:first-child { font-family: var(--font-mono); font-size: 12px; color: var(--navy); font-weight: 500; }
-.tech-table td:nth-child(2) { color: var(--text); }
-.tech-table td:last-child { color: var(--muted); font-size: 12.5px; }
-
-/* Timeline */
-.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
-.tl-step {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-  border-top: 3px solid var(--orange);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.tl-step:hover { box-shadow: 0 8px 24px rgba(27,53,96,0.1); transform: translateY(-2px); }
-.tl-week { font-family: var(--font-mono); font-size: 11px; color: var(--orange); font-weight: 500; margin-bottom: 6px; }
-.tl-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--navy-deep); margin-bottom: 6px; }
-.tl-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
-
-/* ── WHY ME ── */
-.why-section { background: var(--light); }
-.why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.why-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px;
-  transition: box-shadow 0.25s, transform 0.25s;
-}
-.why-card:hover { box-shadow: 0 12px 36px rgba(27,53,96,0.1); transform: translateY(-3px); }
-.why-icon { font-size: 28px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--navy-deep); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
-.why-highlight {
-  grid-column: span 2;
-  background: var(--navy-deep);
-  border-radius: 14px; padding: 32px;
-  display: flex; align-items: center; gap: 32px;
-}
-.why-highlight-quote {
-  font-family: var(--font-display);
-  font-size: 20px; font-weight: 700;
-  color: var(--white); line-height: 1.4;
-  flex: 1;
-}
-.why-highlight-quote em { font-style: normal; color: var(--orange); }
-.why-highlight-meta { flex-shrink: 0; text-align: right; }
-.why-highlight-meta .role { font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-.why-highlight-meta .loc { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 500; }
-
-/* ── CONTACT ── */
-.contact-section { background: var(--navy-deep); text-align: center; }
-.contact-section .section-title { color: var(--white); }
-.contact-section .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 40px; }
-.contact-pills {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  justify-content: center; margin-bottom: 32px;
-}
-.contact-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 20px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 100px;
-  font-size: 14px; color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.contact-pill:hover { background: rgba(245,114,36,0.15); border-color: rgba(245,114,36,0.3); color: var(--white); transform: translateY(-2px); }
-.pill-icon { font-size: 16px; }
-.footer-note { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 40px; font-family: var(--font-mono); }
-
-/* ── TYPING ANIMATION ── */
-.typed-word {
-  display: inline-block;
-  border-right: 3px solid var(--orange);
-  animation: blink 0.7s step-end infinite;
-}
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* ── COUNTER ANIMATION ── */
-.count-up { display: inline-block; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .hero { padding: 80px 30px 60px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  section { padding: 60px 30px; }
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .project-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .eta-split { grid-template-columns: 1fr; }
-  .eta-flow { grid-template-columns: repeat(2, 1fr); }
-  .flow-step:nth-child(2)::after, .flow-step:nth-child(4)::after { display: none; }
-  .timeline { grid-template-columns: repeat(2, 1fr); }
-  .why-grid { grid-template-columns: 1fr; }
-  .why-highlight { grid-column: span 1; flex-direction: column; text-align: center; }
-  .why-highlight-meta { text-align: center; }
-}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Mohan Wakchaure — Data Analyst (AI &amp; Automation)</title>
+  <meta property="og:title" content="Mohan Wakchaure — Data Analyst (AI &amp; Automation)"/>
+  <meta property="og:description" content="5 production tools. Real teams. Real impact."/>
+  <meta property="og:image" content="https://mohanwakchaure.github.io/portfolio/preview.png"/>
+  <meta property="og:url" content="https://mohanwakchaure.github.io/portfolio/"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="description" content="Data Analyst (AI &amp; Automation) at Printo. 5 production tools deployed."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#09090f;--bg2:#111118;--bg3:#18181f;--border:rgba(255,255,255,.07);--accent:#ff5c35;--accent2:#ff8c42;--muted:#6b6b80;--text:#e8e8f0;--text2:#a0a0b8;--ff-head:'Syne',sans-serif;--ff-body:'DM Sans',sans-serif;--ff-mono:'JetBrains Mono',monospace;--r:12px;--r-lg:20px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--ff-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:0}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(9,9,15,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:var(--ff-head);font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
+    .nav-logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:32px;font-size:.875rem;color:var(--text2)}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:6px;font-size:.875rem;font-weight:500;transition:opacity .2s}
+    .nav-cta:hover{opacity:.85}
+    section{position:relative;z-index:1}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    .section-label{font-family:var(--ff-mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
+    #hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(255,92,53,.08) 0%,transparent 65%)}
+    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,92,53,.12);border:1px solid rgba(255,92,53,.25);border-radius:99px;padding:6px 14px;font-size:.8rem;color:var(--accent2);margin-bottom:24px}
+    .hero-badge span{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+    .hero-h1{font-family:var(--ff-head);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:24px}
+    .hero-h1 em{font-style:normal;color:var(--accent)}
+    .hero-sub{font-size:1.05rem;color:var(--text2);max-width:520px;margin-bottom:36px;line-height:1.75}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+    .chip{font-family:var(--ff-mono);font-size:.72rem;padding:5px 12px;border-radius:99px;background:var(--bg3);border:1px solid var(--border);color:var(--text2)}
+    .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary{background:var(--accent);color:#fff;padding:13px 28px;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:transform .2s,opacity .2s}
+    .btn-primary:hover{transform:translateY(-2px);opacity:.9}
+    .btn-outline{border:1px solid var(--border);color:var(--text2);padding:13px 28px;border-radius:var(--r);font-size:.95rem;transition:border-color .2s,color .2s}
+    .btn-outline:hover{border-color:var(--accent);color:var(--text)}
+    .hero-stats-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .stat-item{text-align:center}
+    .stat-num{font-family:var(--ff-head);font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:6px}
+    .stat-label{font-size:.78rem;color:var(--text2);line-height:1.4}
+    .stat-divider{grid-column:1/-1;height:1px;background:var(--border)}
+    .hero-tech{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px}
+    .tech-tag{font-family:var(--ff-mono);font-size:.68rem;padding:4px 10px;border-radius:4px;background:rgba(255,92,53,.08);color:var(--accent2);border:1px solid rgba(255,92,53,.15)}
+    .sec-head{text-align:center;margin-bottom:64px}
+    .sec-head h2{font-family:var(--ff-head);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+    .sec-head p{color:var(--text2);max-width:540px;margin:0 auto}
+    #about{padding:120px 0}
+    .about-grid{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
+    .about-bio h2{font-family:var(--ff-head);font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+    .about-bio p{color:var(--text2);margin-bottom:16px;font-size:.95rem}
+    .contact-links{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+    .contact-link{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text2);transition:color .2s}
+    .contact-link:hover{color:var(--accent)}
+    .timeline{position:relative;padding-left:28px}
+    .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),transparent)}
+    .tl-item{position:relative;margin-bottom:40px}
+    .tl-dot{position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+    .tl-dot.edu{border-color:#4f9cf0}
+    .tl-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--accent)}
+    .tl-dot.edu::after{background:#4f9cf0}
+    .tl-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;transition:border-color .2s}
+    .tl-card:hover{border-color:rgba(255,92,53,.3)}
+    .tl-role{font-family:var(--ff-head);font-weight:700;font-size:1rem;margin-bottom:2px}
+    .tl-company{font-size:.875rem;color:var(--accent);margin-bottom:4px}
+    .tl-date{font-family:var(--ff-mono);font-size:.7rem;color:var(--muted);margin-bottom:12px}
+    .tl-bullets{list-style:none}
+    .tl-bullets li{font-size:.875rem;color:var(--text2);padding:3px 0 3px 14px;position:relative}
+    .tl-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.75rem}
+    .tl-card.edu-card{border-color:rgba(79,156,240,.2)}
+    .tl-card.edu-card:hover{border-color:rgba(79,156,240,.4)}
+    .tl-card.edu-card .tl-company{color:#4f9cf0}
+    .edu-badge{display:inline-block;background:rgba(79,156,240,.12);border:1px solid rgba(79,156,240,.25);color:#4f9cf0;font-family:var(--ff-mono);font-size:.68rem;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+    .skills-section{margin-top:40px}
+    .skill-group{margin-bottom:20px}
+    .skill-group-label{font-family:var(--ff-mono);font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .skill-tag{font-size:.78rem;padding:4px 12px;border-radius:99px;background:var(--bg3);border:1px solid var(--border);color:var(--text2)}
+    #projects{padding:120px 0;background:var(--bg2)}
+    .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .project-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .25s,border-color .25s}
+    .project-card:hover{transform:translateY(-4px);border-color:rgba(255,92,53,.3)}
+    .project-thumb{width:100%;height:200px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+    .project-thumb svg{width:100%;height:100%;display:block}
+    .thumb-badge{position:absolute;top:12px;right:12px;background:rgba(9,9,15,.85);border:1px solid rgba(255,92,53,.35);color:var(--accent);font-family:var(--ff-mono);font-size:.65rem;padding:4px 10px;border-radius:99px;backdrop-filter:blur(6px)}
+    .project-body{padding:24px}
+    .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+    .project-tag{font-family:var(--ff-mono);font-size:.65rem;padding:3px 9px;border-radius:4px;background:var(--bg3);color:var(--muted)}
+    .project-title{font-family:var(--ff-head);font-weight:700;font-size:1.1rem;margin-bottom:12px}
+    .project-problem{font-size:.85rem;color:var(--muted);margin-bottom:10px;display:flex;gap:8px}
+    .project-problem .label{color:#e05050;font-family:var(--ff-mono);font-size:.7rem;white-space:nowrap;margin-top:2px}
+    .project-solution{font-size:.85rem;color:var(--text2);margin-bottom:14px;display:flex;gap:8px}
+    .project-solution .label{color:#50c878;font-family:var(--ff-mono);font-size:.7rem;white-space:nowrap;margin-top:2px}
+    .project-impact{display:flex;align-items:flex-start;gap:8px;background:rgba(255,92,53,.06);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:10px 14px;font-size:.83rem;color:var(--text)}
+    #impact{padding:120px 0}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px}
+    .impact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px 28px;text-align:center;position:relative;overflow:hidden}
+    .impact-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,92,53,.1) 0%,transparent 70%)}
+    .impact-num{font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:8px;position:relative}
+    .impact-desc{font-size:.875rem;color:var(--text2);position:relative}
+    #tracking{padding:120px 0;background:var(--bg2)}
+    .eta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .eta-problem-list,.eta-solution-list{list-style:none;margin:16px 0 24px}
+    .eta-problem-list li,.eta-solution-list li{display:flex;gap:10px;font-size:.9rem;color:var(--text2);padding:6px 0}
+    .eta-problem-list li span{color:#e05050}
+    .eta-solution-list li span{color:#50c878}
+    .eta-flow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+    .eta-step-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;font-size:.78rem}
+    .eta-step-box .step-icon{font-size:1.2rem;margin-bottom:4px}
+    .eta-step-box .step-label{color:var(--text2);font-size:.72rem}
+    .eta-arrow{color:var(--muted);font-size:.9rem;align-self:center}
+    .stack-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+    .stack-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
+    .stack-card-label{font-family:var(--ff-mono);font-size:.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+    .stack-card-tech{font-size:.83rem;font-weight:500;margin-bottom:2px}
+    .stack-card-purpose{font-size:.75rem;color:var(--muted)}
+    #why{padding:120px 0}
+    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .why-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;transition:border-color .2s}
+    .why-card:hover{border-color:rgba(255,92,53,.3)}
+    .why-icon{font-size:1.8rem;margin-bottom:14px}
+    .why-card h3{font-family:var(--ff-head);font-weight:700;font-size:1rem;margin-bottom:8px}
+    .why-card p{font-size:.875rem;color:var(--text2);line-height:1.65}
+    .quote-band{margin-top:56px;background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:32px 40px;font-family:var(--ff-head);font-size:1.25rem;font-weight:700;color:var(--text);line-height:1.5}
+    .quote-band em{font-style:normal;color:var(--accent)}
+    #contact{padding:120px 0;background:var(--bg2)}
+    .contact-card{max-width:700px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:56px;text-align:center}
+    .contact-card h2{font-family:var(--ff-head);font-size:2.2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+    .contact-card p{color:var(--text2);margin-bottom:40px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
+    .contact-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:12px;font-size:.875rem;transition:border-color .2s}
+    .contact-item:hover{border-color:rgba(255,92,53,.3)}
+    .contact-item .ci-icon{font-size:1.1rem}
+    .contact-item .ci-label{font-family:var(--ff-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .contact-item .ci-val{font-size:.85rem;color:var(--text)}
+    footer{padding:24px;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);position:relative;z-index:1}
+    footer a{color:var(--accent)}
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+    .fade-up.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      nav{padding:16px 20px}
+      .nav-links{display:none}
+      .hero-inner{grid-template-columns:1fr}
+      .hero-stats-card{display:none}
+      .about-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .impact-grid{grid-template-columns:1fr 1fr}
+      .eta-grid{grid-template-columns:1fr}
+      .stack-cards{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .contact-card{padding:32px 20px}
+    }
+    @media(max-width:480px){
+      .impact-grid{grid-template-columns:1fr}
+      .hero-h1{font-size:2.2rem}
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">mohan<span>.dev</span></a>
+  <div class="nav-logo">mohan<span>.</span>dev</div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#impact">Impact</a>
     <a href="#tracking">ETA Model</a>
     <a href="#why">Why Me</a>
-    <a href="#contact" class="nav-cta">Get in Touch</a>
   </div>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero" id="hero">
-  <!-- Floating particles -->
-  <div class="particle" style="left:10%;animation-duration:8s;animation-delay:0s;width:4px;height:4px;"></div>
-  <div class="particle" style="left:20%;animation-duration:11s;animation-delay:2s;width:2px;height:2px;opacity:0.3;"></div>
-  <div class="particle" style="left:35%;animation-duration:9s;animation-delay:1s;background:rgba(13,148,136,0.4);"></div>
-  <div class="particle" style="left:50%;animation-duration:13s;animation-delay:3s;width:5px;height:5px;"></div>
-  <div class="particle" style="left:65%;animation-duration:7s;animation-delay:0.5s;background:rgba(124,58,237,0.4);width:2px;height:2px;"></div>
-  <div class="particle" style="left:80%;animation-duration:10s;animation-delay:4s;"></div>
-  <div class="particle" style="left:90%;animation-duration:12s;animation-delay:1.5s;width:3px;height:3px;background:rgba(13,148,136,0.3);"></div>
-
-  <div class="hero-grid">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Data Analyst (AI &amp; Automation)</div>
-      <h1 class="hero-title">
-        Hi, I'm <em>Mohan</em><br>I Turn <em>Data</em> into<br>Decisions
-      </h1>
-      <p class="hero-desc">
-        Data Analyst at Printo with 1.5+ years of experience building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. Deployed 5 production tools eliminating hours of manual work daily.
-      </p>
-      <div class="hero-tags">
-        <span class="tag">Python · ML</span>
-        <span class="tag">SQL (Advanced)</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Google Sheets API</span>
-        <span class="tag">ETA Modelling</span>
-        <span class="tag">Bengaluru, India</span>
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left fade-up">
+        <div class="hero-badge"><span></span> Open to Opportunities &middot; Bengaluru, India</div>
+        <h1 class="hero-h1">I find the <em>manual process</em> costing your team 2 hours a day &mdash; and make it take <em>2 seconds.</em></h1>
+        <p class="hero-sub">Data Analyst at Printo with 1.5+ years building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. 5 production tools deployed &mdash; eliminating hours of manual work daily.</p>
+        <div class="hero-chips">
+          <span class="chip">Python</span><span class="chip">SQL (Advanced)</span><span class="chip">scikit-learn</span>
+          <span class="chip">Supabase</span><span class="chip">Node.js</span><span class="chip">ETA Modelling</span><span class="chip">Time-Series Forecasting</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work &rarr;</a>
+          <a href="#contact" class="btn-outline">Get In Touch</a>
+          <a href="https://github.com/mohanwakchaure" target="_blank" class="btn-outline">GitHub &nearr;</a>
+        </div>
       </div>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View My Work →</a>
-        <a href="#contact" class="btn-outline">Get In Touch</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-title">Production Stats</div>
-      <div class="hero-stat-row">
-        <div class="hero-stat c1"><div class="num" data-target="100000" data-suffix="L+">1L+</div><div class="lbl">PO Records Monitored</div></div>
-        <div class="hero-stat c2"><div class="num">6</div><div class="lbl">Teams Coordinated</div></div>
-        <div class="hero-stat c3"><div class="num">20</div><div class="lbl">Launch Tasks Automated</div></div>
-        <div class="hero-stat c4"><div class="num">0</div><div class="lbl">Manual Daily Checks Needed</div></div>
-      </div>
-      <div class="stack-list">
-        <span class="stack-chip">Python</span>
-        <span class="stack-chip">SQL</span>
-        <span class="stack-chip">scikit-learn</span>
-        <span class="stack-chip">Node.js</span>
-        <span class="stack-chip">Supabase</span>
-        <span class="stack-chip">gspread</span>
-        <span class="stack-chip">Pandas</span>
-        <span class="stack-chip">Chart.js</span>
+      <div class="hero-stats-card fade-up" style="transition-delay:.15s">
+        <div class="stats-grid">
+          <div class="stat-item"><div class="stat-num">1L+</div><div class="stat-label">PO Records<br>Monitored Daily</div></div>
+          <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Teams<br>Coordinated</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Launch Tasks<br>Automated</div></div>
+          <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Manual Daily<br>Checks Needed</div></div>
+        </div>
+        <div class="hero-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">scikit-learn</span>
+          <span class="tech-tag">Node.js</span><span class="tech-tag">Supabase</span><span class="tech-tag">gspread</span>
+          <span class="tech-tag">Pandas</span><span class="tech-tag">Chart.js</span>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ABOUT & CAREER -->
-<section id="about" class="about-section">
-  <div class="section-inner">
-    <div class="section-label reveal">About Me</div>
-    <h2 class="section-title reveal">Data Analyst, Builder & Automation Thinker</h2>
-    <p class="section-sub reveal">From demand forecasting to ML-based route optimization — I work at the intersection of data science and operational impact.</p>
-
+<section id="about">
+  <div class="container">
     <div class="about-grid">
-      <!-- Career timeline left -->
+      <div class="fade-up">
+        <div class="section-label">About Me</div>
+        <h2 style="font-family:var(--ff-head);font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px">Data Analyst, Builder &amp; Automation Thinker</h2>
+        <p style="color:var(--text2);margin-bottom:16px;font-size:.95rem">From demand forecasting to ML-based route optimization &mdash; I work at the intersection of data science and operational impact.</p>
+        <p style="color:var(--text2);margin-bottom:16px;font-size:.95rem">I combine statistical rigor with engineering execution &mdash; speaking the language of operations teams, not just code.</p>
+        <div class="contact-links">
+          <a href="mailto:mohanwakchaure1@gmail.com" class="contact-link"><span>&#128231;</span> mohanwakchaure1@gmail.com</a>
+          <a href="tel:+918805548797" class="contact-link"><span>&#128241;</span> +91 88055 48797</a>
+          <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" class="contact-link"><span>&#128188;</span> linkedin.com/in/mohan-wakchaure</a>
+          <a href="https://github.com/mohanwakchaure" target="_blank" class="contact-link"><span>&#128029;</span> github.com/mohanwakchaure</a>
+          <span class="contact-link"><span>&#128205;</span> Bengaluru, India</span>
+        </div>
+        <div class="skills-section">
+          <div class="skill-group"><div class="skill-group-label">Data &amp; Analytics</div><div class="skill-tags"><span class="skill-tag">SQL (Advanced)</span><span class="skill-tag">Python &middot; Pandas &middot; NumPy</span><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">A/B Testing</span><span class="skill-tag">Time-Series</span></div></div>
+          <div class="skill-group"><div class="skill-group-label">Machine Learning</div><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Random Forest</span><span class="skill-tag">Regression Analysis</span><span class="skill-tag">Anomaly Detection</span></div></div>
+          <div class="skill-group"><div class="skill-group-label">Engineering</div><div class="skill-tags"><span class="skill-tag">Node.js &middot; Express</span><span class="skill-tag">Supabase (PostgreSQL)</span><span class="skill-tag">gspread</span><span class="skill-tag">Notion &middot; Slack</span></div></div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.1s">
+        <div class="section-label">Career Journey</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Data Analyst (Applied Data Science &amp; ML)</div><div class="tl-company">Printo.in &middot; Bangalore</div><div class="tl-date">Mar 2026 &ndash; Present</div><ul class="tl-bullets"><li>Designed and deployed a role-based product launch system &mdash; reduced errors across 6 teams.</li><li>Built ML-based logistics optimization model improving SLA adherence.</li><li>Python automation to monitor low-inventory SKUs in real-time across 5 cities.</li><li>Led Google Sheets &rarr; AI + rule-based system migration, reducing manual effort ~60%.</li><li>Time-series forecasting improved inventory planning accuracy by ~20%.</li></ul></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Fulfillment Analyst</div><div class="tl-company">Meesho &middot; Bangalore</div><div class="tl-date">May 2025 &ndash; Mar 2026</div><ul class="tl-bullets"><li>SQL analytics on order lifecycle, delivery performance, and return rates.</li><li>Automated dashboards reduced stakeholder reporting time by ~40%.</li><li>Led third-party vendor risk management for a 43-member cross-functional team.</li><li>A/B testing and statistical significance analysis on fulfillment process changes.</li></ul></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Software Engineer (Data &amp; Analytics)</div><div class="tl-company">Skylex Technology &middot; Pune</div><div class="tl-date">Aug 2024 &ndash; Nov 2024</div><ul class="tl-bullets"><li>Analyzed campaign performance data (CTR, conversion rates).</li><li>Built reporting systems for budget utilization and campaign optimization.</li></ul></div></div>
+          <div class="tl-item"><div class="tl-dot edu"></div><div class="tl-card edu-card"><div class="edu-badge">&#127891; Education</div><div class="tl-role">MS in Artificial Intelligence &amp; Machine Learning</div><div class="tl-company">MIT-ADT University &middot; Pune</div><div class="tl-date">Graduated 2025</div><ul class="tl-bullets"><li>Specialized in ML, deep learning, and applied data science.</li><li>Hands-on projects in predictive modeling, NLP, and computer vision.</li></ul></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="section-label">My Work at Printo</div>
+      <h2>5 Tools. Real Teams. Real Impact.</h2>
+      <p>Every tool was built to solve a genuine operational pain &mdash; production deployments used daily by real teams.</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Project 1: Low-Stock Alert -->
+      <div class="project-card fade-up">
+        <div class="project-thumb">
+          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="200" fill="#111118"/>
+            <line x1="0" y1="40" x2="420" y2="40" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="0" y1="80" x2="420" y2="80" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="0" y1="120" x2="420" y2="120" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="0" y1="160" x2="420" y2="160" stroke="#ffffff08" stroke-width="1"/>
+            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
+            <text x="16" y="21" fill="#ff5c35" font-size="9" font-family="monospace" font-weight="bold">&#9660; LOW-STOCK ALERT SYSTEM</text>
+            <circle cx="400" cy="16" r="5" fill="#ff5c35" opacity="0.9"/>
+            <circle cx="400" cy="16" r="5" fill="#ff5c35" opacity="0.3"><animate attributeName="r" values="5;13;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/></circle>
+            <rect x="12" y="40" width="396" height="18" fill="#1e1e2a"/>
+            <text x="18" y="53" fill="#6b6b80" font-size="8" font-family="monospace">SKU</text>
+            <text x="88" y="53" fill="#6b6b80" font-size="8" font-family="monospace">ITEM</text>
+            <text x="228" y="53" fill="#6b6b80" font-size="8" font-family="monospace">STOCK %</text>
+            <text x="308" y="53" fill="#6b6b80" font-size="8" font-family="monospace">STATUS</text>
+            <rect x="12" y="58" width="396" height="18" fill="#ff5c3512"/>
+            <text x="18" y="71" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-4421</text>
+            <text x="88" y="71" fill="#a0a0b8" font-size="8" font-family="monospace">Matte Paper A4</text>
+            <rect x="228" y="62" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="62" width="4" height="8" rx="2" fill="#ff5c35"/>
+            <text x="268" y="70" fill="#ff5c35" font-size="7.5" font-family="monospace">6.2%</text>
+            <rect x="306" y="62" width="52" height="10" rx="3" fill="#ff5c3525"/><text x="313" y="70" fill="#ff5c35" font-size="7" font-family="monospace">CRITICAL</text>
+            <rect x="12" y="76" width="396" height="18" fill="#ff8c4210"/>
+            <text x="18" y="89" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-3380</text>
+            <text x="88" y="89" fill="#a0a0b8" font-size="8" font-family="monospace">Glossy Cover 300g</text>
+            <rect x="228" y="80" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="80" width="10" height="8" rx="2" fill="#ff8c42"/>
+            <text x="268" y="88" fill="#ff8c42" font-size="7.5" font-family="monospace">8.7%</text>
+            <rect x="306" y="80" width="52" height="10" rx="3" fill="#ff8c4225"/><text x="311" y="88" fill="#ff8c42" font-size="7" font-family="monospace">WARNING</text>
+            <rect x="12" y="94" width="396" height="18" fill="transparent"/>
+            <text x="18" y="107" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-2210</text>
+            <text x="88" y="107" fill="#a0a0b8" font-size="8" font-family="monospace">Bond Paper 80g</text>
+            <rect x="228" y="98" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="98" width="26" height="8" rx="2" fill="#50c878"/>
+            <text x="268" y="106" fill="#50c878" font-size="7.5" font-family="monospace">78%</text>
+            <rect x="306" y="98" width="36" height="10" rx="3" fill="#50c87825"/><text x="314" y="106" fill="#50c878" font-size="7" font-family="monospace">GOOD</text>
+            <rect x="12" y="112" width="396" height="18" fill="#ff5c3512"/>
+            <text x="18" y="125" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-5501</text>
+            <text x="88" y="125" fill="#a0a0b8" font-size="8" font-family="monospace">Kraft Bag S</text>
+            <rect x="228" y="116" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="116" width="3" height="8" rx="2" fill="#ff5c35"/>
+            <text x="268" y="124" fill="#ff5c35" font-size="7.5" font-family="monospace">4.1%</text>
+            <rect x="306" y="116" width="52" height="10" rx="3" fill="#ff5c3525"/><text x="313" y="124" fill="#ff5c35" font-size="7" font-family="monospace">CRITICAL</text>
+            <rect x="12" y="140" width="396" height="50" rx="6" fill="#1a1a24" stroke="#ff5c3530" stroke-width="1"/>
+            <rect x="12" y="140" width="3" height="50" rx="2" fill="#ff5c35"/>
+            <text x="22" y="157" fill="#ff5c35" font-size="8" font-family="monospace">&#128231; ALERT FIRED &#8594; mohanwakchaure1@gmail.com + Google Chat</text>
+            <text x="22" y="171" fill="#6b6b80" font-size="7.5" font-family="monospace">2 items below 10% threshold detected automatically</text>
+            <text x="22" y="183" fill="#50c878" font-size="7.5" font-family="monospace">&#10003; Ran in 0.3s  &#183;  1,04,820 rows scanned  &#183;  0 manual checks needed</text>
+          </svg>
+          <div class="thumb-badge">Automation</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">gspread</span><span class="project-tag">Gmail SMTP</span><span class="project-tag">Google Chat Webhook</span></div>
+          <div class="project-title">Low-Stock Alert Automation</div>
+          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Procurement had to manually scan 1 lakh+ rows daily &mdash; missed stockouts were costly.</div>
+          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Python script flags stock below 10% consumption and fires email + Chat alerts automatically.</div>
+          <div class="project-impact">&#127919; Zero missed stockouts since deployment. 30&ndash;45 min daily check now takes seconds.</div>
+        </div>
+      </div>
+
+      <!-- Project 2: Materials Dashboard -->
+      <div class="project-card fade-up" style="transition-delay:.05s">
+        <div class="project-thumb">
+          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="200" fill="#111118"/>
+            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
+            <text x="16" y="21" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">MATERIALS OPERATIONS DASHBOARD</text>
+            <rect x="330" y="8" width="30" height="14" rx="3" fill="#ff5c3520" stroke="#ff5c3540" stroke-width="1"/>
+            <text x="337" y="18" fill="#ff5c35" font-size="7" font-family="monospace">LIVE</text>
+            <circle cx="360" cy="15" r="3" fill="#50c878"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+            <!-- city filter pills -->
+            <rect x="12" y="38" width="30" height="14" rx="7" fill="#ff5c35"/><text x="18" y="48" fill="#fff" font-size="7" font-family="monospace">BLR</text>
+            <rect x="46" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="52" y="48" fill="#6b6b80" font-size="7" font-family="monospace">CHN</text>
+            <rect x="80" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="86" y="48" fill="#6b6b80" font-size="7" font-family="monospace">HYD</text>
+            <rect x="114" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="120" y="48" fill="#6b6b80" font-size="7" font-family="monospace">PUN</text>
+            <rect x="148" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="154" y="48" fill="#6b6b80" font-size="7" font-family="monospace">NCR</text>
+            <!-- bar chart -->
+            <rect x="12" y="60" width="180" height="128" rx="6" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
+            <text x="20" y="74" fill="#6b6b80" font-size="7" font-family="monospace">STOCK BY CATEGORY</text>
+            <rect x="22" y="160" width="20" height="18" fill="#ff5c35" rx="2" opacity=".85"/>
+            <rect x="48" y="148" width="20" height="30" fill="#ff8c42" rx="2" opacity=".85"/>
+            <rect x="74" y="138" width="20" height="40" fill="#50c878" rx="2" opacity=".85"/>
+            <rect x="100" y="152" width="20" height="26" fill="#4f9cf0" rx="2" opacity=".85"/>
+            <rect x="126" y="143" width="20" height="35" fill="#a78bfa" rx="2" opacity=".85"/>
+            <rect x="152" y="155" width="20" height="23" fill="#ff5c35" rx="2" opacity=".55"/>
+            <line x1="18" y1="178" x2="178" y2="178" stroke="#ffffff10" stroke-width="1"/>
+            <text x="24" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Paper</text>
+            <text x="48" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Kraft</text>
+            <text x="73" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Cover</text>
+            <text x="98" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Box</text>
+            <text x="124" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Bag</text>
+            <text x="151" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Other</text>
+            <!-- table -->
+            <rect x="200" y="60" width="208" height="128" rx="6" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
+            <text x="208" y="74" fill="#6b6b80" font-size="7" font-family="monospace">VENDOR &amp; LEAD TIME</text>
+            <rect x="204" y="78" width="200" height="14" fill="#1e1e2a"/>
+            <text x="208" y="88" fill="#6b6b80" font-size="7" font-family="monospace">ITEM</text>
+            <text x="296" y="88" fill="#6b6b80" font-size="7" font-family="monospace">VENDOR</text>
+            <text x="362" y="88" fill="#6b6b80" font-size="7" font-family="monospace">ETA</text>
+            <text x="208" y="103" fill="#a0a0b8" font-size="7" font-family="monospace">Matte A4</text>
+            <text x="296" y="103" fill="#a0a0b8" font-size="7" font-family="monospace">PaperCo</text>
+            <text x="362" y="103" fill="#50c878" font-size="7" font-family="monospace">2d</text>
+            <line x1="204" y1="108" x2="404" y2="108" stroke="#ffffff08" stroke-width="1"/>
+            <text x="208" y="120" fill="#a0a0b8" font-size="7" font-family="monospace">Kraft S</text>
+            <text x="296" y="120" fill="#a0a0b8" font-size="7" font-family="monospace">BagMart</text>
+            <text x="362" y="120" fill="#ff8c42" font-size="7" font-family="monospace">5d</text>
+            <line x1="204" y1="125" x2="404" y2="125" stroke="#ffffff08" stroke-width="1"/>
+            <text x="208" y="137" fill="#a0a0b8" font-size="7" font-family="monospace">Cover 300g</text>
+            <text x="296" y="137" fill="#a0a0b8" font-size="7" font-family="monospace">SpecPrint</text>
+            <text x="362" y="137" fill="#ff5c35" font-size="7" font-family="monospace">8d</text>
+            <line x1="204" y1="142" x2="404" y2="142" stroke="#ffffff08" stroke-width="1"/>
+            <text x="208" y="154" fill="#a0a0b8" font-size="7" font-family="monospace">Bond 80g</text>
+            <text x="296" y="154" fill="#a0a0b8" font-size="7" font-family="monospace">PaperCo</text>
+            <text x="362" y="154" fill="#50c878" font-size="7" font-family="monospace">1d</text>
+            <line x1="204" y1="159" x2="404" y2="159" stroke="#ffffff08" stroke-width="1"/>
+            <text x="208" y="171" fill="#a0a0b8" font-size="7" font-family="monospace">Foil Gold</text>
+            <text x="296" y="171" fill="#a0a0b8" font-size="7" font-family="monospace">GoldFoil</text>
+            <text x="362" y="171" fill="#ff8c42" font-size="7" font-family="monospace">4d</text>
+          </svg>
+          <div class="thumb-badge">Dashboard</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Vanilla JS</span><span class="project-tag">Supabase</span><span class="project-tag">Chart.js</span><span class="project-tag">CSS Grid</span></div>
+          <div class="project-title">Printo Materials Operations Dashboard</div>
+          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Material data scattered across spreadsheets &mdash; no unified view across 5 cities.</div>
+          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Single-page Supabase-connected dashboard with live filters, 6-chart analytics, CSV export, and add-record modal.</div>
+          <div class="project-impact">&#127919; Full visibility across BLR, CHN, HYD, PUN, NCR &mdash; one URL, always live.</div>
+        </div>
+      </div>
+
+      <!-- Project 3: Launch Portal -->
+      <div class="project-card fade-up" style="transition-delay:.1s">
+        <div class="project-thumb">
+          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="200" fill="#111118"/>
+            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
+            <text x="16" y="21" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">PRODUCT LAUNCH PORTAL</text>
+            <rect x="344" y="7" width="64" height="16" rx="4" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
+            <text x="350" y="18" fill="#50c878" font-size="7.5" font-family="monospace">6 TEAMS LIVE</text>
+            <!-- state machine nodes -->
+            <!-- row 1: tasks 1-4 -->
+            <rect x="12" y="42" width="70" height="32" rx="6" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
+            <text x="24" y="54" fill="#50c878" font-size="7" font-family="monospace">&#10003; CATEGORY</text>
+            <text x="24" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Done</text>
+            <line x1="82" y1="58" x2="98" y2="58" stroke="#50c878" stroke-width="1.5" marker-end="url(#arr)"/>
+            <rect x="98" y="42" width="70" height="32" rx="6" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
+            <text x="104" y="54" fill="#50c878" font-size="7" font-family="monospace">&#10003; PROCURE</text>
+            <text x="110" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Done</text>
+            <line x1="168" y1="58" x2="184" y2="58" stroke="#50c878" stroke-width="1.5"/>
+            <rect x="184" y="42" width="70" height="32" rx="6" fill="#ff8c4220" stroke="#ff8c4240" stroke-width="1.5"/>
+            <text x="190" y="54" fill="#ff8c42" font-size="7" font-family="monospace">&#9654; PRODUC.</text>
+            <text x="196" y="66" fill="#ff8c42" font-size="6.5" font-family="monospace">In Progress</text>
+            <line x1="254" y1="58" x2="270" y2="58" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <rect x="270" y="42" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
+            <text x="276" y="54" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; COMMERC.</text>
+            <text x="286" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
+            <!-- row 2 -->
+            <line x1="305" y1="74" x2="305" y2="86" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <rect x="270" y="86" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
+            <text x="276" y="98" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; INVENTORY</text>
+            <text x="289" y="110" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
+            <line x1="270" y1="102" x2="254" y2="102" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <rect x="184" y="86" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
+            <text x="198" y="98" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; SKU</text>
+            <text x="196" y="110" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
+            <!-- legend -->
+            <rect x="12" y="90" width="160" height="28" rx="5" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
+            <text x="20" y="103" fill="#50c878" font-size="7" font-family="monospace">&#9632; Done</text>
+            <text x="60" y="103" fill="#ff8c42" font-size="7" font-family="monospace">&#9632; Active</text>
+            <text x="108" y="103" fill="#6b6b80" font-size="7" font-family="monospace">&#9632; Locked</text>
+            <text x="20" y="113" fill="#6b6b80" font-size="6.5" font-family="monospace">Tasks auto-unlock when prereqs complete</text>
+            <!-- email notification bar -->
+            <rect x="12" y="130" width="396" height="58" rx="6" fill="#1a1a24" stroke="#4f9cf020" stroke-width="1"/>
+            <rect x="12" y="130" width="3" height="58" rx="2" fill="#4f9cf0"/>
+            <text x="22" y="147" fill="#4f9cf0" font-size="8" font-family="monospace">&#128231; AUTOMATED HANDOFF EMAIL SENT</text>
+            <text x="22" y="161" fill="#6b6b80" font-size="7.5" font-family="monospace">To: production@printo.in   From: portal@printo.in</text>
+            <text x="22" y="173" fill="#a0a0b8" font-size="7.5" font-family="monospace">Subject: [Launch #47] Procurement complete &#8594; Production task unlocked</text>
+            <text x="22" y="183" fill="#50c878" font-size="7" font-family="monospace">&#10003; Timestamp logged  &#183;  Audit trail updated  &#183;  Zero missed handoffs</text>
+          </svg>
+          <div class="thumb-badge">Full-Stack</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Node.js</span><span class="project-tag">Express</span><span class="project-tag">Nodemailer</span><span class="project-tag">Custom Auth</span></div>
+          <div class="project-title">Printo Product Launch Portal</div>
+          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Launches stalled constantly &mdash; coordination happened over chat with no accountability.</div>
+          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Role-based portal with 20-task state machine &mdash; tasks auto-unlock, emails trigger on every handoff.</div>
+          <div class="project-impact">&#127919; 6 teams coordinated in one place. Zero missed handoffs. Full launch audit trail.</div>
+        </div>
+      </div>
+
+      <!-- Project 4: Desktop Excel App -->
+      <div class="project-card fade-up" style="transition-delay:.15s">
+        <div class="project-thumb">
+          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="420" height="200" fill="#111118"/>
+            <!-- window chrome -->
+            <rect x="0" y="0" width="420" height="24" fill="#0d0d14"/>
+            <circle cx="14" cy="12" r="4" fill="#ff5f57"/><circle cx="28" cy="12" r="4" fill="#febc2e"/><circle cx="42" cy="12" r="4" fill="#28c840"/>
+            <text x="160" y="16" fill="#6b6b80" font-size="8" font-family="monospace">Printo Desktop Spreadsheet v1.0</text>
+            <!-- toolbar -->
+            <rect x="0" y="24" width="420" height="22" fill="#18181f" stroke="#ffffff08" stroke-width="0"/>
+            <rect x="6" y="29" width="28" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="10" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">File</text>
+            <rect x="38" y="29" width="28" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="41" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">Edit</text>
+            <rect x="70" y="29" width="40" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="73" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">Export</text>
+            <rect x="340" y="29" width="32" height="12" rx="3" fill="#ff5c3520" stroke="#ff5c3540" stroke-width="1"/><text x="343" y="38" fill="#ff5c35" font-size="6.5" font-family="monospace">SYNC &#8635;</text>
+            <!-- spreadsheet grid -->
+            <!-- header row -->
+            <rect x="0" y="46" width="420" height="16" fill="#1e1e2a"/>
+            <line x1="40" y1="46" x2="40" y2="200" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="120" y1="46" x2="120" y2="200" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="200" y1="46" x2="200" y2="200" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="280" y1="46" x2="280" y2="200" stroke="#ffffff08" stroke-width="1"/>
+            <line x1="360" y1="46" x2="360" y2="200" stroke="#ffffff08" stroke-width="1"/>
+            <text x="48" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">SKU ID</text>
+            <text x="128" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Category</text>
+            <text x="208" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Qty</text>
+            <text x="288" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Dept</text>
+            <text x="368" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Modified</text>
+            <!-- rows -->
+            <rect x="0" y="62" width="420" height="16" fill="#111118"/>
+            <text x="4" y="73" fill="#6b6b80" font-size="7" font-family="monospace">1</text>
+            <text x="48" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-001</text>
+            <text x="128" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">Paper</text>
+            <text x="208" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">5000</text>
+            <text x="288" y="73" fill="#4f9cf0" font-size="7.5" font-family="monospace">Inventory</text>
+            <text x="368" y="73" fill="#6b6b80" font-size="7" font-family="monospace">12:34</text>
+            <rect x="0" y="78" width="420" height="16" fill="#18181f"/>
+            <text x="4" y="89" fill="#6b6b80" font-size="7" font-family="monospace">2</text>
+            <text x="48" y="89" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-002</text>
+            <text x="128" y="89" fill="#a0a0b8" font-size="7.5" font-family="monospace">Bag</text>
+            <rect x="200" y="80" width="76" height="14" rx="2" fill="#ff5c3515" stroke="#ff5c3540" stroke-width="1"/>
+            <text x="208" y="89" fill="#ff8c42" font-size="7.5" font-family="monospace">2300 &#9998;</text>
+            <text x="288" y="89" fill="#ff8c42" font-size="7.5" font-family="monospace">Production</text>
+            <text x="368" y="89" fill="#ff5c35" font-size="7" font-family="monospace">NOW</text>
+            <rect x="0" y="94" width="420" height="16" fill="#111118"/>
+            <text x="4" y="105" fill="#6b6b80" font-size="7" font-family="monospace">3</text>
+            <text x="48" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-003</text>
+            <text x="128" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">Cover</text>
+            <text x="208" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">820</text>
+            <text x="288" y="105" fill="#50c878" font-size="7.5" font-family="monospace">Category</text>
+            <text x="368" y="105" fill="#6b6b80" font-size="7" font-family="monospace">11:02</text>
+            <rect x="0" y="110" width="420" height="16" fill="#18181f"/>
+            <text x="4" y="121" fill="#6b6b80" font-size="7" font-family="monospace">4</text>
+            <text x="48" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-004</text>
+            <text x="128" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">Box</text>
+            <text x="208" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">1150</text>
+            <text x="288" y="121" fill="#a78bfa" font-size="7.5" font-family="monospace">SKU</text>
+            <text x="368" y="121" fill="#6b6b80" font-size="7" font-family="monospace">10:58</text>
+            <!-- audit log bar -->
+            <rect x="0" y="136" width="420" height="16" fill="#0d0d14" stroke="#ffffff08" stroke-width="1"/>
+            <text x="8" y="147" fill="#6b6b80" font-size="7" font-family="monospace">AUDIT LOG</text>
+            <text x="70" y="147" fill="#50c878" font-size="7" font-family="monospace">&#8226; PRN-002 qty edited by production@printo.in at 12:36:02  &#8594; pushed to DB + Slack</text>
+            <!-- status bar -->
+            <rect x="0" y="152" width="420" height="48" rx="0" fill="#0d0d14"/>
+            <rect x="8" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#50c87830" stroke-width="1"/>
+            <text x="14" y="169" fill="#50c878" font-size="7" font-family="monospace">&#9679; DB SYNCED</text>
+            <text x="14" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Supabase live</text>
+            <rect x="112" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#4f9cf030" stroke-width="1"/>
+            <text x="118" y="169" fill="#4f9cf0" font-size="7" font-family="monospace">&#9679; SLACK HOOK</text>
+            <text x="118" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Connected</text>
+            <rect x="216" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#a78bfa30" stroke-width="1"/>
+            <text x="222" y="169" fill="#a78bfa" font-size="7" font-family="monospace">&#9679; 6 DEPTS</text>
+            <text x="222" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Access active</text>
+            <rect x="320" y="158" width="90" height="32" rx="5" fill="#18181f" stroke="#ff8c4230" stroke-width="1"/>
+            <text x="326" y="169" fill="#ff8c42" font-size="7" font-family="monospace">&#9679; AUDIT LOG</text>
+            <text x="326" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">All edits saved</text>
+          </svg>
+          <div class="thumb-badge">Desktop App</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Electron.js</span><span class="project-tag">Node.js</span><span class="project-tag">SQLite</span><span class="project-tag">WebSocket</span></div>
+          <div class="project-title">In-House Excel Tool (Desktop Spreadsheet)</div>
+          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Teams used shared sheets with no access control, no audit trail, no live sync.</div>
+          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Custom Electron app &mdash; full editable grid, department-wise access, local SQLite, REST/WebSocket integration manager.</div>
+          <div class="project-impact">&#127919; Native Win/Mac/Linux installer. Every cell edit pushes live to DB, Slack, CRM &mdash; zero copy-paste.</div>
+        </div>
+      </div>
+
+      <!-- Project 5: AI Migration — full width -->
+      <div class="project-card fade-up" style="grid-column:1/-1;transition-delay:.2s">
+        <div class="project-thumb" style="height:180px">
+          <svg viewBox="0 0 840 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="840" height="180" fill="#111118"/>
+            <rect x="0" y="0" width="840" height="28" fill="#18181f"/>
+            <text x="16" y="19" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">GOOGLE SHEETS &#8594; AI + RULE-BASED SYSTEM  &#8212;  MIGRATION COMPLETE</text>
+            <rect x="726" y="6" width="100" height="16" rx="4" fill="#50c87818" stroke="#50c87840" stroke-width="1"/>
+            <text x="733" y="17" fill="#50c878" font-size="7.5" font-family="monospace">~60% EFFORT SAVED</text>
+            <!-- BEFORE box -->
+            <rect x="12" y="38" width="200" height="130" rx="8" fill="#1e1e2a" stroke="#ff5c3530" stroke-width="1"/>
+            <rect x="12" y="38" width="200" height="22" rx="8" fill="#ff5c3518"/>
+            <text x="22" y="52" fill="#ff5c35" font-size="8" font-family="monospace" font-weight="bold">BEFORE: Google Sheets</text>
+            <text x="20" y="72" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Fragile formulas</text>
+            <text x="20" y="86" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Manual daily updates</text>
+            <text x="20" y="100" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Broken links</text>
+            <text x="20" y="114" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; No intelligence layer</text>
+            <text x="20" y="128" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Reactive &amp; slow</text>
+            <text x="20" y="142" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Hours of analyst time</text>
+            <text x="20" y="156" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; No version control</text>
+            <!-- arrow -->
+            <text x="228" y="126" fill="#ff5c35" font-size="24" font-family="monospace">&#8594;</text>
+            <!-- MIDDLE: pipeline -->
+            <rect x="260" y="38" width="320" height="130" rx="8" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
+            <text x="270" y="52" fill="#a0a0b8" font-size="8" font-family="monospace" font-weight="bold">MIGRATION PIPELINE</text>
+            <!-- pipeline steps -->
+            <rect x="270" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#4f9cf040" stroke-width="1"/>
+            <text x="278" y="70" fill="#4f9cf0" font-size="7" font-family="monospace">Raw Sheets</text>
+            <text x="278" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">Data Ingestion</text>
+            <text x="362" y="74" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
+            <rect x="370" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#a78bfa40" stroke-width="1"/>
+            <text x="378" y="70" fill="#a78bfa" font-size="7" font-family="monospace">Python ETL</text>
+            <text x="378" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">Transform</text>
+            <text x="462" y="74" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
+            <rect x="470" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#ff8c4240" stroke-width="1"/>
+            <text x="478" y="70" fill="#ff8c42" font-size="7" font-family="monospace">Supabase DB</text>
+            <text x="478" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">PostgreSQL</text>
+            <!-- row 2 -->
+            <rect x="270" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#50c87840" stroke-width="1"/>
+            <text x="278" y="108" fill="#50c878" font-size="7" font-family="monospace">Rule Engine</text>
+            <text x="278" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Business Logic</text>
+            <text x="362" y="112" fill="#6b6b80" font-size="9" font-family="monospace">+</text>
+            <rect x="370" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#ff5c3540" stroke-width="1"/>
+            <text x="378" y="108" fill="#ff5c35" font-size="7" font-family="monospace">ML Models</text>
+            <text x="378" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Anomaly + Forecast</text>
+            <text x="462" y="112" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
+            <rect x="470" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#50c87840" stroke-width="1"/>
+            <text x="478" y="108" fill="#50c878" font-size="7" font-family="monospace">Live Reports</text>
+            <text x="478" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Auto + Proactive</text>
+            <text x="270" y="145" fill="#6b6b80" font-size="7" font-family="monospace">scikit-learn &middot; XGBoost &middot; Python &middot; Node.js &middot; Supabase &middot; Custom UI</text>
+            <!-- arrow -->
+            <text x="594" y="126" fill="#50c878" font-size="24" font-family="monospace">&#8594;</text>
+            <!-- AFTER box -->
+            <rect x="628" y="38" width="200" height="130" rx="8" fill="#1e1e2a" stroke="#50c87830" stroke-width="1"/>
+            <rect x="628" y="38" width="200" height="22" rx="8" fill="#50c87818"/>
+            <text x="638" y="52" fill="#50c878" font-size="8" font-family="monospace" font-weight="bold">AFTER: In-House System</text>
+            <text x="636" y="72" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Scalable DB backend</text>
+            <text x="636" y="86" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Automated daily reports</text>
+            <text x="636" y="100" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; ML anomaly detection</text>
+            <text x="636" y="114" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Proactive insights</text>
+            <text x="636" y="128" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Version controlled</text>
+            <text x="636" y="142" fill="#ff5c35" font-size="7.5" font-family="monospace" font-weight="bold">~60% less manual effort</text>
+            <text x="636" y="156" fill="#50c878" font-size="7.5" font-family="monospace">Teams get PROACTIVE alerts</text>
+          </svg>
+          <div class="thumb-badge">Migration &middot; AI + Rules</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Supabase</span><span class="project-tag">ML Models</span><span class="project-tag">Node.js</span><span class="project-tag">Custom Web UI</span></div>
+          <div class="project-title">Google Sheets &rarr; AI + Rule-Based In-House System</div>
+          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Critical reporting ran on fragile Google Sheets &mdash; broken formulas, manual daily updates, no intelligence layer.</div>
+          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>End-to-end migration combining deterministic business rules with ML for anomaly detection and trend prediction &mdash; backed by a proper database, live dashboard, and automated daily reports.</div>
+          <div class="project-impact">&#127919; Manual reporting effort cut by ~60%. Reports are now scalable, reliable, and version-controlled. Teams get proactive insights instead of static numbers.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="section-label">By the Numbers</div>
+      <h2>The Impact Across All 5 Tools</h2>
+      <p>Every metric below reflects production systems &mdash; not demos.</p>
+    </div>
+    <div class="impact-grid fade-up">
+      <div class="impact-card"><div class="impact-num">1L+</div><div class="impact-desc">PO records monitored daily</div></div>
+      <div class="impact-card"><div class="impact-num">6</div><div class="impact-desc">Teams coordinated in one portal</div></div>
+      <div class="impact-card"><div class="impact-num">20</div><div class="impact-desc">Launch tasks automated</div></div>
+      <div class="impact-card"><div class="impact-num">~60%</div><div class="impact-desc">Manual reporting effort reduced</div></div>
+      <div class="impact-card"><div class="impact-num">0</div><div class="impact-desc">Manual daily stock checks needed</div></div>
+      <div class="impact-card"><div class="impact-num">5</div><div class="impact-desc">Production tools built from scratch</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tracking">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="section-label">New Proposal</div>
+      <h2>Live Tracking + ETA Prediction Model</h2>
+      <p>E-commerce operations waste hours on "where is my order?" &mdash; I'll eliminate that with a proactive, ML-powered shipment intelligence system.</p>
+    </div>
+    <div class="eta-grid fade-up">
       <div>
-        <div class="section-label reveal" style="margin-bottom:24px;">Career Journey</div>
-        <div class="career-timeline">
-          <div class="career-item reveal">
-            <div class="career-dot printo">🟠</div>
-            <div class="career-body">
-              <div class="career-role">Data Analyst (Applied Data Science &amp; ML)</div>
-              <div class="career-company">Printo.in · Bangalore</div>
-              <div class="career-period">Mar 2026 – Present</div>
-              <ul class="career-bullets">
-                <li>Designed and deployed a role-based product launch system — reduced operational errors and improved process control across 6 teams.</li>
-                <li>Built an ML-based logistics optimization model for fastest delivery route selection, improving SLA adherence and fulfillment efficiency.</li>
-                <li>Developed Python automation to monitor low-inventory SKUs in real-time, preventing stockouts across 5 cities.</li>
-                <li>Led migration from Google Sheets to a scalable AI + rule-based system — reduced manual reporting effort by ~60%.</li>
-                <li>Applied time-series forecasting and regression analysis to predict demand fluctuations, improving inventory planning accuracy by ~20%.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="career-item reveal">
-            <div class="career-dot meesho">🟣</div>
-            <div class="career-body">
-              <div class="career-role">Fulfillment Analyst</div>
-              <div class="career-company">Meesho · Bangalore</div>
-              <div class="career-period">May 2025 – Mar 2026</div>
-              <ul class="career-bullets">
-                <li>Analyzed large-scale datasets using SQL to track order lifecycle, delivery performance, and return rates.</li>
-                <li>Built automated dashboards and KPI trackers reducing stakeholder reporting time by ~40%.</li>
-                <li>Led third-party vendor risk management, coordinating a cross-functional team of 43 members.</li>
-                <li>Conducted A/B testing and statistical significance analysis on fulfillment process changes before company-wide rollout.</li>
-                <li>Built SQL + Excel-based risk trackers to monitor vendor compliance, SLA breaches, and performance deviations.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="career-item reveal">
-            <div class="career-dot skylex">🔵</div>
-            <div class="career-body">
-              <div class="career-role">Software Engineer (Data &amp; Analytics)</div>
-              <div class="career-company">Skylex Technology · Pune</div>
-              <div class="career-period">Aug 2024 – Nov 2024</div>
-              <ul class="career-bullets">
-                <li>Analyzed campaign performance data (CTR, conversion rates) to identify underperforming segments.</li>
-                <li>Built reporting systems and trackers for budget utilization and campaign optimization.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right side: bio + skills + contact -->
-      <div class="about-right">
-        <p class="about-intro reveal">
-          I'm a data scientist and analyst who builds tools that make invisible operational problems visible — and then eliminates them. With an MS in AI/ML from MIT-ADT University (2025) and hands-on production deployments, I combine statistical rigor with engineering execution.
-        </p>
-        <p class="about-intro reveal" style="margin-top:-12px;">
-          My background spans supply chain analytics, demand forecasting, ML model development, and full-stack automation. I speak the language of operations teams — not just code.
-        </p>
-
-        <div class="skills-block reveal">
-          <div class="skills-block-title">Data & Analytics</div>
-          <div class="skills-chips">
-            <span class="skill-chip">SQL (Advanced)</span>
-            <span class="skill-chip">Python · Pandas · NumPy</span>
-            <span class="skill-chip">Power BI</span>
-            <span class="skill-chip">Tableau</span>
-            <span class="skill-chip">Google Sheets</span>
-            <span class="skill-chip">A/B Testing</span>
-            <span class="skill-chip">Time-Series Forecasting</span>
-          </div>
-        </div>
-        <div class="skills-block reveal">
-          <div class="skills-block-title">Machine Learning</div>
-          <div class="skills-chips">
-            <span class="skill-chip">scikit-learn</span>
-            <span class="skill-chip">XGBoost</span>
-            <span class="skill-chip">Random Forest</span>
-            <span class="skill-chip">Regression Analysis</span>
-            <span class="skill-chip">Anomaly Detection</span>
-            <span class="skill-chip">Feature Engineering</span>
-          </div>
-        </div>
-        <div class="skills-block reveal">
-          <div class="skills-block-title">Engineering & Tools</div>
-          <div class="skills-chips">
-            <span class="skill-chip">Node.js · Express</span>
-            <span class="skill-chip">Supabase (PostgreSQL)</span>
-            <span class="skill-chip">gspread · Sheets API</span>
-            <span class="skill-chip">Notion · Slack</span>
-          </div>
-        </div>
-
-        <!-- Contact card -->
-        <div class="contact-card reveal">
-          <a href="mailto:mohanwakchaure1@gmail.com" class="contact-row">
-            <span class="contact-icon">📧</span>
-            <span><span class="contact-label">EMAIL</span>mohanwakchaure1@gmail.com</span>
-          </a>
-          <a href="tel:+918805548797" class="contact-row">
-            <span class="contact-icon">📱</span>
-            <span><span class="contact-label">PHONE</span>+91 88055 48797</span>
-          </a>
-          <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" rel="noopener" class="contact-row">
-            <span class="contact-icon">💼</span>
-            <span><span class="contact-label">LINKEDIN</span>mohan-wakchaure-994b1a224</span>
-          </a>
-          <span class="contact-row" style="cursor:default;">
-            <span class="contact-icon">📍</span>
-            <span><span class="contact-label">LOCATION</span>Bengaluru, India</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="projects-bg">
-  <div class="section-inner">
-    <div class="section-label reveal">My Work at Printo</div>
-    <h2 class="section-title reveal">5 Tools. Real Teams. Real Impact.</h2>
-    <p class="section-sub reveal">Every tool was built to solve a genuine operational pain — not a side project, but a production deployment used daily by real teams.</p>
-
-    <div class="project-cards">
-
-      <!-- P1 -->
-      <div class="project-card" data-delay="0">
-        <div class="project-accent teal"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title-wrap">
-              <span class="project-emoji">📦</span>
-              <div class="project-title">Low-Stock Alert Automation</div>
-              <div class="project-sub">Python · gspread · Gmail SMTP · Google Chat Webhook</div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">Automation</span>
-              <span class="ptag">Supply Chain</span>
-              <span class="ptag">Monitoring</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-block prob">
-              <div class="project-block-label">❌ Problem</div>
-              <div class="project-block-text">Procurement team had to manually scan 1 lakh+ rows daily to check if discontinuing materials were running low — missed stockouts were costly.</div>
-            </div>
-            <div class="project-block sol">
-              <div class="project-block-label">✅ My Solution</div>
-              <div class="project-block-text">Python script that connects to Google Sheets via Service Account, filters items marked 'will be discontinued later', flags stock below 10% of consumption, and fires email + Google Chat alerts automatically.</div>
-            </div>
-            <div class="project-block impact">
-              <div class="project-block-label">🎯 Impact</div>
-              <div class="project-block-text">Zero missed stockouts on phased-out materials since deployment. Daily check that took 30–45 minutes now happens in seconds with zero human involvement.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- P2 -->
-      <div class="project-card" data-delay="150">
-        <div class="project-accent"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title-wrap">
-              <span class="project-emoji">🗂️</span>
-              <div class="project-title">Printo Materials Operations Dashboard</div>
-              <div class="project-sub">Vanilla JS · Supabase · Chart.js · CSS Grid</div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">Dashboard</span>
-              <span class="ptag">Real-time</span>
-              <span class="ptag">Multi-city</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-block prob">
-              <div class="project-block-label">❌ Problem</div>
-              <div class="project-block-text">Material data was scattered across spreadsheets with no unified view — teams couldn't see stock, vendor, lead time, or consumption for all 5 cities in one place.</div>
-            </div>
-            <div class="project-block sol">
-              <div class="project-block-label">✅ My Solution</div>
-              <div class="project-block-text">Single-page dashboard connected to Supabase — live filters by city, category, and priority; expandable rows with per-city vendor + reorder data; 6-chart analytics view; CSV export; add-record modal.</div>
-            </div>
-            <div class="project-block impact">
-              <div class="project-block-label">🎯 Impact</div>
-              <div class="project-block-text">Full visibility across BLR, CHN, HYD, PUN, NCR instantly for all teams. No more hunting through spreadsheets — one URL, all data, always live.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- P3 -->
-      <div class="project-card" data-delay="300">
-        <div class="project-accent purple"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title-wrap">
-              <span class="project-emoji">🚀</span>
-              <div class="project-title">Printo Product Launch Portal</div>
-              <div class="project-sub">Node.js · Express · Nodemailer · Vanilla JS · Custom Auth</div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">Full-Stack</span>
-              <span class="ptag">State Machine</span>
-              <span class="ptag">6 Teams</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-block prob">
-              <div class="project-block-label">❌ Problem</div>
-              <div class="project-block-text">New product launches stalled constantly because teams didn't know when the previous step was done. Coordination happened over chat with no accountability or tracking.</div>
-            </div>
-            <div class="project-block sol">
-              <div class="project-block-label">✅ My Solution</div>
-              <div class="project-block-text">Role-based web portal with a 20-task state machine — tasks auto-unlock when prerequisites complete, each team sees only their work, and automated emails trigger on every handoff.</div>
-            </div>
-            <div class="project-block impact">
-              <div class="project-block-label">🎯 Impact</div>
-              <div class="project-block-text">6 teams (Category, Procurement, Production, Commercial, Inventory, SKU) coordinated in one place. Zero missed handoffs. Full launch audit trail with timestamps.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- P4 -->
-      <div class="project-card" data-delay="450">
-        <div class="project-accent green"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title-wrap">
-              <span class="project-emoji">📊</span>
-              <div class="project-title">In-House Excel Tool (Printo Desktop Spreadsheet)</div>
-              <div class="project-sub">Electron.js · Node.js · SQLite · IPC · REST &amp; WebSocket Sync</div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">Desktop App</span>
-              <span class="ptag">Department Access</span>
-              <span class="ptag">Live Sync</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-block prob">
-              <div class="project-block-label">❌ Problem</div>
-              <div class="project-block-text">Teams were using Excel and shared sheets with no access control, no audit trail, and no way to push changes live to other systems (website, Slack, CRM). Every edit had to be manually copied across tools.</div>
-            </div>
-            <div class="project-block sol">
-              <div class="project-block-label">✅ My Solution</div>
-              <div class="project-block-text">Built a custom Excel-like desktop app in Electron — full editable spreadsheet grid, department-wise access for 6 teams, local SQLite database, integration manager (webhook / REST / WebSocket), CSV export, and a full audit log tracking every cell change with user + timestamp.</div>
-            </div>
-            <div class="project-block impact">
-              <div class="project-block-label">🎯 Impact</div>
-              <div class="project-block-text">Native Windows / Mac / Linux installer. Every cell edit pushes live to connected APIs — DB, website, Slack, CRM stay in sync without manual copy-paste. Full accountability with audit log of every change.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- P5 -->
-      <div class="project-card" data-delay="600">
-        <div class="project-accent"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title-wrap">
-              <span class="project-emoji">🤖</span>
-              <div class="project-title">Google Sheets → AI + Rule-Based In-House System</div>
-              <div class="project-sub">Python · Supabase · ML Models · Node.js · Custom Web UI</div>
-            </div>
-            <div class="project-tags">
-              <span class="ptag">Migration</span>
-              <span class="ptag">AI + Rules</span>
-              <span class="ptag">~60% Effort Saved</span>
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-block prob">
-              <div class="project-block-label">❌ Problem</div>
-              <div class="project-block-text">Critical operational reporting ran entirely on Google Sheets — fragile formulas, broken links, manual daily updates, and no intelligence layer. Reporting was reactive, slow, and consumed hours of analyst time every week.</div>
-            </div>
-            <div class="project-block sol">
-              <div class="project-block-label">✅ My Solution</div>
-              <div class="project-block-text">Led the end-to-end migration from Google Sheets to an in-house AI + rule-based system. Combined deterministic business rules with ML models for anomaly detection and trend prediction — backed by a proper database, a live web dashboard, and automated daily reports.</div>
-            </div>
-            <div class="project-block impact">
-              <div class="project-block-label">🎯 Impact</div>
-              <div class="project-block-text">Manual reporting effort cut by <strong>~60%</strong>. Reports are now scalable, reliable, and version-controlled — no more broken formulas or stale sheets. Teams get proactive insights instead of static numbers.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ML Projects sub-section -->
-    <div style="margin-top:60px;">
-      <div class="section-label reveal" style="margin-bottom:16px;">ML &amp; Analytics Projects</div>
-      <h3 class="reveal" style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;letter-spacing:-0.02em;color:var(--navy-deep);margin-bottom:8px;">Independent &amp; Cross-Company Projects</h3>
-      <p class="section-sub reveal" style="margin-bottom:32px;">ML-first projects built to drive measurable operational outcomes.</p>
-
-      <div style="display:flex;flex-direction:column;gap:20px;">
-
-        <div class="ml-project-card" data-delay="0">
-          <div class="ml-accent-green"></div>
-          <div class="ml-body">
-            <div class="ml-header">
-              <div class="project-title-wrap">
-                <span class="project-emoji">🔧</span>
-                <div class="project-title">Predictive Maintenance Model</div>
-                <div class="project-sub">scikit-learn · XGBoost · Random Forest · Pandas · NumPy</div>
-              </div>
-              <div class="project-tags">
-                <span class="ptag">Machine Learning</span>
-                <span class="ptag">Classification</span>
-                <span class="ptag">Industrial IoT</span>
-              </div>
-            </div>
-            <ul class="ml-bullets">
-              <li>Built a classification model to predict equipment failure using historical sensor data with feature engineering and class imbalance handling.</li>
-              <li>Trained and compared Random Forest vs XGBoost — evaluated using F1-score, precision, and recall optimized for early failure detection.</li>
-              <li>Improved prediction accuracy by ~10% and reduced false positive rate using statistical hypothesis testing for feature significance.</li>
-              <li>Simulated industrial IoT sensor pipelines to test model robustness under noisy and missing-data conditions.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="ml-project-card" data-delay="150">
-          <div class="ml-accent-teal"></div>
-          <div class="ml-body">
-            <div class="ml-header">
-              <div class="project-title-wrap">
-                <span class="project-emoji">🗺️</span>
-                <div class="project-title">ML-Based Logistics Optimization Model</div>
-                <div class="project-sub">Python · Pandas · NumPy · Heuristic Algorithms</div>
-              </div>
-              <div class="project-tags">
-                <span class="ptag">Optimization</span>
-                <span class="ptag">Logistics</span>
-                <span class="ptag">Printo</span>
-              </div>
-            </div>
-            <ul class="ml-bullets">
-              <li>Developed a route optimization model using ML + heuristic algorithms to minimize delivery time and improve SLA adherence at Printo.</li>
-              <li>Performed distance-based optimization for route selection with full data preprocessing and feature engineering pipeline.</li>
-              <li>Reduced average delivery time by ~10–15% with scalable logic designed for real-time decision support.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="ml-project-card" data-delay="300">
-          <div class="ml-accent-red"></div>
-          <div class="ml-body">
-            <div class="ml-header">
-              <div class="project-title-wrap">
-                <span class="project-emoji">🏢</span>
-                <div class="project-title">Third-Party Vendor Risk Management</div>
-                <div class="project-sub">SQL · Excel · Cross-functional coordination (Oct 2025)</div>
-              </div>
-              <div class="project-tags">
-                <span class="ptag">Risk Analysis</span>
-                <span class="ptag">Meesho</span>
-                <span class="ptag">43-member team</span>
-              </div>
-            </div>
-            <ul class="ml-bullets">
-              <li>Led data analysis for third-party vendor risk management across fulfilment partners — acted as primary point of contact for a 43-member cross-functional team.</li>
-              <li>Built Excel and SQL-based risk trackers to monitor vendor compliance, performance deviations, SLA breaches, and operational risks.</li>
-              <li>Analyzed historical vendor performance data to identify high-risk vendors and recurring issue patterns for procurement and finance teams.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- STATS -->
-<section id="impact" class="stats-section">
-  <div class="section-inner">
-    <div class="section-label reveal">By the Numbers</div>
-    <h2 class="section-title reveal">The Impact Across All 5 Tools</h2>
-    <p class="section-sub reveal">Every metric below reflects production systems, not demos.</p>
-    <div class="stats-grid">
-      <div class="stat-box o reveal"><div class="stat-num">1L+</div><div class="stat-label">PO records monitored daily</div></div>
-      <div class="stat-box t reveal"><div class="stat-num">6</div><div class="stat-label">Teams coordinated in one portal</div></div>
-      <div class="stat-box p reveal"><div class="stat-num">20</div><div class="stat-label">Launch tasks automated</div></div>
-      <div class="stat-box g reveal"><div class="stat-num">~60%</div><div class="stat-label">Manual reporting effort reduced</div></div>
-      <div class="stat-box r reveal"><div class="stat-num">0</div><div class="stat-label">Manual daily stock checks needed</div></div>
-      <div class="stat-box y reveal"><div class="stat-num">5</div><div class="stat-label">Production tools built from scratch</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ETA MODEL -->
-<section id="tracking" class="eta-section">
-  <div class="section-inner">
-    <div class="section-label reveal">New Proposal</div>
-    <h2 class="section-title reveal">What I Can Build for You:<br>Live Tracking + ETA Prediction Model</h2>
-    <p class="section-sub reveal">E-commerce operations waste hours on 'where is my order?' — I'll eliminate that with a proactive, ML-powered shipment intelligence system.</p>
-
-    <div class="eta-split reveal">
-      <div class="eta-box prob">
-        <div class="eta-box-head">❌ The Problem Today</div>
-        <ul class="eta-list">
-          <li><span class="ic">→</span> Customers call support asking "Where is my order?"</li>
-          <li><span class="ic">→</span> Ops team manually checks each courier portal separately</li>
-          <li><span class="ic">→</span> No single view of all shipments across courier partners</li>
-          <li><span class="ic">→</span> Delivery delays only caught after customer complaint</li>
-          <li><span class="ic">→</span> ETA shown at checkout is static — never updated live</li>
+        <div class="section-label">The Problem Today</div>
+        <ul class="eta-problem-list">
+          <li><span>&rarr;</span> Customers call support asking "where is my order?"</li>
+          <li><span>&rarr;</span> Ops team manually checks each courier portal separately</li>
+          <li><span>&rarr;</span> No single view of all shipments across courier partners</li>
+          <li><span>&rarr;</span> Delivery delays only caught after customer complaint</li>
+          <li><span>&rarr;</span> ETA at checkout is static &mdash; never updated live</li>
         </ul>
-      </div>
-      <div class="eta-box sol">
-        <div class="eta-box-head">✅ What I'll Build</div>
-        <ul class="eta-list">
-          <li><span class="ic">✓</span> Live tracking dashboard — every order, every courier, one screen</li>
-          <li><span class="ic">✓</span> Automated courier API polling (Delhivery / Shiprocket / Ecom Express)</li>
-          <li><span class="ic">✓</span> ML-based ETA model trained on your historical delivery data</li>
-          <li><span class="ic">✓</span> Proactive delay alerts to ops team T-12hrs before breach</li>
-          <li><span class="ic">✓</span> Customer-facing dynamic ETA widget embeddable on your site</li>
+        <div class="section-label">What I'll Build</div>
+        <ul class="eta-solution-list">
+          <li><span>&#10003;</span> Live tracking dashboard &mdash; every order, every courier, one screen</li>
+          <li><span>&#10003;</span> Automated courier API polling (Delhivery / Shiprocket / Ecom Express)</li>
+          <li><span>&#10003;</span> ML-based ETA model trained on your historical delivery data</li>
+          <li><span>&#10003;</span> Proactive delay alerts to ops team T-12hrs before breach</li>
+          <li><span>&#10003;</span> Customer-facing dynamic ETA widget embeddable on your site</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="section-label reveal" style="margin-bottom:16px;">How It Works</div>
-    <div class="eta-flow reveal">
-      <div class="flow-step">
-        <div class="flow-emoji">🛒</div>
-        <div class="flow-title">Order Placed</div>
-        <div class="flow-sub">AWB captured from order system</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-emoji">🔄</div>
-        <div class="flow-title">Courier Poll</div>
-        <div class="flow-sub">API fetches live status every 15 mins</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-emoji">🧠</div>
-        <div class="flow-title">ETA Engine</div>
-        <div class="flow-sub">ML model predicts delivery window</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-emoji">📱</div>
-        <div class="flow-title">Push Update</div>
-        <div class="flow-sub">Customer + ops notified instantly</div>
-      </div>
-    </div>
-
-    <div class="section-label reveal" style="margin: 32px 0 16px;">Tech Stack</div>
-    <table class="tech-table reveal">
-      <thead>
-        <tr>
-          <th>Component</th>
-          <th>Technology</th>
-          <th>Purpose</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Data Ingestion</td><td>Python + Courier APIs (Delhivery, Shiprocket, Ecom Express)</td><td>Fetch live shipment status</td></tr>
-        <tr><td>Data Store</td><td>PostgreSQL via Supabase</td><td>Orders, status events, ETA predictions</td></tr>
-        <tr><td>ETA Model</td><td>scikit-learn — Random Forest / XGBoost</td><td>Predict delivery window from historical data</td></tr>
-        <tr><td>Live Dashboard</td><td>React or Vanilla JS</td><td>Real-time order map + delay alerts for ops</td></tr>
-        <tr><td>Notifications</td><td>Gmail SMTP + Twilio SMS + optional WhatsApp</td><td>Proactive delay alerts</td></tr>
-        <tr><td>Hosting</td><td>Node.js API on Render / Railway</td><td>Free tier to start, scales as needed</td></tr>
-      </tbody>
-    </table>
-
-    <div class="section-label reveal" style="margin: 40px 0 16px;">Delivery Timeline</div>
-    <div class="timeline">
-      <div class="tl-step reveal">
-        <div class="tl-week">Week 1–2</div>
-        <div class="tl-title">API Integration</div>
-        <div class="tl-desc">Connect courier APIs, set up PostgreSQL schema, build polling pipeline</div>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-week">Week 3–4</div>
-        <div class="tl-title">ETA Model</div>
-        <div class="tl-desc">Train on historical delivery data, validate predictions by lane & courier</div>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-week">Week 5–6</div>
-        <div class="tl-title">Dashboard + Alerts</div>
-        <div class="tl-desc">Build live ops dashboard, customer ETA widget, delay notification system</div>
-      </div>
-      <div class="tl-step reveal">
-        <div class="tl-week">Week 7–8</div>
-        <div class="tl-title">Testing + Go-live</div>
-        <div class="tl-desc">Parallel run against manual process, A/B test ETA accuracy, deploy to production</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY ME -->
-<section id="why" class="why-section">
-  <div class="section-inner">
-    <div class="section-label reveal">Why Hire Me</div>
-    <h2 class="section-title reveal">What You're Actually Getting</h2>
-    <p class="section-sub reveal">Not just an analyst — an operations professional who understands the problem before writing a single line of code or query.</p>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-icon">⚡</div>
-        <div class="why-title">I Ship in Production</div>
-        <div class="why-desc">5 tools already live and used by real teams every single day. Not side projects — actual deployments that replaced manual processes entirely at Printo.</div>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">🔁</div>
-        <div class="why-title">End-to-End Builder</div>
-        <div class="why-desc">I handle everything: problem scoping → data analysis → ML modelling → deployment → maintenance. No handoffs, no dropped context, no finger-pointing.</div>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">📦</div>
-        <div class="why-title">Operations Domain Depth</div>
-        <div class="why-desc">Hands-on at Printo (supply chain, inventory, product launch) and Meesho (fulfillment, vendor risk, SLA management). I speak your team's language — not just code.</div>
-      </div>
-      <div class="why-card reveal">
-        <div class="why-icon">🧠</div>
-        <div class="why-title">AI + Automation Thinking</div>
-        <div class="why-desc">I combine ML intelligence (predictive models, forecasting, anomaly detection) with process automation (Python, Node.js) to build systems that are proactive, not reactive.</div>
-      </div>
-      <div class="why-highlight reveal">
-        <div class="why-highlight-quote">
-          "I don't just analyze data — I find the <em>manual process</em> that's costing your team 2 hours a day and make it take <em>2 seconds</em>."
-        </div>
-        <div class="why-highlight-meta">
-          <div class="role">Data Analyst (AI & Automation)</div>
-          <div class="loc">Mohan Wakchaure · Bengaluru, India</div>
+        <div class="eta-flow">
+          <div class="eta-step-box"><div class="step-icon">&#128722;</div><div>Order Placed</div><div class="step-label">AWB captured</div></div>
+          <div class="eta-arrow">&rarr;</div>
+          <div class="eta-step-box"><div class="step-icon">&#8635;</div><div>Courier Poll</div><div class="step-label">Every 15 mins</div></div>
+          <div class="eta-arrow">&rarr;</div>
+          <div class="eta-step-box"><div class="step-icon">&#129504;</div><div>ETA Engine</div><div class="step-label">ML prediction</div></div>
+          <div class="eta-arrow">&rarr;</div>
+          <div class="eta-step-box"><div class="step-icon">&#128241;</div><div>Push Update</div><div class="step-label">Customer + ops</div></div>
         </div>
       </div>
+      <div>
+        <div class="section-label">Tech Stack</div>
+        <div class="stack-cards">
+          <div class="stack-card"><div class="stack-card-label">Data Ingestion</div><div class="stack-card-tech">Python + Courier APIs</div><div class="stack-card-purpose">Fetch live shipment status</div></div>
+          <div class="stack-card"><div class="stack-card-label">Data Store</div><div class="stack-card-tech">PostgreSQL via Supabase</div><div class="stack-card-purpose">Orders, events, predictions</div></div>
+          <div class="stack-card"><div class="stack-card-label">ETA Model</div><div class="stack-card-tech">scikit-learn &middot; XGBoost</div><div class="stack-card-purpose">Predict delivery window</div></div>
+          <div class="stack-card"><div class="stack-card-label">Live Dashboard</div><div class="stack-card-tech">React / Vanilla JS</div><div class="stack-card-purpose">Real-time ops view</div></div>
+          <div class="stack-card"><div class="stack-card-label">Notifications</div><div class="stack-card-tech">Gmail SMTP + Twilio</div><div class="stack-card-purpose">Proactive delay alerts</div></div>
+          <div class="stack-card"><div class="stack-card-label">Hosting</div><div class="stack-card-tech">Node.js &middot; Render</div><div class="stack-card-purpose">Free tier &rarr; scales up</div></div>
+        </div>
+        <div style="margin-top:28px;text-align:center"><a href="#contact" class="btn-primary">Let's discuss this project &rarr;</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-  <div class="section-inner">
-    <div class="section-label reveal" style="color:var(--orange); justify-content:center;">Let's Talk</div>
-    <h2 class="section-title reveal">Let's Build Something Together</h2>
-    <p class="section-sub reveal">I'm ready to bring the same data-first, automation thinking to your team — and ship real, production impact fast.</p>
-    <div class="contact-pills reveal">
-      <a href="mailto:mohanwakchaure1@gmail.com" class="contact-pill">
-        <span class="pill-icon">📧</span> mohanwakchaure1@gmail.com
-      </a>
-      <a href="tel:+918805548797" class="contact-pill">
-        <span class="pill-icon">📱</span> +91 88055 48797
-      </a>
-      <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" rel="noopener" class="contact-pill">
-        <span class="pill-icon">💼</span> LinkedIn Profile
-      </a>
-      <span class="contact-pill" style="cursor:default;">
-        <span class="pill-icon">📍</span> Bengaluru, India
-      </span>
-      <span class="contact-pill" style="cursor:default;">
-        <span class="pill-icon">🚀</span> Open to Opportunities
-      </span>
+<section id="why">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="section-label">Why Hire Me</div>
+      <h2>What You're Actually Getting</h2>
+      <p>Not just an analyst &mdash; an operations professional who understands the problem before writing a single line of code.</p>
     </div>
-    <p class="footer-note reveal">Built from scratch by Mohan Wakchaure — the same way I build every tool: with care, precision, and zero manual work.</p>
+    <div class="why-grid fade-up">
+      <div class="why-card"><div class="why-icon">&#9889;</div><h3>I Ship in Production</h3><p>5 tools already live and used by real teams every day. Not side projects &mdash; actual deployments that replaced manual processes entirely at Printo.</p></div>
+      <div class="why-card"><div class="why-icon">&#128260;</div><h3>End-to-End Builder</h3><p>I handle everything: problem scoping &rarr; data analysis &rarr; ML modelling &rarr; deployment &rarr; maintenance. No handoffs, no dropped context.</p></div>
+      <div class="why-card"><div class="why-icon">&#128230;</div><h3>Operations Domain Depth</h3><p>Hands-on at Printo (supply chain, inventory, product launch) and Meesho (fulfillment, vendor risk, SLA). I speak your team's language.</p></div>
+      <div class="why-card"><div class="why-icon">&#129504;</div><h3>AI + Automation Thinking</h3><p>I combine ML intelligence (predictive models, forecasting, anomaly detection) with process automation to build systems that are proactive, not reactive.</p></div>
+    </div>
+    <div class="quote-band fade-up">"I don't just analyze data &mdash; I find the <em>manual process</em> that's costing your team 2 hours a day and make it take <em>2 seconds.</em>"</div>
   </div>
 </section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-card fade-up">
+      <div class="section-label" style="text-align:center">Let's Talk</div>
+      <h2>Let's Build Something Together</h2>
+      <p>I'm ready to bring the same data-first, automation thinking to your team &mdash; and ship real, production impact fast.</p>
+      <div class="contact-grid">
+        <a href="mailto:mohanwakchaure1@gmail.com" class="contact-item"><span class="ci-icon">&#128231;</span><div><div class="ci-label">Email</div><div class="ci-val">mohanwakchaure1@gmail.com</div></div></a>
+        <a href="tel:+918805548797" class="contact-item"><span class="ci-icon">&#128241;</span><div><div class="ci-label">Phone</div><div class="ci-val">+91 88055 48797</div></div></a>
+        <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" class="contact-item"><span class="ci-icon">&#128188;</span><div><div class="ci-label">LinkedIn</div><div class="ci-val">mohan-wakchaure-994b1a224</div></div></a>
+        <a href="https://github.com/mohanwakchaure" target="_blank" class="contact-item"><span class="ci-icon">&#128029;</span><div><div class="ci-label">GitHub</div><div class="ci-val">github.com/mohanwakchaure</div></div></a>
+        <div class="contact-item" style="grid-column:1/-1"><span class="ci-icon">&#128205;</span><div><div class="ci-label">Location</div><div class="ci-val">Bengaluru, India &middot; Open to Opportunities</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Built from scratch by <a href="#hero">Mohan Wakchaure</a> &mdash; the same way I build every tool: with care, precision, and zero manual work.</footer>
 
 <script>
-// ── Scroll reveal (standard .reveal elements)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-// ── Staggered project card animations
-const projectCardObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const delay = parseInt(e.target.dataset.delay || 0);
-      setTimeout(() => {
-        e.target.style.transition = `opacity 0.6s ease, transform 0.6s ease`;
-        e.target.classList.add('visible');
-      }, delay);
-      projectCardObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-document.querySelectorAll('.project-card, .ml-project-card').forEach(card => {
-  projectCardObserver.observe(card);
-});
-
-// ── Stat counter animation
-function animateCounter(el, target, duration = 1500, suffix = '') {
-  let start = 0;
-  const step = target / (duration / 16);
-  const tick = () => {
-    start = Math.min(start + step, target);
-    if (target >= 1000) {
-      el.textContent = (start / 100000).toFixed(0) + 'L+';
-    } else {
-      el.textContent = Math.floor(start) + suffix;
-    }
-    if (start < target) requestAnimationFrame(tick);
-  };
-  tick();
-}
-
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.stat-num').forEach(numEl => {
-        const text = numEl.textContent.trim();
-        if (text === '1L+') {
-          animateCounter(numEl, 100000, 1800, '');
-        } else if (!isNaN(parseInt(text))) {
-          const val = parseInt(text);
-          animateCounter(numEl, val, 1000, text.replace(/[0-9]/g,''));
-        }
-      });
-      statObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-const statsGrid = document.querySelector('.stats-grid');
-if (statsGrid) statObserver.observe(statsGrid);
-
-// ── Hero particle random positioning
-document.querySelectorAll('.particle').forEach(p => {
-  p.style.left = Math.random() * 100 + '%';
-  p.style.animationDuration = (7 + Math.random() * 8) + 's';
-  p.style.animationDelay = (Math.random() * 5) + 's';
-});
-
-// ── Smooth nav highlight on scroll
-const sections = document.querySelectorAll('section[id], #hero');
-const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 80) current = s.id;
-  });
-  navLinks.forEach(link => {
-    link.style.color = '';
-    if (link.getAttribute('href') === '#' + current) {
-      link.style.color = 'var(--white)';
-    }
-  });
-}, { passive: true });
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }),
+    {threshold:0.12}
+  );
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
