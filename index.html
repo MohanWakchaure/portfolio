@@ -1,616 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Mohan Wakchaure — Data Analyst (AI &amp; Automation)</title>
-  <meta property="og:title" content="Mohan Wakchaure — Data Analyst (AI &amp; Automation)"/>
-  <meta property="og:description" content="5 production tools. Real teams. Real impact."/>
-  <meta property="og:image" content="https://mohanwakchaure.github.io/portfolio/preview.png"/>
-  <meta property="og:url" content="https://mohanwakchaure.github.io/portfolio/"/>
-  <meta property="og:type" content="website"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="description" content="Data Analyst (AI &amp; Automation) at Printo. 5 production tools deployed."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root{--bg:#09090f;--bg2:#111118;--bg3:#18181f;--border:rgba(255,255,255,.07);--accent:#ff5c35;--accent2:#ff8c42;--muted:#6b6b80;--text:#e8e8f0;--text2:#a0a0b8;--ff-head:'Syne',sans-serif;--ff-body:'DM Sans',sans-serif;--ff-mono:'JetBrains Mono',monospace;--r:12px;--r-lg:20px}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:var(--ff-body);font-size:16px;line-height:1.7;overflow-x:hidden}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:0}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(9,9,15,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-    .nav-logo{font-family:var(--ff-head);font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
-    .nav-logo span{color:var(--accent)}
-    .nav-links{display:flex;gap:32px;font-size:.875rem;color:var(--text2)}
-    .nav-links a:hover{color:var(--text)}
-    .nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:6px;font-size:.875rem;font-weight:500;transition:opacity .2s}
-    .nav-cta:hover{opacity:.85}
-    section{position:relative;z-index:1}
-    .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    .section-label{font-family:var(--ff-mono);font-size:.72rem;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
-    #hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:radial-gradient(ellipse 70% 60% at 60% 40%,rgba(255,92,53,.08) 0%,transparent 65%)}
-    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,92,53,.12);border:1px solid rgba(255,92,53,.25);border-radius:99px;padding:6px 14px;font-size:.8rem;color:var(--accent2);margin-bottom:24px}
-    .hero-badge span{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-    .hero-h1{font-family:var(--ff-head);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:24px}
-    .hero-h1 em{font-style:normal;color:var(--accent)}
-    .hero-sub{font-size:1.05rem;color:var(--text2);max-width:520px;margin-bottom:36px;line-height:1.75}
-    .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
-    .chip{font-family:var(--ff-mono);font-size:.72rem;padding:5px 12px;border-radius:99px;background:var(--bg3);border:1px solid var(--border);color:var(--text2)}
-    .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-    .btn-primary{background:var(--accent);color:#fff;padding:13px 28px;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:transform .2s,opacity .2s}
-    .btn-primary:hover{transform:translateY(-2px);opacity:.9}
-    .btn-outline{border:1px solid var(--border);color:var(--text2);padding:13px 28px;border-radius:var(--r);font-size:.95rem;transition:border-color .2s,color .2s}
-    .btn-outline:hover{border-color:var(--accent);color:var(--text)}
-    .hero-stats-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px}
-    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .stat-item{text-align:center}
-    .stat-num{font-family:var(--ff-head);font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:6px}
-    .stat-label{font-size:.78rem;color:var(--text2);line-height:1.4}
-    .stat-divider{grid-column:1/-1;height:1px;background:var(--border)}
-    .hero-tech{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px}
-    .tech-tag{font-family:var(--ff-mono);font-size:.68rem;padding:4px 10px;border-radius:4px;background:rgba(255,92,53,.08);color:var(--accent2);border:1px solid rgba(255,92,53,.15)}
-    .sec-head{text-align:center;margin-bottom:64px}
-    .sec-head h2{font-family:var(--ff-head);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
-    .sec-head p{color:var(--text2);max-width:540px;margin:0 auto}
-    #about{padding:120px 0}
-    .about-grid{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:start}
-    .about-bio h2{font-family:var(--ff-head);font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
-    .about-bio p{color:var(--text2);margin-bottom:16px;font-size:.95rem}
-    .contact-links{display:flex;flex-direction:column;gap:10px;margin-top:28px}
-    .contact-link{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text2);transition:color .2s}
-    .contact-link:hover{color:var(--accent)}
-    .timeline{position:relative;padding-left:28px}
-    .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),transparent)}
-    .tl-item{position:relative;margin-bottom:40px}
-    .tl-dot{position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
-    .tl-dot.edu{border-color:#4f9cf0}
-    .tl-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--accent)}
-    .tl-dot.edu::after{background:#4f9cf0}
-    .tl-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;transition:border-color .2s}
-    .tl-card:hover{border-color:rgba(255,92,53,.3)}
-    .tl-role{font-family:var(--ff-head);font-weight:700;font-size:1rem;margin-bottom:2px}
-    .tl-company{font-size:.875rem;color:var(--accent);margin-bottom:4px}
-    .tl-date{font-family:var(--ff-mono);font-size:.7rem;color:var(--muted);margin-bottom:12px}
-    .tl-bullets{list-style:none}
-    .tl-bullets li{font-size:.875rem;color:var(--text2);padding:3px 0 3px 14px;position:relative}
-    .tl-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.75rem}
-    .tl-card.edu-card{border-color:rgba(79,156,240,.2)}
-    .tl-card.edu-card:hover{border-color:rgba(79,156,240,.4)}
-    .tl-card.edu-card .tl-company{color:#4f9cf0}
-    .edu-badge{display:inline-block;background:rgba(79,156,240,.12);border:1px solid rgba(79,156,240,.25);color:#4f9cf0;font-family:var(--ff-mono);font-size:.68rem;padding:3px 10px;border-radius:99px;margin-bottom:10px}
-    .skills-section{margin-top:40px}
-    .skill-group{margin-bottom:20px}
-    .skill-group-label{font-family:var(--ff-mono);font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
-    .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-    .skill-tag{font-size:.78rem;padding:4px 12px;border-radius:99px;background:var(--bg3);border:1px solid var(--border);color:var(--text2)}
-    #projects{padding:120px 0;background:var(--bg2)}
-    .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .project-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .25s,border-color .25s}
-    .project-card:hover{transform:translateY(-4px);border-color:rgba(255,92,53,.3)}
-    .project-thumb{width:100%;height:200px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-    .project-thumb svg{width:100%;height:100%;display:block}
-    .thumb-badge{position:absolute;top:12px;right:12px;background:rgba(9,9,15,.85);border:1px solid rgba(255,92,53,.35);color:var(--accent);font-family:var(--ff-mono);font-size:.65rem;padding:4px 10px;border-radius:99px;backdrop-filter:blur(6px)}
-    .project-body{padding:24px}
-    .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-    .project-tag{font-family:var(--ff-mono);font-size:.65rem;padding:3px 9px;border-radius:4px;background:var(--bg3);color:var(--muted)}
-    .project-title{font-family:var(--ff-head);font-weight:700;font-size:1.1rem;margin-bottom:12px}
-    .project-problem{font-size:.85rem;color:var(--muted);margin-bottom:10px;display:flex;gap:8px}
-    .project-problem .label{color:#e05050;font-family:var(--ff-mono);font-size:.7rem;white-space:nowrap;margin-top:2px}
-    .project-solution{font-size:.85rem;color:var(--text2);margin-bottom:14px;display:flex;gap:8px}
-    .project-solution .label{color:#50c878;font-family:var(--ff-mono);font-size:.7rem;white-space:nowrap;margin-top:2px}
-    .project-impact{display:flex;align-items:flex-start;gap:8px;background:rgba(255,92,53,.06);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:10px 14px;font-size:.83rem;color:var(--text)}
-    #impact{padding:120px 0}
-    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px}
-    .impact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px 28px;text-align:center;position:relative;overflow:hidden}
-    .impact-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,92,53,.1) 0%,transparent 70%)}
-    .impact-num{font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:8px;position:relative}
-    .impact-desc{font-size:.875rem;color:var(--text2);position:relative}
-    #tracking{padding:120px 0;background:var(--bg2)}
-    .eta-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .eta-problem-list,.eta-solution-list{list-style:none;margin:16px 0 24px}
-    .eta-problem-list li,.eta-solution-list li{display:flex;gap:10px;font-size:.9rem;color:var(--text2);padding:6px 0}
-    .eta-problem-list li span{color:#e05050}
-    .eta-solution-list li span{color:#50c878}
-    .eta-flow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-    .eta-step-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;font-size:.78rem}
-    .eta-step-box .step-icon{font-size:1.2rem;margin-bottom:4px}
-    .eta-step-box .step-label{color:var(--text2);font-size:.72rem}
-    .eta-arrow{color:var(--muted);font-size:.9rem;align-self:center}
-    .stack-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-    .stack-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
-    .stack-card-label{font-family:var(--ff-mono);font-size:.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-    .stack-card-tech{font-size:.83rem;font-weight:500;margin-bottom:2px}
-    .stack-card-purpose{font-size:.75rem;color:var(--muted)}
-    #why{padding:120px 0}
-    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .why-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;transition:border-color .2s}
-    .why-card:hover{border-color:rgba(255,92,53,.3)}
-    .why-icon{font-size:1.8rem;margin-bottom:14px}
-    .why-card h3{font-family:var(--ff-head);font-weight:700;font-size:1rem;margin-bottom:8px}
-    .why-card p{font-size:.875rem;color:var(--text2);line-height:1.65}
-    .quote-band{margin-top:56px;background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:32px 40px;font-family:var(--ff-head);font-size:1.25rem;font-weight:700;color:var(--text);line-height:1.5}
-    .quote-band em{font-style:normal;color:var(--accent)}
-    #contact{padding:120px 0;background:var(--bg2)}
-    .contact-card{max-width:700px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:56px;text-align:center}
-    .contact-card h2{font-family:var(--ff-head);font-size:2.2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
-    .contact-card p{color:var(--text2);margin-bottom:40px}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
-    .contact-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;display:flex;align-items:center;gap:12px;font-size:.875rem;transition:border-color .2s}
-    .contact-item:hover{border-color:rgba(255,92,53,.3)}
-    .contact-item .ci-icon{font-size:1.1rem}
-    .contact-item .ci-label{font-family:var(--ff-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-    .contact-item .ci-val{font-size:.85rem;color:var(--text)}
-    footer{padding:24px;text-align:center;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border);position:relative;z-index:1}
-    footer a{color:var(--accent)}
-    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-    .fade-up.visible{opacity:1;transform:none}
-    @media(max-width:900px){
-      nav{padding:16px 20px}
-      .nav-links{display:none}
-      .hero-inner{grid-template-columns:1fr}
-      .hero-stats-card{display:none}
-      .about-grid{grid-template-columns:1fr}
-      .projects-grid{grid-template-columns:1fr}
-      .impact-grid{grid-template-columns:1fr 1fr}
-      .eta-grid{grid-template-columns:1fr}
-      .stack-cards{grid-template-columns:1fr}
-      .why-grid{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-      .contact-card{padding:32px 20px}
-    }
-    @media(max-width:480px){
-      .impact-grid{grid-template-columns:1fr}
-      .hero-h1{font-size:2.2rem}
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mohan Wakchaure — Automation & Data Systems</title>
+<meta name="description" content="I replaced manual work for 6 teams at Printo and Meesho. Data Analyst building AI automation systems that actually ship."/>
+<meta property="og:title" content="Mohan Wakchaure — Automation Builder"/>
+<meta property="og:description" content="3 production tools. 1 lakh rows automated. 0 manual checks needed."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Figtree:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --black:#030305;
+  --black2:#0d0d10;
+  --black3:#141418;
+  --border:rgba(255,255,255,.06);
+  --border2:rgba(255,255,255,.12);
+  --gold:#F5A623;
+  --gold2:#ffc65a;
+  --gold-dim:rgba(245,166,35,.1);
+  --gold-border:rgba(245,166,35,.25);
+  --text:#f0ece4;
+  --text2:#8a8880;
+  --text3:#3d3d45;
+  --green:#22c55e;
+  --red:#ef4444;
+  --blue:#60a5fa;
+  --ff-d:'Fraunces',serif;
+  --ff-b:'Figtree',sans-serif;
+  --ff-m:'Fira Code',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--ff-b);font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:34px;
+  background:var(--gold);
+  overflow:hidden;
+  display:flex;align-items:center;
+}
+.ticker-track{
+  display:flex;align-items:center;
+  white-space:nowrap;
+  animation:ticker 28s linear infinite;
+}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{
+  font-family:var(--ff-m);
+  font-size:.72rem;
+  color:#000;
+  padding:0 32px;
+  font-weight:500;
+  letter-spacing:.04em;
+}
+.ticker-dot{
+  width:5px;height:5px;
+  background:#000;border-radius:50%;
+  margin:0 8px;opacity:.4;display:inline-block;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:34px;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 5%;
+  background:rgba(3,3,5,.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{font-family:var(--ff-m);font-size:.85rem;color:var(--text2);letter-spacing:.08em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;font-size:.8rem;color:var(--text2)}
+.nav-links a:hover{color:var(--text)}
+.nav-hire{
+  font-family:var(--ff-m);font-size:.75rem;
+  background:transparent;
+  border:1px solid var(--gold-border);
+  color:var(--gold);
+  padding:7px 18px;border-radius:4px;
+  transition:background .2s,color .2s;
+}
+.nav-hire:hover{background:var(--gold);color:#000}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  padding:160px 5% 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-bottom:1px solid var(--border);
+}
+.hero-eyebrow{
+  font-family:var(--ff-m);
+  font-size:.7rem;color:var(--text2);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:36px;
+  display:flex;align-items:center;gap:10px;
+}
+.live-dot{
+  width:7px;height:7px;background:var(--green);
+  border-radius:50%;animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.6)}}
+
+.hero-h1{
+  font-family:var(--ff-d);
+  font-size:clamp(3.2rem,8vw,7.5rem);
+  font-weight:900;
+  line-height:.95;
+  letter-spacing:-.03em;
+  margin-bottom:0;
+  max-width:1100px;
+}
+.hero-h1 .line-gold{color:var(--gold);font-style:italic;font-weight:700}
+.hero-h1 .line-dim{
+  color:var(--text2);
+  font-weight:300;
+  font-size:clamp(1.8rem,4vw,3.8rem);
+  display:block;
+  margin-top:12px;
+  letter-spacing:-.01em;
+}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-top:60px;
+  padding-top:48px;
+  border-top:1px solid var(--border);
+}
+.hero-desc{
+  font-size:1.05rem;color:var(--text2);
+  line-height:1.85;font-weight:300;
+  max-width:480px;
+}
+.hero-desc strong{color:var(--text);font-weight:500}
+.hero-btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#000;padding:12px 28px;border-radius:4px;font-weight:600;font-size:.9rem;transition:opacity .2s,transform .2s}
+.btn-gold:hover{opacity:.88;transform:translateY(-2px)}
+.btn-line{border:1px solid var(--border2);color:var(--text2);padding:12px 24px;border-radius:4px;font-size:.9rem;transition:border-color .2s,color .2s}
+.btn-line:hover{border-color:var(--gold-border);color:var(--text)}
+
+.hero-proof{display:flex;flex-direction:column;gap:14px}
+.proof-card{
+  background:var(--black2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;
+}
+.proof-num{font-family:var(--ff-d);font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1}
+.proof-label{font-size:.82rem;color:var(--text2);font-weight:300;line-height:1.4}
+.proof-badge{font-family:var(--ff-m);font-size:.62rem;padding:3px 10px;border-radius:3px}
+.pb-green{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.pb-gold{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border)}
+.pb-blue{background:rgba(96,165,250,.1);color:var(--blue);border:1px solid rgba(96,165,250,.2)}
+
+/* ── SECTION SHELL ── */
+.sec{padding:100px 5%;border-bottom:1px solid var(--border)}
+.sec-mono{font-family:var(--ff-m);font-size:.65rem;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;margin-bottom:16px}
+.sec-h2{font-family:var(--ff-d);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:16px}
+.sec-h2 em{font-style:italic;font-weight:700;color:var(--gold)}
+.sec-sub{color:var(--text2);font-weight:300;max-width:600px;font-size:.95rem}
+
+/* ── PROJECTS ── */
+.project-list{display:flex;flex-direction:column;gap:2px;margin-top:56px}
+
+/* Expandable project rows */
+.proj-row{
+  background:var(--black2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  transition:border-color .25s;
+}
+.proj-row:hover,.proj-row.open{border-color:var(--gold-border)}
+
+.proj-header{
+  display:grid;
+  grid-template-columns:48px 1fr auto auto;
+  align-items:center;
+  gap:20px;
+  padding:22px 28px;
+  cursor:pointer;
+  user-select:none;
+}
+.proj-num{font-family:var(--ff-m);font-size:.75rem;color:var(--text3);font-weight:500}
+.proj-name{font-family:var(--ff-d);font-size:1.35rem;font-weight:700}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap}
+.ptag{font-family:var(--ff-m);font-size:.6rem;padding:3px 9px;border-radius:3px;background:var(--black3);color:var(--text2);border:1px solid var(--border)}
+.ptag.live{background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.2)}
+.ptag.wip{background:rgba(96,165,250,.08);color:var(--blue);border-color:rgba(96,165,250,.15)}
+.proj-arrow{color:var(--text3);font-size:.85rem;transition:transform .25s;font-family:var(--ff-m)}
+
+.proj-row.open .proj-arrow{transform:rotate(45deg);color:var(--gold)}
+
+.proj-body{
+  display:none;
+  padding:0 28px 28px;
+  border-top:1px solid var(--border);
+}
+.proj-row.open .proj-body{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:24px}
+
+.pb-section-label{font-family:var(--ff-m);font-size:.62rem;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.pb-text{font-size:.9rem;color:var(--text2);line-height:1.8;font-weight:300}
+.pb-impact{
+  background:var(--gold-dim);
+  border-left:2px solid var(--gold);
+  padding:14px 18px;
+  margin-top:16px;
+  border-radius:0 6px 6px 0;
+  font-size:.85rem;
+  color:var(--text);
+}
+.pb-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+
+.flow-row{
+  display:flex;align-items:center;gap:6px;
+  flex-wrap:wrap;margin-top:16px;
+}
+.fn{background:var(--black3);border:1px solid var(--border);padding:5px 12px;border-radius:4px;font-family:var(--ff-m);font-size:.65rem;color:var(--text)}
+.fa{color:var(--gold);font-size:.7rem;font-family:var(--ff-m)}
+
+.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.metric-box{background:var(--black3);border:1px solid var(--border);border-radius:6px;padding:14px;text-align:center}
+.m-n{font-family:var(--ff-d);font-size:1.8rem;font-weight:900;color:var(--gold);line-height:1}
+.m-l{font-size:.72rem;color:var(--text2);margin-top:4px}
+
+/* ── TERMINAL CALLOUT ── */
+.terminal-block{
+  background:#000;
+  border:1px solid var(--border2);
+  border-radius:10px;
+  margin:60px 0 0;
+  overflow:hidden;
+}
+.terminal-bar{
+  background:var(--black3);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--border);
+}
+.t-dot{width:11px;height:11px;border-radius:50%}
+.terminal-body{padding:24px;font-family:var(--ff-m);font-size:.82rem;line-height:2;color:#aaa}
+.t-comment{color:#555}
+.t-cmd{color:#f0ece4}
+.t-key{color:var(--gold)}
+.t-val{color:var(--green)}
+.t-out{color:#60a5fa}
+.t-cursor{display:inline-block;width:8px;height:14px;background:var(--gold);animation:blink .9s infinite;vertical-align:middle;margin-left:2px}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* ── EXPERIENCE ── */
+.exp-grid{display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:start}
+.exp-aside p{font-size:.9rem;color:var(--text2);font-weight:300;line-height:1.85}
+.exp-aside .stat-big{font-family:var(--ff-d);font-size:4rem;font-weight:900;color:var(--gold);line-height:1;margin:24px 0 4px}
+
+.timeline{position:relative;padding-left:20px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.tl-item{position:relative;margin-bottom:32px}
+.tl-dot{position:absolute;left:-24px;top:10px;width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);background:var(--black)}
+.tl-dot::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--gold)}
+.tl-dot.edu{border-color:var(--blue)}
+.tl-dot.edu::after{background:var(--blue)}
+.tl-dot.sky{border-color:var(--text3)}
+.tl-dot.sky::after{background:var(--text3)}
+.tl-card{background:var(--black2);border:1px solid var(--border);border-radius:8px;padding:20px 22px;transition:border-color .2s}
+.tl-card:hover{border-color:var(--border2)}
+.tl-role{font-weight:600;font-size:.95rem;margin-bottom:2px}
+.tl-co{font-family:var(--ff-m);font-size:.72rem;color:var(--gold);margin-bottom:3px}
+.tl-co.blue{color:var(--blue)}
+.tl-co.sky{color:var(--text3)}
+.tl-date{font-family:var(--ff-m);font-size:.62rem;color:var(--text3);margin-bottom:12px}
+.tl-li{list-style:none}
+.tl-li li{font-size:.85rem;color:var(--text2);padding:3px 0 3px 16px;position:relative;font-weight:300;line-height:1.6}
+.tl-li li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:.7rem;top:5px}
+
+/* ── SKILLS ── */
+.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.sk-card{background:var(--black2);border:1px solid var(--border);border-radius:8px;padding:22px 20px;transition:border-color .2s}
+.sk-card:hover{border-color:var(--border2)}
+.sk-label{font-family:var(--ff-m);font-size:.62rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.sk-item{font-size:.83rem;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);font-weight:300}
+.sk-item:last-child{border-bottom:none}
+
+/* ── EDUCATION ── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.edu-card{background:var(--black2);border:1px solid var(--border);border-radius:8px;padding:24px}
+.edu-card.main{border-color:rgba(96,165,250,.2)}
+.edu-degree{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.edu-inst{font-size:.85rem;color:var(--text2);font-weight:300;margin-bottom:4px}
+.edu-meta{font-family:var(--ff-m);font-size:.65rem;color:var(--text3)}
+
+/* ── WHY ── */
+.why-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  margin-top:48px;
+}
+.why-cell{
+  padding:28px 24px;
+  border-right:1px solid var(--border);
+  transition:background .2s;
+}
+.why-cell:last-child{border-right:none}
+.why-cell:hover{background:var(--black2)}
+.why-icon{font-size:1.4rem;margin-bottom:12px}
+.why-title{font-weight:600;font-size:.9rem;margin-bottom:8px}
+.why-desc{font-size:.8rem;color:var(--text2);line-height:1.7;font-weight:300}
+
+.big-quote{
+  margin-top:56px;
+  font-family:var(--ff-d);
+  font-size:clamp(1.6rem,3.5vw,2.6rem);
+  font-weight:700;
+  line-height:1.3;
+  letter-spacing:-.02em;
+  border-top:1px solid var(--border);
+  padding-top:48px;
+  color:var(--text2);
+}
+.big-quote em{color:var(--text);font-style:italic}
+.big-quote span{color:var(--gold);font-style:italic}
+
+/* ── CONTACT ── */
+#contact{padding:100px 5% 80px;border-bottom:none}
+.contact-inner{max-width:800px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
+.c-item{
+  background:var(--black2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:18px 20px;
+  display:flex;align-items:center;gap:14px;
+  transition:border-color .2s;
+}
+.c-item:hover{border-color:var(--gold-border)}
+.c-icon{font-size:1.1rem;flex-shrink:0}
+.c-label{font-family:var(--ff-m);font-size:.58rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.c-val{font-size:.875rem;color:var(--text)}
+.c-item.full{grid-column:1/-1}
+
+.avail{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(34,197,94,.08);
+  border:1px solid rgba(34,197,94,.2);
+  color:var(--green);
+  padding:8px 18px;border-radius:99px;
+  font-size:.78rem;font-family:var(--ff-m);
+  margin-top:40px;
+}
+
+/* ── FOOTER ── */
+footer{
+  padding:20px 5%;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--ff-m);font-size:.65rem;color:var(--text3);
+}
+footer a{color:var(--gold)}
+
+/* ── ANIMATION ── */
+.fade{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s}
+.fade.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-bottom{grid-template-columns:1fr}
+  .proj-row.open .proj-body{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr}
+  .skills-wrap{grid-template-columns:1fr 1fr}
+  .why-strip{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .hero-h1{font-size:2.8rem}
+  .skills-wrap{grid-template-columns:1fr}
+  .why-strip{grid-template-columns:1fr}
+  .why-cell{border-right:none;border-bottom:1px solid var(--border)}
+  .proj-header{grid-template-columns:36px 1fr auto}
+  .proj-tags{display:none}
+}
+</style>
 </head>
 <body>
 
+<!-- ── TICKER ── -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- ── NAV ── -->
 <nav>
-  <div class="nav-logo">mohan<span>.</span>dev</div>
+  <div class="nav-logo">mohan<span>.</span>build</div>
   <div class="nav-links">
-    <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#impact">Impact</a>
-    <a href="#tracking">ETA Model</a>
-    <a href="#why">Why Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </div>
-  <a href="#contact" class="nav-cta">Get in Touch</a>
+  <a href="mailto:mohanwakchaure1@gmail.com" class="nav-hire">Open to work →</a>
 </nav>
 
+<!-- ── HERO ── -->
 <section id="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-left fade-up">
-        <div class="hero-badge"><span></span> Open to Opportunities &middot; Bengaluru, India</div>
-        <h1 class="hero-h1">I find the <em>manual process</em> costing your team 2 hours a day &mdash; and make it take <em>2 seconds.</em></h1>
-        <p class="hero-sub">Data Analyst at Printo with 1.5+ years building ML models, automation pipelines, and intelligent data systems. Previously at Meesho. 5 production tools deployed &mdash; eliminating hours of manual work daily.</p>
-        <div class="hero-chips">
-          <span class="chip">Python</span><span class="chip">SQL (Advanced)</span><span class="chip">scikit-learn</span>
-          <span class="chip">Supabase</span><span class="chip">Node.js</span><span class="chip">ETA Modelling</span><span class="chip">Time-Series Forecasting</span>
-        </div>
-        <div class="hero-btns">
-          <a href="#projects" class="btn-primary">View My Work &rarr;</a>
-          <a href="#contact" class="btn-outline">Get In Touch</a>
-          <a href="https://github.com/mohanwakchaure" target="_blank" class="btn-outline">GitHub &nearr;</a>
-        </div>
+  <div class="hero-eyebrow">
+    <span class="live-dot"></span>
+    Currently @ Printo, Bengaluru &nbsp;·&nbsp; Data Analyst (AI & Automation) &nbsp;·&nbsp; Open to new roles
+  </div>
+
+  <h1 class="hero-h1">
+    I replaced manual work<br/>
+    for <span class="line-gold">6 teams.</span>
+    <span class="line-dim">Your team could be next.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <div>
+      <p class="hero-desc">
+        M.Sc. AI/ML graduate with <strong>1.5+ years</strong> shipping automation tools at <strong>Printo</strong> and <strong>Meesho</strong> — inventory alerts, operations dashboards, launch portals, ML logistics models, and AI procurement systems. I don't just analyse data. I build the system so <strong>nobody has to check it manually ever again.</strong>
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-gold">See the proof</a>
+        <a href="#contact" class="btn-line">Get in touch</a>
+        <a href="https://github.com/mohanwakchaure" target="_blank" class="btn-line">GitHub</a>
       </div>
-      <div class="hero-stats-card fade-up" style="transition-delay:.15s">
-        <div class="stats-grid">
-          <div class="stat-item"><div class="stat-num">1L+</div><div class="stat-label">PO Records<br>Monitored Daily</div></div>
-          <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Teams<br>Coordinated</div></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Launch Tasks<br>Automated</div></div>
-          <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Manual Daily<br>Checks Needed</div></div>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof-card">
+        <div>
+          <div class="proof-num" data-target="100" data-suffix="K+">0</div>
+          <div class="proof-label">inventory rows scanned automatically — every night</div>
         </div>
-        <div class="hero-tech">
-          <span class="tech-tag">Python</span><span class="tech-tag">SQL</span><span class="tech-tag">scikit-learn</span>
-          <span class="tech-tag">Node.js</span><span class="tech-tag">Supabase</span><span class="tech-tag">gspread</span>
-          <span class="tech-tag">Pandas</span><span class="tech-tag">Chart.js</span>
+        <span class="proof-badge pb-green">Live at Printo</span>
+      </div>
+      <div class="proof-card">
+        <div>
+          <div class="proof-num" data-target="40" data-suffix="%">0</div>
+          <div class="proof-label">reporting time cut at Meesho with automated KPI dashboards</div>
         </div>
+        <span class="proof-badge pb-blue">Meesho</span>
+      </div>
+      <div class="proof-card">
+        <div>
+          <div class="proof-num" data-target="3">0</div>
+          <div class="proof-label">production systems shipped from scratch — used daily by real teams</div>
+        </div>
+        <span class="proof-badge pb-gold">Not side projects</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="fade-up">
-        <div class="section-label">About Me</div>
-        <h2 style="font-family:var(--ff-head);font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px">Data Analyst, Builder &amp; Automation Thinker</h2>
-        <p style="color:var(--text2);margin-bottom:16px;font-size:.95rem">From demand forecasting to ML-based route optimization &mdash; I work at the intersection of data science and operational impact.</p>
-        <p style="color:var(--text2);margin-bottom:16px;font-size:.95rem">I combine statistical rigor with engineering execution &mdash; speaking the language of operations teams, not just code.</p>
-        <div class="contact-links">
-          <a href="mailto:mohanwakchaure1@gmail.com" class="contact-link"><span>&#128231;</span> mohanwakchaure1@gmail.com</a>
-          <a href="tel:+918805548797" class="contact-link"><span>&#128241;</span> +91 88055 48797</a>
-          <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" class="contact-link"><span>&#128188;</span> linkedin.com/in/mohan-wakchaure</a>
-          <a href="https://github.com/mohanwakchaure" target="_blank" class="contact-link"><span>&#128029;</span> github.com/mohanwakchaure</a>
-          <span class="contact-link"><span>&#128205;</span> Bengaluru, India</span>
+<!-- ── PROJECTS ── -->
+<section id="projects" class="sec">
+  <div class="sec-mono">Featured systems</div>
+  <h2 class="sec-h2">3 in production.<br/><em>2 in the pipeline.</em></h2>
+  <p class="sec-sub">Every deployed system below replaced a real manual process at a real company. Click any row to see the full case study.</p>
+
+  <div class="project-list">
+
+    <!-- P1 -->
+    <div class="proj-row" onclick="toggleProject(this)">
+      <div class="proj-header">
+        <span class="proj-num">01</span>
+        <span class="proj-name">Low-Stock Alert Automation</span>
+        <div class="proj-tags">
+          <span class="ptag live">● Live · Printo</span>
+          <span class="ptag">Python</span>
+          <span class="ptag">gspread</span>
+          <span class="ptag">Gmail SMTP</span>
+          <span class="ptag">Google Chat</span>
         </div>
-        <div class="skills-section">
-          <div class="skill-group"><div class="skill-group-label">Data &amp; Analytics</div><div class="skill-tags"><span class="skill-tag">SQL (Advanced)</span><span class="skill-tag">Python &middot; Pandas &middot; NumPy</span><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">A/B Testing</span><span class="skill-tag">Time-Series</span></div></div>
-          <div class="skill-group"><div class="skill-group-label">Machine Learning</div><div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">XGBoost</span><span class="skill-tag">Random Forest</span><span class="skill-tag">Regression Analysis</span><span class="skill-tag">Anomaly Detection</span></div></div>
-          <div class="skill-group"><div class="skill-group-label">Engineering</div><div class="skill-tags"><span class="skill-tag">Node.js &middot; Express</span><span class="skill-tag">Supabase (PostgreSQL)</span><span class="skill-tag">gspread</span><span class="skill-tag">Notion &middot; Slack</span></div></div>
+        <span class="proj-arrow">+</span>
+      </div>
+      <div class="proj-body">
+        <div>
+          <div class="pb-section-label">What it does</div>
+          <p class="pb-text">Runs nightly against a Google Sheet with 1 lakh+ rows. Filters all materials flagged as "Will Be Discontinued", checks if current stock is below 10% of monthly consumption, and fires dual alerts — a formatted HTML email and a Google Chat webhook — without a single human trigger.</p>
+          <div class="flow-row">
+            <span class="fn">Read Google Sheet</span><span class="fa">→</span>
+            <span class="fn">Filter Discontinued</span><span class="fa">→</span>
+            <span class="fn">Stock &lt; 10%?</span><span class="fa">→</span>
+            <span class="fn">Email + Chat Alert</span>
+          </div>
+          <div class="pb-impact">
+            Zero stockouts on phased-out materials since deployment. Daily 45-min manual review → 0 seconds. Dual notification so no alert is ever missed.
+          </div>
+        </div>
+        <div>
+          <div class="pb-section-label">Business impact</div>
+          <div class="metric-row">
+            <div class="metric-box"><div class="m-n">1L+</div><div class="m-l">rows processed nightly</div></div>
+            <div class="metric-box"><div class="m-n">0</div><div class="m-l">manual checks needed</div></div>
+            <div class="metric-box"><div class="m-n">0.3s</div><div class="m-l">run time per cycle</div></div>
+          </div>
+          <div style="margin-top:18px">
+            <div class="pb-section-label">Tech stack</div>
+            <div class="pb-stack">
+              <span class="ptag">Python 3</span><span class="ptag">gspread</span><span class="ptag">pandas</span>
+              <span class="ptag">smtplib</span><span class="ptag">Google Chat Webhook</span><span class="ptag">OAuth2 Service Account</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="fade-up" style="transition-delay:.1s">
-        <div class="section-label">Career Journey</div>
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Data Analyst (Applied Data Science &amp; ML)</div><div class="tl-company">Printo.in &middot; Bangalore</div><div class="tl-date">Mar 2026 &ndash; Present</div><ul class="tl-bullets"><li>Designed and deployed a role-based product launch system &mdash; reduced errors across 6 teams.</li><li>Built ML-based logistics optimization model improving SLA adherence.</li><li>Python automation to monitor low-inventory SKUs in real-time across 5 cities.</li><li>Led Google Sheets &rarr; AI + rule-based system migration, reducing manual effort ~60%.</li><li>Time-series forecasting improved inventory planning accuracy by ~20%.</li></ul></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Fulfillment Analyst</div><div class="tl-company">Meesho &middot; Bangalore</div><div class="tl-date">May 2025 &ndash; Mar 2026</div><ul class="tl-bullets"><li>SQL analytics on order lifecycle, delivery performance, and return rates.</li><li>Automated dashboards reduced stakeholder reporting time by ~40%.</li><li>Led third-party vendor risk management for a 43-member cross-functional team.</li><li>A/B testing and statistical significance analysis on fulfillment process changes.</li></ul></div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-card"><div class="tl-role">Software Engineer (Data &amp; Analytics)</div><div class="tl-company">Skylex Technology &middot; Pune</div><div class="tl-date">Aug 2024 &ndash; Nov 2024</div><ul class="tl-bullets"><li>Analyzed campaign performance data (CTR, conversion rates).</li><li>Built reporting systems for budget utilization and campaign optimization.</li></ul></div></div>
-          <div class="tl-item"><div class="tl-dot edu"></div><div class="tl-card edu-card"><div class="edu-badge">&#127891; Education</div><div class="tl-role">MS in Artificial Intelligence &amp; Machine Learning</div><div class="tl-company">MIT-ADT University &middot; Pune</div><div class="tl-date">Graduated 2025</div><ul class="tl-bullets"><li>Specialized in ML, deep learning, and applied data science.</li><li>Hands-on projects in predictive modeling, NLP, and computer vision.</li></ul></div></div>
+    </div>
+
+    <!-- P2 -->
+    <div class="proj-row" onclick="toggleProject(this)">
+      <div class="proj-header">
+        <span class="proj-num">02</span>
+        <span class="proj-name">Materials Operations Dashboard</span>
+        <div class="proj-tags">
+          <span class="ptag live">● Live · Printo</span>
+          <span class="ptag">Supabase</span>
+          <span class="ptag">Chart.js</span>
+          <span class="ptag">Vanilla JS</span>
+        </div>
+        <span class="proj-arrow">+</span>
+      </div>
+      <div class="proj-body">
+        <div>
+          <div class="pb-section-label">What it does</div>
+          <p class="pb-text">Single-page live dashboard giving full materials visibility across 5 cities — Bengaluru, Chennai, Hyderabad, Pune, NCR. Smart filters by city, category, priority, and reorder type. 6 customisable analytics charts (bar, donut, pie, horizontal bar). Add new records to Supabase directly from the browser. One-click CSV export of any filtered view.</p>
+          <div class="pb-impact">
+            Material data was scattered across multiple spreadsheets — no unified view, constant back-and-forth between cities. Now: one URL, always live, always accurate.
+          </div>
+        </div>
+        <div>
+          <div class="pb-section-label">Scale</div>
+          <div class="metric-row">
+            <div class="metric-box"><div class="m-n">5</div><div class="m-l">cities on one screen</div></div>
+            <div class="metric-box"><div class="m-n">6</div><div class="m-l">live analytics charts</div></div>
+            <div class="metric-box"><div class="m-n">0</div><div class="m-l">backend servers needed</div></div>
+          </div>
+          <div style="margin-top:18px">
+            <div class="pb-section-label">Tech stack</div>
+            <div class="pb-stack">
+              <span class="ptag">Supabase (PostgreSQL)</span><span class="ptag">Chart.js</span>
+              <span class="ptag">Vanilla JS</span><span class="ptag">HTML/CSS</span><span class="ptag">CSV Export</span>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="proj-row" onclick="toggleProject(this)">
+      <div class="proj-header">
+        <span class="proj-num">03</span>
+        <span class="proj-name">Product Launch Portal</span>
+        <div class="proj-tags">
+          <span class="ptag live">● Live · Printo</span>
+          <span class="ptag">Node.js</span>
+          <span class="ptag">Express</span>
+          <span class="ptag">Nodemailer</span>
+        </div>
+        <span class="proj-arrow">+</span>
+      </div>
+      <div class="proj-body">
+        <div>
+          <div class="pb-section-label">What it does</div>
+          <p class="pb-text">End-to-end launch coordinator for 6 teams across 20 tasks. A smart state machine auto-unlocks each task when the previous step completes. Conditional paths handle vendor checks, inventory rejections, and sign-offs. Final step auto-triggers a "Launch Complete" email to all teams. Role-based auth with PBKDF2-SHA512 hashing and 24-hour session tokens.</p>
+          <div class="flow-row">
+            <span class="fn">Category</span><span class="fa">→</span>
+            <span class="fn">Procurement</span><span class="fa">→</span>
+            <span class="fn">Production</span><span class="fa">→</span>
+            <span class="fn">Commercial</span><span class="fa">→</span>
+            <span class="fn">Launch ✓</span>
+          </div>
+          <div class="pb-impact">
+            Launches were delayed by missed handoffs over WhatsApp. Now: auto-unlock, auto-notify, zero missed sign-offs, full audit trail.
+          </div>
+        </div>
+        <div>
+          <div class="pb-section-label">Scale</div>
+          <div class="metric-row">
+            <div class="metric-box"><div class="m-n">6</div><div class="m-l">teams connected</div></div>
+            <div class="metric-box"><div class="m-n">20</div><div class="m-l">tasks automated</div></div>
+            <div class="metric-box"><div class="m-n">0</div><div class="m-l">missed handoffs</div></div>
+          </div>
+          <div style="margin-top:18px">
+            <div class="pb-section-label">Tech stack</div>
+            <div class="pb-stack">
+              <span class="ptag">Node.js</span><span class="ptag">Express</span><span class="ptag">Nodemailer</span>
+              <span class="ptag">Multer</span><span class="ptag">PBKDF2-SHA512</span><span class="ptag">Session Auth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 -->
+    <div class="proj-row" onclick="toggleProject(this)">
+      <div class="proj-header">
+        <span class="proj-num">04</span>
+        <span class="proj-name">Forge — AI Procurement Command Center</span>
+        <div class="proj-tags">
+          <span class="ptag wip">◎ In Progress</span>
+          <span class="ptag">FastAPI</span>
+          <span class="ptag">Twilio</span>
+          <span class="ptag">WhatsApp API</span>
+        </div>
+        <span class="proj-arrow">+</span>
+      </div>
+      <div class="proj-body">
+        <div>
+          <div class="pb-section-label">What it does</div>
+          <p class="pb-text">AI-powered PO system with P0–P3 priority routing. P0 (critical, stockout risk) triggers an automated phone call to the approver via Twilio. P1 sends a WhatsApp approval message. P2 routes via email. P3 via dashboard. Forge Copilot AI compares vendor quotes against historical data, flags variances, and suggests counter-offers. ₹3.8L saved across 14 negotiations in early testing.</p>
+          <div class="flow-row">
+            <span class="fn">PO Created</span><span class="fa">→</span>
+            <span class="fn">AI Priority Assign</span><span class="fa">→</span>
+            <span class="fn">Route: Call/WA/Email</span><span class="fa">→</span>
+            <span class="fn">Approved</span>
+          </div>
+        </div>
+        <div>
+          <div class="pb-section-label">Approval channels</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:#fee2e2;color:#991b1b;font-family:var(--ff-m);font-size:.6rem;padding:2px 8px;border-radius:3px;font-weight:500">P0</span>
+              <span style="color:var(--text2)">Phone call — TTS reads PO, approver says yes/no</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:#fef3c7;color:#92400e;font-family:var(--ff-m);font-size:.6rem;padding:2px 8px;border-radius:3px;font-weight:500">P1</span>
+              <span style="color:var(--text2)">WhatsApp — reply 1 to approve, 2 to reject</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:#dbeafe;color:#1e40af;font-family:var(--ff-m);font-size:.6rem;padding:2px 8px;border-radius:3px;font-weight:500">P2</span>
+              <span style="color:var(--text2)">Email — one-click approve from inbox</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:var(--black3);color:var(--text3);font-family:var(--ff-m);font-size:.6rem;padding:2px 8px;border-radius:3px;font-weight:500">P3</span>
+              <span style="color:var(--text2)">Dashboard — standard portal flow</span>
+            </div>
+          </div>
+          <div style="margin-top:16px">
+            <div class="pb-section-label">Stack</div>
+            <div class="pb-stack">
+              <span class="ptag">FastAPI</span><span class="ptag">Node.js</span><span class="ptag">Supabase</span>
+              <span class="ptag">Twilio</span><span class="ptag">WhatsApp Business API</span><span class="ptag">OpenAI API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P5 -->
+    <div class="proj-row" onclick="toggleProject(this)">
+      <div class="proj-header">
+        <span class="proj-num">05</span>
+        <span class="proj-name">ML Logistics Optimization Model</span>
+        <div class="proj-tags">
+          <span class="ptag live">● Live · Printo</span>
+          <span class="ptag">Python</span>
+          <span class="ptag">scikit-learn</span>
+          <span class="ptag">Pandas</span>
+        </div>
+        <span class="proj-arrow">+</span>
+      </div>
+      <div class="proj-body">
+        <div>
+          <div class="pb-section-label">What it does</div>
+          <p class="pb-text">ML + heuristic route optimization model to find the fastest delivery paths across Printo's fulfilment network. Combines distance-based optimization with historical SLA data and feature engineering on order attributes. Outputs real-time route recommendations for dispatch teams.</p>
+          <div class="pb-impact">Reduced average delivery time by 10–15%. Improved SLA adherence across fulfilment operations.</div>
+        </div>
+        <div>
+          <div class="pb-section-label">Also at Meesho: Vendor Risk Management</div>
+          <p class="pb-text" style="margin-top:8px">Led data analysis for third-party vendor risk across fulfilment partners. Coordinated a cross-functional team of 43 members. Built Excel + SQL risk trackers monitoring compliance, SLA breaches, and performance deviations — identifying high-risk vendors before they caused operational failures.</p>
+          <div class="pb-stack" style="margin-top:12px">
+            <span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">NumPy</span>
+            <span class="ptag">SQL</span><span class="ptag">scikit-learn</span><span class="ptag">Excel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Terminal block -->
+  <div class="terminal-block fade">
+    <div class="terminal-bar">
+      <div class="t-dot" style="background:#ff5f57"></div>
+      <div class="t-dot" style="background:#febc2e"></div>
+      <div class="t-dot" style="background:#28c840"></div>
+      <span style="margin-left:8px;font-family:var(--ff-m);font-size:.68rem;color:#555">mohan@printo ~ low_stock_alert.py</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="t-comment"># Real automation running nightly at Printo</span></div>
+      <div><span class="t-key">df</span> = <span class="t-val">read_google_sheet</span>(<span class="t-out">"Materials_Master"</span>)</div>
+      <div><span class="t-key">at_risk</span> = df[</div>
+      <div>&nbsp;&nbsp;(df[<span class="t-out">'status'</span>] == <span class="t-out">'Will Be Discontinued'</span>) &amp;</div>
+      <div>&nbsp;&nbsp;(df[<span class="t-out">'current_stock'</span>] &lt; df[<span class="t-out">'monthly_consumption'</span>] * <span class="t-val">0.10</span>)</div>
+      <div>]</div>
+      <div>&nbsp;</div>
+      <div><span class="t-comment"># 1,04,820 rows scanned · 0.3s run time</span></div>
+      <div><span class="t-key">print</span>(<span class="t-out">f"Found </span><span class="t-key">{len(at_risk)}</span><span class="t-out"> at-risk SKUs — firing alerts..."</span>)</div>
+      <div><span class="t-val">send_email_alert</span>(at_risk) &nbsp;<span class="t-comment"># HTML email via Gmail SMTP</span></div>
+      <div><span class="t-val">send_chat_webhook</span>(at_risk) <span class="t-comment"># Google Chat notification</span></div>
+      <div>&nbsp;</div>
+      <div><span class="t-out">✓ Alerts sent. Zero stockouts this quarter.</span><span class="t-cursor"></span></div>
     </div>
   </div>
 </section>
 
-<section id="projects">
-  <div class="container">
-    <div class="sec-head fade-up">
-      <div class="section-label">My Work at Printo</div>
-      <h2>5 Tools. Real Teams. Real Impact.</h2>
-      <p>Every tool was built to solve a genuine operational pain &mdash; production deployments used daily by real teams.</p>
+<!-- ── EXPERIENCE ── -->
+<section id="experience" class="sec">
+  <div class="exp-grid">
+    <div class="exp-aside fade">
+      <div class="sec-mono">Work experience</div>
+      <h2 class="sec-h2" style="font-size:2.4rem">Built inside<br/><em>real ops teams.</em></h2>
+      <p class="exp-aside" style="margin-top:16px;font-size:.9rem;color:var(--text2);font-weight:300;line-height:1.85">
+        Not a developer who occasionally automates things. I've been embedded inside supply chain, inventory, procurement, and fulfilment teams — building the tools they use every day.
+      </p>
+      <div class="stat-big">43</div>
+      <p style="font-size:.82rem;color:var(--text2);font-weight:300">cross-functional team members coordinated during Meesho vendor risk project</p>
     </div>
-    <div class="projects-grid">
 
-      <!-- Project 1: Low-Stock Alert -->
-      <div class="project-card fade-up">
-        <div class="project-thumb">
-          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="420" height="200" fill="#111118"/>
-            <line x1="0" y1="40" x2="420" y2="40" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="0" y1="80" x2="420" y2="80" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="0" y1="120" x2="420" y2="120" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="0" y1="160" x2="420" y2="160" stroke="#ffffff08" stroke-width="1"/>
-            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
-            <text x="16" y="21" fill="#ff5c35" font-size="9" font-family="monospace" font-weight="bold">&#9660; LOW-STOCK ALERT SYSTEM</text>
-            <circle cx="400" cy="16" r="5" fill="#ff5c35" opacity="0.9"/>
-            <circle cx="400" cy="16" r="5" fill="#ff5c35" opacity="0.3"><animate attributeName="r" values="5;13;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/></circle>
-            <rect x="12" y="40" width="396" height="18" fill="#1e1e2a"/>
-            <text x="18" y="53" fill="#6b6b80" font-size="8" font-family="monospace">SKU</text>
-            <text x="88" y="53" fill="#6b6b80" font-size="8" font-family="monospace">ITEM</text>
-            <text x="228" y="53" fill="#6b6b80" font-size="8" font-family="monospace">STOCK %</text>
-            <text x="308" y="53" fill="#6b6b80" font-size="8" font-family="monospace">STATUS</text>
-            <rect x="12" y="58" width="396" height="18" fill="#ff5c3512"/>
-            <text x="18" y="71" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-4421</text>
-            <text x="88" y="71" fill="#a0a0b8" font-size="8" font-family="monospace">Matte Paper A4</text>
-            <rect x="228" y="62" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="62" width="4" height="8" rx="2" fill="#ff5c35"/>
-            <text x="268" y="70" fill="#ff5c35" font-size="7.5" font-family="monospace">6.2%</text>
-            <rect x="306" y="62" width="52" height="10" rx="3" fill="#ff5c3525"/><text x="313" y="70" fill="#ff5c35" font-size="7" font-family="monospace">CRITICAL</text>
-            <rect x="12" y="76" width="396" height="18" fill="#ff8c4210"/>
-            <text x="18" y="89" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-3380</text>
-            <text x="88" y="89" fill="#a0a0b8" font-size="8" font-family="monospace">Glossy Cover 300g</text>
-            <rect x="228" y="80" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="80" width="10" height="8" rx="2" fill="#ff8c42"/>
-            <text x="268" y="88" fill="#ff8c42" font-size="7.5" font-family="monospace">8.7%</text>
-            <rect x="306" y="80" width="52" height="10" rx="3" fill="#ff8c4225"/><text x="311" y="88" fill="#ff8c42" font-size="7" font-family="monospace">WARNING</text>
-            <rect x="12" y="94" width="396" height="18" fill="transparent"/>
-            <text x="18" y="107" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-2210</text>
-            <text x="88" y="107" fill="#a0a0b8" font-size="8" font-family="monospace">Bond Paper 80g</text>
-            <rect x="228" y="98" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="98" width="26" height="8" rx="2" fill="#50c878"/>
-            <text x="268" y="106" fill="#50c878" font-size="7.5" font-family="monospace">78%</text>
-            <rect x="306" y="98" width="36" height="10" rx="3" fill="#50c87825"/><text x="314" y="106" fill="#50c878" font-size="7" font-family="monospace">GOOD</text>
-            <rect x="12" y="112" width="396" height="18" fill="#ff5c3512"/>
-            <text x="18" y="125" fill="#a0a0b8" font-size="8" font-family="monospace">PRN-5501</text>
-            <text x="88" y="125" fill="#a0a0b8" font-size="8" font-family="monospace">Kraft Bag S</text>
-            <rect x="228" y="116" width="34" height="8" rx="2" fill="#1e1e2a"/><rect x="228" y="116" width="3" height="8" rx="2" fill="#ff5c35"/>
-            <text x="268" y="124" fill="#ff5c35" font-size="7.5" font-family="monospace">4.1%</text>
-            <rect x="306" y="116" width="52" height="10" rx="3" fill="#ff5c3525"/><text x="313" y="124" fill="#ff5c35" font-size="7" font-family="monospace">CRITICAL</text>
-            <rect x="12" y="140" width="396" height="50" rx="6" fill="#1a1a24" stroke="#ff5c3530" stroke-width="1"/>
-            <rect x="12" y="140" width="3" height="50" rx="2" fill="#ff5c35"/>
-            <text x="22" y="157" fill="#ff5c35" font-size="8" font-family="monospace">&#128231; ALERT FIRED &#8594; mohanwakchaure1@gmail.com + Google Chat</text>
-            <text x="22" y="171" fill="#6b6b80" font-size="7.5" font-family="monospace">2 items below 10% threshold detected automatically</text>
-            <text x="22" y="183" fill="#50c878" font-size="7.5" font-family="monospace">&#10003; Ran in 0.3s  &#183;  1,04,820 rows scanned  &#183;  0 manual checks needed</text>
-          </svg>
-          <div class="thumb-badge">Automation</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">gspread</span><span class="project-tag">Gmail SMTP</span><span class="project-tag">Google Chat Webhook</span></div>
-          <div class="project-title">Low-Stock Alert Automation</div>
-          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Procurement had to manually scan 1 lakh+ rows daily &mdash; missed stockouts were costly.</div>
-          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Python script flags stock below 10% consumption and fires email + Chat alerts automatically.</div>
-          <div class="project-impact">&#127919; Zero missed stockouts since deployment. 30&ndash;45 min daily check now takes seconds.</div>
+    <div class="timeline fade" style="transition-delay:.1s">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-role">Data Analyst — Applied Data Science & ML</div>
+          <div class="tl-co">Printo · Bengaluru</div>
+          <div class="tl-date">Mar 2026 – Present</div>
+          <ul class="tl-li">
+            <li>Designed and shipped role-based product launch system — reducing operational errors across 6 teams</li>
+            <li>Built ML logistics optimization model for fastest delivery routes — 10–15% delivery time reduction</li>
+            <li>Python automation for low-inventory SKUs — 1L+ rows, real-time tracking, zero stockouts</li>
+            <li>Led transition from Google Sheets to scalable AI + rule-based system — ~60% reduction in manual reporting</li>
+            <li>Time-series + regression forecasting — improved inventory planning accuracy by ~20%</li>
+            <li>Building Forge: AI-powered PO system with phone/WhatsApp/email approval channels</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Project 2: Materials Dashboard -->
-      <div class="project-card fade-up" style="transition-delay:.05s">
-        <div class="project-thumb">
-          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="420" height="200" fill="#111118"/>
-            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
-            <text x="16" y="21" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">MATERIALS OPERATIONS DASHBOARD</text>
-            <rect x="330" y="8" width="30" height="14" rx="3" fill="#ff5c3520" stroke="#ff5c3540" stroke-width="1"/>
-            <text x="337" y="18" fill="#ff5c35" font-size="7" font-family="monospace">LIVE</text>
-            <circle cx="360" cy="15" r="3" fill="#50c878"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
-            <!-- city filter pills -->
-            <rect x="12" y="38" width="30" height="14" rx="7" fill="#ff5c35"/><text x="18" y="48" fill="#fff" font-size="7" font-family="monospace">BLR</text>
-            <rect x="46" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="52" y="48" fill="#6b6b80" font-size="7" font-family="monospace">CHN</text>
-            <rect x="80" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="86" y="48" fill="#6b6b80" font-size="7" font-family="monospace">HYD</text>
-            <rect x="114" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="120" y="48" fill="#6b6b80" font-size="7" font-family="monospace">PUN</text>
-            <rect x="148" y="38" width="30" height="14" rx="7" fill="#1e1e2a" stroke="#ffffff15" stroke-width="1"/><text x="154" y="48" fill="#6b6b80" font-size="7" font-family="monospace">NCR</text>
-            <!-- bar chart -->
-            <rect x="12" y="60" width="180" height="128" rx="6" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
-            <text x="20" y="74" fill="#6b6b80" font-size="7" font-family="monospace">STOCK BY CATEGORY</text>
-            <rect x="22" y="160" width="20" height="18" fill="#ff5c35" rx="2" opacity=".85"/>
-            <rect x="48" y="148" width="20" height="30" fill="#ff8c42" rx="2" opacity=".85"/>
-            <rect x="74" y="138" width="20" height="40" fill="#50c878" rx="2" opacity=".85"/>
-            <rect x="100" y="152" width="20" height="26" fill="#4f9cf0" rx="2" opacity=".85"/>
-            <rect x="126" y="143" width="20" height="35" fill="#a78bfa" rx="2" opacity=".85"/>
-            <rect x="152" y="155" width="20" height="23" fill="#ff5c35" rx="2" opacity=".55"/>
-            <line x1="18" y1="178" x2="178" y2="178" stroke="#ffffff10" stroke-width="1"/>
-            <text x="24" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Paper</text>
-            <text x="48" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Kraft</text>
-            <text x="73" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Cover</text>
-            <text x="98" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Box</text>
-            <text x="124" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Bag</text>
-            <text x="151" y="186" fill="#6b6b80" font-size="6" font-family="monospace">Other</text>
-            <!-- table -->
-            <rect x="200" y="60" width="208" height="128" rx="6" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
-            <text x="208" y="74" fill="#6b6b80" font-size="7" font-family="monospace">VENDOR &amp; LEAD TIME</text>
-            <rect x="204" y="78" width="200" height="14" fill="#1e1e2a"/>
-            <text x="208" y="88" fill="#6b6b80" font-size="7" font-family="monospace">ITEM</text>
-            <text x="296" y="88" fill="#6b6b80" font-size="7" font-family="monospace">VENDOR</text>
-            <text x="362" y="88" fill="#6b6b80" font-size="7" font-family="monospace">ETA</text>
-            <text x="208" y="103" fill="#a0a0b8" font-size="7" font-family="monospace">Matte A4</text>
-            <text x="296" y="103" fill="#a0a0b8" font-size="7" font-family="monospace">PaperCo</text>
-            <text x="362" y="103" fill="#50c878" font-size="7" font-family="monospace">2d</text>
-            <line x1="204" y1="108" x2="404" y2="108" stroke="#ffffff08" stroke-width="1"/>
-            <text x="208" y="120" fill="#a0a0b8" font-size="7" font-family="monospace">Kraft S</text>
-            <text x="296" y="120" fill="#a0a0b8" font-size="7" font-family="monospace">BagMart</text>
-            <text x="362" y="120" fill="#ff8c42" font-size="7" font-family="monospace">5d</text>
-            <line x1="204" y1="125" x2="404" y2="125" stroke="#ffffff08" stroke-width="1"/>
-            <text x="208" y="137" fill="#a0a0b8" font-size="7" font-family="monospace">Cover 300g</text>
-            <text x="296" y="137" fill="#a0a0b8" font-size="7" font-family="monospace">SpecPrint</text>
-            <text x="362" y="137" fill="#ff5c35" font-size="7" font-family="monospace">8d</text>
-            <line x1="204" y1="142" x2="404" y2="142" stroke="#ffffff08" stroke-width="1"/>
-            <text x="208" y="154" fill="#a0a0b8" font-size="7" font-family="monospace">Bond 80g</text>
-            <text x="296" y="154" fill="#a0a0b8" font-size="7" font-family="monospace">PaperCo</text>
-            <text x="362" y="154" fill="#50c878" font-size="7" font-family="monospace">1d</text>
-            <line x1="204" y1="159" x2="404" y2="159" stroke="#ffffff08" stroke-width="1"/>
-            <text x="208" y="171" fill="#a0a0b8" font-size="7" font-family="monospace">Foil Gold</text>
-            <text x="296" y="171" fill="#a0a0b8" font-size="7" font-family="monospace">GoldFoil</text>
-            <text x="362" y="171" fill="#ff8c42" font-size="7" font-family="monospace">4d</text>
-          </svg>
-          <div class="thumb-badge">Dashboard</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Vanilla JS</span><span class="project-tag">Supabase</span><span class="project-tag">Chart.js</span><span class="project-tag">CSS Grid</span></div>
-          <div class="project-title">Printo Materials Operations Dashboard</div>
-          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Material data scattered across spreadsheets &mdash; no unified view across 5 cities.</div>
-          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Single-page Supabase-connected dashboard with live filters, 6-chart analytics, CSV export, and add-record modal.</div>
-          <div class="project-impact">&#127919; Full visibility across BLR, CHN, HYD, PUN, NCR &mdash; one URL, always live.</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-role">Fulfillment Analyst</div>
+          <div class="tl-co">Meesho · Bengaluru</div>
+          <div class="tl-date">May 2025 – Mar 2026</div>
+          <ul class="tl-li">
+            <li>SQL analysis across large-scale order lifecycle, delivery performance, and return rate datasets</li>
+            <li>Built automated KPI dashboards — ~40% reduction in stakeholder reporting time</li>
+            <li>Led third-party vendor risk management across fulfilment partners — coordinated 43-member team</li>
+            <li>A/B testing and statistical significance analysis on fulfilment process changes</li>
+            <li>Anomaly detection and bottleneck identification in operational pipelines</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Project 3: Launch Portal -->
-      <div class="project-card fade-up" style="transition-delay:.1s">
-        <div class="project-thumb">
-          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="420" height="200" fill="#111118"/>
-            <rect x="0" y="0" width="420" height="32" fill="#18181f"/>
-            <text x="16" y="21" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">PRODUCT LAUNCH PORTAL</text>
-            <rect x="344" y="7" width="64" height="16" rx="4" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
-            <text x="350" y="18" fill="#50c878" font-size="7.5" font-family="monospace">6 TEAMS LIVE</text>
-            <!-- state machine nodes -->
-            <!-- row 1: tasks 1-4 -->
-            <rect x="12" y="42" width="70" height="32" rx="6" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
-            <text x="24" y="54" fill="#50c878" font-size="7" font-family="monospace">&#10003; CATEGORY</text>
-            <text x="24" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Done</text>
-            <line x1="82" y1="58" x2="98" y2="58" stroke="#50c878" stroke-width="1.5" marker-end="url(#arr)"/>
-            <rect x="98" y="42" width="70" height="32" rx="6" fill="#50c87820" stroke="#50c87840" stroke-width="1"/>
-            <text x="104" y="54" fill="#50c878" font-size="7" font-family="monospace">&#10003; PROCURE</text>
-            <text x="110" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Done</text>
-            <line x1="168" y1="58" x2="184" y2="58" stroke="#50c878" stroke-width="1.5"/>
-            <rect x="184" y="42" width="70" height="32" rx="6" fill="#ff8c4220" stroke="#ff8c4240" stroke-width="1.5"/>
-            <text x="190" y="54" fill="#ff8c42" font-size="7" font-family="monospace">&#9654; PRODUC.</text>
-            <text x="196" y="66" fill="#ff8c42" font-size="6.5" font-family="monospace">In Progress</text>
-            <line x1="254" y1="58" x2="270" y2="58" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
-            <rect x="270" y="42" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
-            <text x="276" y="54" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; COMMERC.</text>
-            <text x="286" y="66" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
-            <!-- row 2 -->
-            <line x1="305" y1="74" x2="305" y2="86" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
-            <rect x="270" y="86" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
-            <text x="276" y="98" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; INVENTORY</text>
-            <text x="289" y="110" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
-            <line x1="270" y1="102" x2="254" y2="102" stroke="#ffffff15" stroke-width="1.5" stroke-dasharray="3,2"/>
-            <rect x="184" y="86" width="70" height="32" rx="6" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/>
-            <text x="198" y="98" fill="#6b6b80" font-size="7" font-family="monospace">&#9900; SKU</text>
-            <text x="196" y="110" fill="#6b6b80" font-size="6.5" font-family="monospace">Locked</text>
-            <!-- legend -->
-            <rect x="12" y="90" width="160" height="28" rx="5" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
-            <text x="20" y="103" fill="#50c878" font-size="7" font-family="monospace">&#9632; Done</text>
-            <text x="60" y="103" fill="#ff8c42" font-size="7" font-family="monospace">&#9632; Active</text>
-            <text x="108" y="103" fill="#6b6b80" font-size="7" font-family="monospace">&#9632; Locked</text>
-            <text x="20" y="113" fill="#6b6b80" font-size="6.5" font-family="monospace">Tasks auto-unlock when prereqs complete</text>
-            <!-- email notification bar -->
-            <rect x="12" y="130" width="396" height="58" rx="6" fill="#1a1a24" stroke="#4f9cf020" stroke-width="1"/>
-            <rect x="12" y="130" width="3" height="58" rx="2" fill="#4f9cf0"/>
-            <text x="22" y="147" fill="#4f9cf0" font-size="8" font-family="monospace">&#128231; AUTOMATED HANDOFF EMAIL SENT</text>
-            <text x="22" y="161" fill="#6b6b80" font-size="7.5" font-family="monospace">To: production@printo.in   From: portal@printo.in</text>
-            <text x="22" y="173" fill="#a0a0b8" font-size="7.5" font-family="monospace">Subject: [Launch #47] Procurement complete &#8594; Production task unlocked</text>
-            <text x="22" y="183" fill="#50c878" font-size="7" font-family="monospace">&#10003; Timestamp logged  &#183;  Audit trail updated  &#183;  Zero missed handoffs</text>
-          </svg>
-          <div class="thumb-badge">Full-Stack</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Node.js</span><span class="project-tag">Express</span><span class="project-tag">Nodemailer</span><span class="project-tag">Custom Auth</span></div>
-          <div class="project-title">Printo Product Launch Portal</div>
-          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Launches stalled constantly &mdash; coordination happened over chat with no accountability.</div>
-          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Role-based portal with 20-task state machine &mdash; tasks auto-unlock, emails trigger on every handoff.</div>
-          <div class="project-impact">&#127919; 6 teams coordinated in one place. Zero missed handoffs. Full launch audit trail.</div>
-        </div>
-      </div>
-
-      <!-- Project 4: Desktop Excel App -->
-      <div class="project-card fade-up" style="transition-delay:.15s">
-        <div class="project-thumb">
-          <svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="420" height="200" fill="#111118"/>
-            <!-- window chrome -->
-            <rect x="0" y="0" width="420" height="24" fill="#0d0d14"/>
-            <circle cx="14" cy="12" r="4" fill="#ff5f57"/><circle cx="28" cy="12" r="4" fill="#febc2e"/><circle cx="42" cy="12" r="4" fill="#28c840"/>
-            <text x="160" y="16" fill="#6b6b80" font-size="8" font-family="monospace">Printo Desktop Spreadsheet v1.0</text>
-            <!-- toolbar -->
-            <rect x="0" y="24" width="420" height="22" fill="#18181f" stroke="#ffffff08" stroke-width="0"/>
-            <rect x="6" y="29" width="28" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="10" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">File</text>
-            <rect x="38" y="29" width="28" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="41" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">Edit</text>
-            <rect x="70" y="29" width="40" height="12" rx="3" fill="#1e1e2a" stroke="#ffffff10" stroke-width="1"/><text x="73" y="38" fill="#a0a0b8" font-size="7" font-family="monospace">Export</text>
-            <rect x="340" y="29" width="32" height="12" rx="3" fill="#ff5c3520" stroke="#ff5c3540" stroke-width="1"/><text x="343" y="38" fill="#ff5c35" font-size="6.5" font-family="monospace">SYNC &#8635;</text>
-            <!-- spreadsheet grid -->
-            <!-- header row -->
-            <rect x="0" y="46" width="420" height="16" fill="#1e1e2a"/>
-            <line x1="40" y1="46" x2="40" y2="200" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="120" y1="46" x2="120" y2="200" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="200" y1="46" x2="200" y2="200" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="280" y1="46" x2="280" y2="200" stroke="#ffffff08" stroke-width="1"/>
-            <line x1="360" y1="46" x2="360" y2="200" stroke="#ffffff08" stroke-width="1"/>
-            <text x="48" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">SKU ID</text>
-            <text x="128" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Category</text>
-            <text x="208" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Qty</text>
-            <text x="288" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Dept</text>
-            <text x="368" y="57" fill="#6b6b80" font-size="7.5" font-family="monospace">Modified</text>
-            <!-- rows -->
-            <rect x="0" y="62" width="420" height="16" fill="#111118"/>
-            <text x="4" y="73" fill="#6b6b80" font-size="7" font-family="monospace">1</text>
-            <text x="48" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-001</text>
-            <text x="128" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">Paper</text>
-            <text x="208" y="73" fill="#a0a0b8" font-size="7.5" font-family="monospace">5000</text>
-            <text x="288" y="73" fill="#4f9cf0" font-size="7.5" font-family="monospace">Inventory</text>
-            <text x="368" y="73" fill="#6b6b80" font-size="7" font-family="monospace">12:34</text>
-            <rect x="0" y="78" width="420" height="16" fill="#18181f"/>
-            <text x="4" y="89" fill="#6b6b80" font-size="7" font-family="monospace">2</text>
-            <text x="48" y="89" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-002</text>
-            <text x="128" y="89" fill="#a0a0b8" font-size="7.5" font-family="monospace">Bag</text>
-            <rect x="200" y="80" width="76" height="14" rx="2" fill="#ff5c3515" stroke="#ff5c3540" stroke-width="1"/>
-            <text x="208" y="89" fill="#ff8c42" font-size="7.5" font-family="monospace">2300 &#9998;</text>
-            <text x="288" y="89" fill="#ff8c42" font-size="7.5" font-family="monospace">Production</text>
-            <text x="368" y="89" fill="#ff5c35" font-size="7" font-family="monospace">NOW</text>
-            <rect x="0" y="94" width="420" height="16" fill="#111118"/>
-            <text x="4" y="105" fill="#6b6b80" font-size="7" font-family="monospace">3</text>
-            <text x="48" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-003</text>
-            <text x="128" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">Cover</text>
-            <text x="208" y="105" fill="#a0a0b8" font-size="7.5" font-family="monospace">820</text>
-            <text x="288" y="105" fill="#50c878" font-size="7.5" font-family="monospace">Category</text>
-            <text x="368" y="105" fill="#6b6b80" font-size="7" font-family="monospace">11:02</text>
-            <rect x="0" y="110" width="420" height="16" fill="#18181f"/>
-            <text x="4" y="121" fill="#6b6b80" font-size="7" font-family="monospace">4</text>
-            <text x="48" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">PRN-004</text>
-            <text x="128" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">Box</text>
-            <text x="208" y="121" fill="#a0a0b8" font-size="7.5" font-family="monospace">1150</text>
-            <text x="288" y="121" fill="#a78bfa" font-size="7.5" font-family="monospace">SKU</text>
-            <text x="368" y="121" fill="#6b6b80" font-size="7" font-family="monospace">10:58</text>
-            <!-- audit log bar -->
-            <rect x="0" y="136" width="420" height="16" fill="#0d0d14" stroke="#ffffff08" stroke-width="1"/>
-            <text x="8" y="147" fill="#6b6b80" font-size="7" font-family="monospace">AUDIT LOG</text>
-            <text x="70" y="147" fill="#50c878" font-size="7" font-family="monospace">&#8226; PRN-002 qty edited by production@printo.in at 12:36:02  &#8594; pushed to DB + Slack</text>
-            <!-- status bar -->
-            <rect x="0" y="152" width="420" height="48" rx="0" fill="#0d0d14"/>
-            <rect x="8" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#50c87830" stroke-width="1"/>
-            <text x="14" y="169" fill="#50c878" font-size="7" font-family="monospace">&#9679; DB SYNCED</text>
-            <text x="14" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Supabase live</text>
-            <rect x="112" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#4f9cf030" stroke-width="1"/>
-            <text x="118" y="169" fill="#4f9cf0" font-size="7" font-family="monospace">&#9679; SLACK HOOK</text>
-            <text x="118" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Connected</text>
-            <rect x="216" y="158" width="95" height="32" rx="5" fill="#18181f" stroke="#a78bfa30" stroke-width="1"/>
-            <text x="222" y="169" fill="#a78bfa" font-size="7" font-family="monospace">&#9679; 6 DEPTS</text>
-            <text x="222" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">Access active</text>
-            <rect x="320" y="158" width="90" height="32" rx="5" fill="#18181f" stroke="#ff8c4230" stroke-width="1"/>
-            <text x="326" y="169" fill="#ff8c42" font-size="7" font-family="monospace">&#9679; AUDIT LOG</text>
-            <text x="326" y="180" fill="#6b6b80" font-size="6.5" font-family="monospace">All edits saved</text>
-          </svg>
-          <div class="thumb-badge">Desktop App</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Electron.js</span><span class="project-tag">Node.js</span><span class="project-tag">SQLite</span><span class="project-tag">WebSocket</span></div>
-          <div class="project-title">In-House Excel Tool (Desktop Spreadsheet)</div>
-          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Teams used shared sheets with no access control, no audit trail, no live sync.</div>
-          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>Custom Electron app &mdash; full editable grid, department-wise access, local SQLite, REST/WebSocket integration manager.</div>
-          <div class="project-impact">&#127919; Native Win/Mac/Linux installer. Every cell edit pushes live to DB, Slack, CRM &mdash; zero copy-paste.</div>
-        </div>
-      </div>
-
-      <!-- Project 5: AI Migration — full width -->
-      <div class="project-card fade-up" style="grid-column:1/-1;transition-delay:.2s">
-        <div class="project-thumb" style="height:180px">
-          <svg viewBox="0 0 840 180" xmlns="http://www.w3.org/2000/svg">
-            <rect width="840" height="180" fill="#111118"/>
-            <rect x="0" y="0" width="840" height="28" fill="#18181f"/>
-            <text x="16" y="19" fill="#a0a0b8" font-size="9" font-family="monospace" font-weight="bold">GOOGLE SHEETS &#8594; AI + RULE-BASED SYSTEM  &#8212;  MIGRATION COMPLETE</text>
-            <rect x="726" y="6" width="100" height="16" rx="4" fill="#50c87818" stroke="#50c87840" stroke-width="1"/>
-            <text x="733" y="17" fill="#50c878" font-size="7.5" font-family="monospace">~60% EFFORT SAVED</text>
-            <!-- BEFORE box -->
-            <rect x="12" y="38" width="200" height="130" rx="8" fill="#1e1e2a" stroke="#ff5c3530" stroke-width="1"/>
-            <rect x="12" y="38" width="200" height="22" rx="8" fill="#ff5c3518"/>
-            <text x="22" y="52" fill="#ff5c35" font-size="8" font-family="monospace" font-weight="bold">BEFORE: Google Sheets</text>
-            <text x="20" y="72" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Fragile formulas</text>
-            <text x="20" y="86" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Manual daily updates</text>
-            <text x="20" y="100" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Broken links</text>
-            <text x="20" y="114" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; No intelligence layer</text>
-            <text x="20" y="128" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Reactive &amp; slow</text>
-            <text x="20" y="142" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; Hours of analyst time</text>
-            <text x="20" y="156" fill="#6b6b80" font-size="7.5" font-family="monospace">&#10007; No version control</text>
-            <!-- arrow -->
-            <text x="228" y="126" fill="#ff5c35" font-size="24" font-family="monospace">&#8594;</text>
-            <!-- MIDDLE: pipeline -->
-            <rect x="260" y="38" width="320" height="130" rx="8" fill="#18181f" stroke="#ffffff08" stroke-width="1"/>
-            <text x="270" y="52" fill="#a0a0b8" font-size="8" font-family="monospace" font-weight="bold">MIGRATION PIPELINE</text>
-            <!-- pipeline steps -->
-            <rect x="270" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#4f9cf040" stroke-width="1"/>
-            <text x="278" y="70" fill="#4f9cf0" font-size="7" font-family="monospace">Raw Sheets</text>
-            <text x="278" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">Data Ingestion</text>
-            <text x="362" y="74" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
-            <rect x="370" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#a78bfa40" stroke-width="1"/>
-            <text x="378" y="70" fill="#a78bfa" font-size="7" font-family="monospace">Python ETL</text>
-            <text x="378" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">Transform</text>
-            <text x="462" y="74" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
-            <rect x="470" y="58" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#ff8c4240" stroke-width="1"/>
-            <text x="478" y="70" fill="#ff8c42" font-size="7" font-family="monospace">Supabase DB</text>
-            <text x="478" y="80" fill="#6b6b80" font-size="6.5" font-family="monospace">PostgreSQL</text>
-            <!-- row 2 -->
-            <rect x="270" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#50c87840" stroke-width="1"/>
-            <text x="278" y="108" fill="#50c878" font-size="7" font-family="monospace">Rule Engine</text>
-            <text x="278" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Business Logic</text>
-            <text x="362" y="112" fill="#6b6b80" font-size="9" font-family="monospace">+</text>
-            <rect x="370" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#ff5c3540" stroke-width="1"/>
-            <text x="378" y="108" fill="#ff5c35" font-size="7" font-family="monospace">ML Models</text>
-            <text x="378" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Anomaly + Forecast</text>
-            <text x="462" y="112" fill="#6b6b80" font-size="9" font-family="monospace">&#8594;</text>
-            <rect x="470" y="96" width="88" height="28" rx="5" fill="#1e1e2a" stroke="#50c87840" stroke-width="1"/>
-            <text x="478" y="108" fill="#50c878" font-size="7" font-family="monospace">Live Reports</text>
-            <text x="478" y="118" fill="#6b6b80" font-size="6.5" font-family="monospace">Auto + Proactive</text>
-            <text x="270" y="145" fill="#6b6b80" font-size="7" font-family="monospace">scikit-learn &middot; XGBoost &middot; Python &middot; Node.js &middot; Supabase &middot; Custom UI</text>
-            <!-- arrow -->
-            <text x="594" y="126" fill="#50c878" font-size="24" font-family="monospace">&#8594;</text>
-            <!-- AFTER box -->
-            <rect x="628" y="38" width="200" height="130" rx="8" fill="#1e1e2a" stroke="#50c87830" stroke-width="1"/>
-            <rect x="628" y="38" width="200" height="22" rx="8" fill="#50c87818"/>
-            <text x="638" y="52" fill="#50c878" font-size="8" font-family="monospace" font-weight="bold">AFTER: In-House System</text>
-            <text x="636" y="72" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Scalable DB backend</text>
-            <text x="636" y="86" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Automated daily reports</text>
-            <text x="636" y="100" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; ML anomaly detection</text>
-            <text x="636" y="114" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Proactive insights</text>
-            <text x="636" y="128" fill="#a0a0b8" font-size="7.5" font-family="monospace">&#10003; Version controlled</text>
-            <text x="636" y="142" fill="#ff5c35" font-size="7.5" font-family="monospace" font-weight="bold">~60% less manual effort</text>
-            <text x="636" y="156" fill="#50c878" font-size="7.5" font-family="monospace">Teams get PROACTIVE alerts</text>
-          </svg>
-          <div class="thumb-badge">Migration &middot; AI + Rules</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Supabase</span><span class="project-tag">ML Models</span><span class="project-tag">Node.js</span><span class="project-tag">Custom Web UI</span></div>
-          <div class="project-title">Google Sheets &rarr; AI + Rule-Based In-House System</div>
-          <div class="project-problem"><span class="label">&#10060; PROBLEM</span>Critical reporting ran on fragile Google Sheets &mdash; broken formulas, manual daily updates, no intelligence layer.</div>
-          <div class="project-solution"><span class="label">&#9989; SOLUTION</span>End-to-end migration combining deterministic business rules with ML for anomaly detection and trend prediction &mdash; backed by a proper database, live dashboard, and automated daily reports.</div>
-          <div class="project-impact">&#127919; Manual reporting effort cut by ~60%. Reports are now scalable, reliable, and version-controlled. Teams get proactive insights instead of static numbers.</div>
+      <div class="tl-item">
+        <div class="tl-dot sky"></div>
+        <div class="tl-card">
+          <div class="tl-role">Software Engineer — Data & Analytics</div>
+          <div class="tl-co sky">Skylex Technology · Pune</div>
+          <div class="tl-date">Aug 2024 – Nov 2024</div>
+          <ul class="tl-li">
+            <li>Analysed campaign performance data (CTR, conversion rates) — identified underperforming segments</li>
+            <li>Built reporting systems and budget utilisation trackers for campaign optimisation</li>
+          </ul>
         </div>
       </div>
 
@@ -618,117 +780,193 @@
   </div>
 </section>
 
-<section id="impact">
-  <div class="container">
-    <div class="sec-head fade-up">
-      <div class="section-label">By the Numbers</div>
-      <h2>The Impact Across All 5 Tools</h2>
-      <p>Every metric below reflects production systems &mdash; not demos.</p>
+<!-- ── EDUCATION ── -->
+<section id="education" class="sec">
+  <div class="sec-mono">Education</div>
+  <h2 class="sec-h2" style="font-size:2.2rem">Theory meets <em>practice.</em></h2>
+  <div class="edu-grid fade">
+    <div class="edu-card main">
+      <div style="font-family:var(--ff-m);font-size:.62rem;color:var(--blue);margin-bottom:10px">POSTGRADUATE</div>
+      <div class="edu-degree">Master of Science — Artificial Intelligence & Machine Learning</div>
+      <div class="edu-inst">MIT-ADT University, Pune, Maharashtra</div>
+      <div class="edu-meta">2023 – 2025 &nbsp;·&nbsp; Completed</div>
     </div>
-    <div class="impact-grid fade-up">
-      <div class="impact-card"><div class="impact-num">1L+</div><div class="impact-desc">PO records monitored daily</div></div>
-      <div class="impact-card"><div class="impact-num">6</div><div class="impact-desc">Teams coordinated in one portal</div></div>
-      <div class="impact-card"><div class="impact-num">20</div><div class="impact-desc">Launch tasks automated</div></div>
-      <div class="impact-card"><div class="impact-num">~60%</div><div class="impact-desc">Manual reporting effort reduced</div></div>
-      <div class="impact-card"><div class="impact-num">0</div><div class="impact-desc">Manual daily stock checks needed</div></div>
-      <div class="impact-card"><div class="impact-num">5</div><div class="impact-desc">Production tools built from scratch</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="tracking">
-  <div class="container">
-    <div class="sec-head fade-up">
-      <div class="section-label">New Proposal</div>
-      <h2>Live Tracking + ETA Prediction Model</h2>
-      <p>E-commerce operations waste hours on "where is my order?" &mdash; I'll eliminate that with a proactive, ML-powered shipment intelligence system.</p>
-    </div>
-    <div class="eta-grid fade-up">
-      <div>
-        <div class="section-label">The Problem Today</div>
-        <ul class="eta-problem-list">
-          <li><span>&rarr;</span> Customers call support asking "where is my order?"</li>
-          <li><span>&rarr;</span> Ops team manually checks each courier portal separately</li>
-          <li><span>&rarr;</span> No single view of all shipments across courier partners</li>
-          <li><span>&rarr;</span> Delivery delays only caught after customer complaint</li>
-          <li><span>&rarr;</span> ETA at checkout is static &mdash; never updated live</li>
-        </ul>
-        <div class="section-label">What I'll Build</div>
-        <ul class="eta-solution-list">
-          <li><span>&#10003;</span> Live tracking dashboard &mdash; every order, every courier, one screen</li>
-          <li><span>&#10003;</span> Automated courier API polling (Delhivery / Shiprocket / Ecom Express)</li>
-          <li><span>&#10003;</span> ML-based ETA model trained on your historical delivery data</li>
-          <li><span>&#10003;</span> Proactive delay alerts to ops team T-12hrs before breach</li>
-          <li><span>&#10003;</span> Customer-facing dynamic ETA widget embeddable on your site</li>
-        </ul>
-        <div class="eta-flow">
-          <div class="eta-step-box"><div class="step-icon">&#128722;</div><div>Order Placed</div><div class="step-label">AWB captured</div></div>
-          <div class="eta-arrow">&rarr;</div>
-          <div class="eta-step-box"><div class="step-icon">&#8635;</div><div>Courier Poll</div><div class="step-label">Every 15 mins</div></div>
-          <div class="eta-arrow">&rarr;</div>
-          <div class="eta-step-box"><div class="step-icon">&#129504;</div><div>ETA Engine</div><div class="step-label">ML prediction</div></div>
-          <div class="eta-arrow">&rarr;</div>
-          <div class="eta-step-box"><div class="step-icon">&#128241;</div><div>Push Update</div><div class="step-label">Customer + ops</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="section-label">Tech Stack</div>
-        <div class="stack-cards">
-          <div class="stack-card"><div class="stack-card-label">Data Ingestion</div><div class="stack-card-tech">Python + Courier APIs</div><div class="stack-card-purpose">Fetch live shipment status</div></div>
-          <div class="stack-card"><div class="stack-card-label">Data Store</div><div class="stack-card-tech">PostgreSQL via Supabase</div><div class="stack-card-purpose">Orders, events, predictions</div></div>
-          <div class="stack-card"><div class="stack-card-label">ETA Model</div><div class="stack-card-tech">scikit-learn &middot; XGBoost</div><div class="stack-card-purpose">Predict delivery window</div></div>
-          <div class="stack-card"><div class="stack-card-label">Live Dashboard</div><div class="stack-card-tech">React / Vanilla JS</div><div class="stack-card-purpose">Real-time ops view</div></div>
-          <div class="stack-card"><div class="stack-card-label">Notifications</div><div class="stack-card-tech">Gmail SMTP + Twilio</div><div class="stack-card-purpose">Proactive delay alerts</div></div>
-          <div class="stack-card"><div class="stack-card-label">Hosting</div><div class="stack-card-tech">Node.js &middot; Render</div><div class="stack-card-purpose">Free tier &rarr; scales up</div></div>
-        </div>
-        <div style="margin-top:28px;text-align:center"><a href="#contact" class="btn-primary">Let's discuss this project &rarr;</a></div>
-      </div>
+    <div class="edu-card">
+      <div style="font-family:var(--ff-m);font-size:.62rem;color:var(--text3);margin-bottom:10px">UNDERGRADUATE</div>
+      <div class="edu-degree">Bachelor of Science — Computer Science</div>
+      <div class="edu-inst">SMBST College, Sangamner, Ahmednagar, Maharashtra</div>
+      <div class="edu-meta">2020 – 2023 &nbsp;·&nbsp; 7.76 / 10.0</div>
     </div>
   </div>
 </section>
 
-<section id="why">
-  <div class="container">
-    <div class="sec-head fade-up">
-      <div class="section-label">Why Hire Me</div>
-      <h2>What You're Actually Getting</h2>
-      <p>Not just an analyst &mdash; an operations professional who understands the problem before writing a single line of code.</p>
+<!-- ── SKILLS ── -->
+<section id="skills" class="sec">
+  <div class="sec-mono">Skills & tools</div>
+  <h2 class="sec-h2" style="font-size:2.2rem">What I actually <em>use.</em></h2>
+  <div class="skills-wrap">
+    <div class="sk-card fade">
+      <div class="sk-label">Data & Analysis</div>
+      <div class="sk-item">SQL — Advanced (joins, subqueries, aggregations)</div>
+      <div class="sk-item">Excel / Google Sheets — Pivot Tables, Advanced Formulas</div>
+      <div class="sk-item">Power BI · Tableau — dashboarding & reporting</div>
+      <div class="sk-item">Anomaly detection · root-cause analysis</div>
+      <div class="sk-item">A/B testing · statistical significance</div>
     </div>
-    <div class="why-grid fade-up">
-      <div class="why-card"><div class="why-icon">&#9889;</div><h3>I Ship in Production</h3><p>5 tools already live and used by real teams every day. Not side projects &mdash; actual deployments that replaced manual processes entirely at Printo.</p></div>
-      <div class="why-card"><div class="why-icon">&#128260;</div><h3>End-to-End Builder</h3><p>I handle everything: problem scoping &rarr; data analysis &rarr; ML modelling &rarr; deployment &rarr; maintenance. No handoffs, no dropped context.</p></div>
-      <div class="why-card"><div class="why-icon">&#128230;</div><h3>Operations Domain Depth</h3><p>Hands-on at Printo (supply chain, inventory, product launch) and Meesho (fulfillment, vendor risk, SLA). I speak your team's language.</p></div>
-      <div class="why-card"><div class="why-icon">&#129504;</div><h3>AI + Automation Thinking</h3><p>I combine ML intelligence (predictive models, forecasting, anomaly detection) with process automation to build systems that are proactive, not reactive.</p></div>
+    <div class="sk-card fade" style="transition-delay:.06s">
+      <div class="sk-label">Programming & ML</div>
+      <div class="sk-item">Python — Pandas, NumPy, scikit-learn</div>
+      <div class="sk-item">Random Forest · XGBoost · Regression</div>
+      <div class="sk-item">Time-series forecasting · demand planning</div>
+      <div class="sk-item">Node.js · Express · FastAPI</div>
+      <div class="sk-item">Supabase · PostgreSQL · Google Sheets API</div>
     </div>
-    <div class="quote-band fade-up">"I don't just analyze data &mdash; I find the <em>manual process</em> that's costing your team 2 hours a day and make it take <em>2 seconds.</em>"</div>
+    <div class="sk-card fade" style="transition-delay:.12s">
+      <div class="sk-label">Automation & Ops</div>
+      <div class="sk-item">Workflow automation — Python, Node.js, webhooks</div>
+      <div class="sk-item">Gmail SMTP · Google Chat · Nodemailer</div>
+      <div class="sk-item">Twilio · WhatsApp Business API</div>
+      <div class="sk-item">Role-based systems · state machines</div>
+      <div class="sk-item">Notion · Slack · cross-team coordination</div>
+    </div>
   </div>
 </section>
 
+<!-- ── WHY ── -->
+<section id="why" class="sec">
+  <div class="sec-mono">Why hire me</div>
+  <h2 class="sec-h2" style="font-size:2.2rem">What you're <em>actually getting.</em></h2>
+
+  <div class="why-strip fade">
+    <div class="why-cell">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">I ship in production</div>
+      <p class="why-desc">3 tools live at Printo, used daily by real teams. Not demos — actual systems that replaced manual processes and kept running without me.</p>
+    </div>
+    <div class="why-cell">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Problem first, code second</div>
+      <p class="why-desc">I understand the ops pain before I write anything. From scoping to deployment to maintenance — I own the full solution, not just the code.</p>
+    </div>
+    <div class="why-cell">
+      <div class="why-icon">📦</div>
+      <div class="why-title">Deep ops domain knowledge</div>
+      <p class="why-desc">Supply chain, inventory, procurement, last-mile, vendor risk — I've worked inside these teams at Printo and Meesho. I speak your language.</p>
+    </div>
+    <div class="why-cell">
+      <div class="why-icon">🧠</div>
+      <div class="why-title">ML + automation combined</div>
+      <p class="why-desc">MSc AI/ML + real deployment experience. I can build the predictive layer and the automation layer — not just one or the other.</p>
+    </div>
+  </div>
+
+  <div class="big-quote fade">
+    "Your ops team shouldn't be manually checking things<br/>
+    that <em>follow a pattern.</em> <span>That's exactly what I fix.</span>"
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-card fade-up">
-      <div class="section-label" style="text-align:center">Let's Talk</div>
-      <h2>Let's Build Something Together</h2>
-      <p>I'm ready to bring the same data-first, automation thinking to your team &mdash; and ship real, production impact fast.</p>
-      <div class="contact-grid">
-        <a href="mailto:mohanwakchaure1@gmail.com" class="contact-item"><span class="ci-icon">&#128231;</span><div><div class="ci-label">Email</div><div class="ci-val">mohanwakchaure1@gmail.com</div></div></a>
-        <a href="tel:+918805548797" class="contact-item"><span class="ci-icon">&#128241;</span><div><div class="ci-label">Phone</div><div class="ci-val">+91 88055 48797</div></div></a>
-        <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" class="contact-item"><span class="ci-icon">&#128188;</span><div><div class="ci-label">LinkedIn</div><div class="ci-val">mohan-wakchaure-994b1a224</div></div></a>
-        <a href="https://github.com/mohanwakchaure" target="_blank" class="contact-item"><span class="ci-icon">&#128029;</span><div><div class="ci-label">GitHub</div><div class="ci-val">github.com/mohanwakchaure</div></div></a>
-        <div class="contact-item" style="grid-column:1/-1"><span class="ci-icon">&#128205;</span><div><div class="ci-label">Location</div><div class="ci-val">Bengaluru, India &middot; Open to Opportunities</div></div></div>
+  <div class="contact-inner">
+    <div class="sec-mono">Let's talk</div>
+    <h2 class="sec-h2">Ready to automate<br/><em>your operations?</em></h2>
+    <p style="color:var(--text2);font-size:.95rem;font-weight:300;max-width:500px;margin-top:12px">
+      I'm actively looking for my next role in automation, data, or ops engineering. If you have a team doing things manually that a system could handle — I want to hear about it.
+    </p>
+
+    <div class="avail">
+      <span class="live-dot"></span>
+      Available now · Bengaluru · Open to remote & relocation
+    </div>
+
+    <div class="contact-grid">
+      <a href="mailto:mohanwakchaure1@gmail.com" class="c-item">
+        <span class="c-icon">📧</span>
+        <div><div class="c-label">Email</div><div class="c-val">mohanwakchaure1@gmail.com</div></div>
+      </a>
+      <a href="tel:+918805548797" class="c-item">
+        <span class="c-icon">📱</span>
+        <div><div class="c-label">Phone</div><div class="c-val">+91 8805548797</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/mohan-wakchaure-994b1a224" target="_blank" class="c-item">
+        <span class="c-icon">💼</span>
+        <div><div class="c-label">LinkedIn</div><div class="c-val">mohan-wakchaure-994b1a224</div></div>
+      </a>
+      <a href="https://github.com/mohanwakchaure" target="_blank" class="c-item">
+        <span class="c-icon">🐙</span>
+        <div><div class="c-label">GitHub</div><div class="c-val">github.com/mohanwakchaure</div></div>
+      </a>
+      <div class="c-item full" style="cursor:default">
+        <span class="c-icon">📍</span>
+        <div><div class="c-label">Location</div><div class="c-val">Bengaluru, India · Open to opportunities across India</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>Built from scratch by <a href="#hero">Mohan Wakchaure</a> &mdash; the same way I build every tool: with care, precision, and zero manual work.</footer>
+<footer>
+  <span>© 2026 Mohan Wakchaure · <a href="mailto:mohanwakchaure1@gmail.com">mohanwakchaure1@gmail.com</a></span>
+  <span>Built the same way I build every system — with care and no manual steps.</span>
+</footer>
 
 <script>
-  const obs = new IntersectionObserver(
-    entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }),
-    {threshold:0.12}
-  );
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+/* Ticker */
+const items = [
+  "1,00,000+ rows scanned nightly","0 missed stockouts at Printo","3 production systems live","6 teams automated","40% reporting time saved at Meesho","43-member team led — vendor risk project","20 launch tasks automated","5 cities on one dashboard","MSc AI/ML — MIT-ADT University","Open to new roles · Bengaluru"
+];
+const track = document.getElementById('ticker');
+const content = items.map(t=>`<span class="ticker-item">${t}</span><span class="ticker-dot"></span>`).join('');
+track.innerHTML = content + content;
+
+/* Counter animation */
+function animateNum(el){
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix||'';
+  let start = null;
+  const dur = 1600;
+  const step = ts => {
+    if(!start) start = ts;
+    const p = Math.min((ts-start)/dur,1);
+    const e = 1-Math.pow(1-p,3);
+    el.textContent = Math.floor(e*target)+suffix;
+    if(p<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const numObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateNum(e.target);
+      numObs.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-target]').forEach(el=>numObs.observe(el));
+
+/* Fade in */
+const fadeObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>fadeObs.observe(el));
+
+/* Project expand/collapse */
+function toggleProject(row){
+  const isOpen = row.classList.contains('open');
+  document.querySelectorAll('.proj-row.open').forEach(r=>{
+    r.classList.remove('open');
+  });
+  if(!isOpen) row.classList.add('open');
+}
+
+/* Nav active */
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{ if(scrollY>=s.offsetTop-140) cur=s.id; });
+  links.forEach(a=>{ a.style.color=a.getAttribute('href')==='#'+cur?'var(--gold)':''; });
+},{passive:true});
 </script>
 </body>
 </html>
