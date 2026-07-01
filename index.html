@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mohan Wakchaure — Data & Automation Engineer. 6 live systems. 2+ years. Pune.">
+<meta name="description" content="Mohan Wakchaure — Data & Automation Engineer. 5 live systems, 2 on the roadmap. 2+ years. Pune.">
 <title>Mohan Wakchaure — Automation & Data Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,14 +269,36 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-tag">Selected work</div>
-  <h2 class="section-title">6 systems.<br>All in production.</h2>
-  <p class="section-lead">Not tutorials. Not demos. Every project below replaced a real manual process at a real company and is still running.</p>
+  <h2 class="section-title">7 systems.<br>5 live, 2 on the roadmap.</h2>
+  <p class="section-lead">Not tutorials. Not demos. Five are running in production at Printo and Meesho today. Two more are fully designed and in my build queue.</p>
 
   <div class="projects-grid reveal">
 
     <div class="project-card">
       <div class="project-header">
         <span class="project-num">01</span>
+        <span class="project-status live">● Live · Printo</span>
+      </div>
+      <h3 class="project-title">LLM Invoice &amp; PO Extraction Tool</h3>
+      <p class="project-desc">Streamlit tool for the Finance/AP team that reads incoming invoice PDFs — digital via pdfplumber, scanned via pytesseract OCR — and uses an LLM (llama-3.1-8b-instant, OpenAI-compatible API) to extract vendor, invoice number, line items, amounts, and PO references into structured JSON. A validation layer auto-matches each invoice against its delivery challan and flags mismatches. Exports to Excel via openpyxl.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">LLM (llama-3.1)</span>
+        <span class="tag">pdfplumber</span>
+        <span class="tag">pytesseract OCR</span>
+        <span class="tag">openpyxl</span>
+      </div>
+      <div class="project-metrics">
+        <div class="metric"><div class="metric-val">~45m/day</div><div class="metric-label">Manual entry removed</div></div>
+        <div class="metric"><div class="metric-val">0</div><div class="metric-label">Manual entry on clean PDFs</div></div>
+        <div class="metric"><div class="metric-val">1-step</div><div class="metric-label">Invoice–PO–challan match</div></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">02</span>
         <span class="project-status live">● Live · Printo</span>
       </div>
       <h3 class="project-title">Low-Stock Alert Automation</h3>
@@ -298,7 +320,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
 
     <div class="project-card">
       <div class="project-header">
-        <span class="project-num">02</span>
+        <span class="project-num">03</span>
         <span class="project-status live">● Live · Printo</span>
       </div>
       <h3 class="project-title">Product Launch Portal</h3>
@@ -319,7 +341,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
 
     <div class="project-card">
       <div class="project-header">
-        <span class="project-num">03</span>
+        <span class="project-num">04</span>
         <span class="project-status live">● Live · Printo</span>
       </div>
       <h3 class="project-title">Materials Operations Dashboard</h3>
@@ -335,26 +357,6 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
         <div class="metric"><div class="metric-val">5</div><div class="metric-label">Cities on one screen</div></div>
         <div class="metric"><div class="metric-val">6</div><div class="metric-label">Live analytics charts</div></div>
         <div class="metric"><div class="metric-val">0</div><div class="metric-label">Backend servers needed</div></div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-num">04</span>
-        <span class="project-status live">● Live · Printo</span>
-      </div>
-      <h3 class="project-title">ML Logistics Optimization Model</h3>
-      <p class="project-desc">ML + heuristic route optimization model combining distance-based optimization with historical SLA data. Full pipeline: data preprocessing → feature engineering → route selection → real-time decision support API. Used by dispatch teams daily.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">NumPy</span>
-        <span class="tag">FastAPI</span>
-      </div>
-      <div class="project-metrics">
-        <div class="metric"><div class="metric-val">10–15%</div><div class="metric-label">Delivery time reduction</div></div>
-        <div class="metric"><div class="metric-val">↑ SLA</div><div class="metric-label">Adherence improved</div></div>
       </div>
     </div>
 
@@ -381,10 +383,30 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
     <div class="project-card">
       <div class="project-header">
         <span class="project-num">06</span>
-        <span class="project-status progress">◎ In progress</span>
+        <span class="project-status progress">◎ Planned · Printo</span>
+      </div>
+      <h3 class="project-title">ML Logistics Optimization Model</h3>
+      <p class="project-desc">Planned — architecture defined, in my build queue. An ML + heuristic route-optimization model combining distance-based optimization with historical SLA data. Designed pipeline: data preprocessing → feature engineering → route selection → real-time decision-support API. Not yet deployed.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">FastAPI</span>
+      </div>
+      <div class="project-metrics">
+        <div class="metric"><div class="metric-val">Design</div><div class="metric-label">Architecture defined</div></div>
+        <div class="metric"><div class="metric-val">In queue</div><div class="metric-label">Build status</div></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">07</span>
+        <span class="project-status progress">◎ Planned · Printo</span>
       </div>
       <h3 class="project-title">Forge — AI Procurement Command Center</h3>
-      <p class="project-desc">AI-powered PO system with P0–P3 priority routing. P0 (critical) triggers an automated phone call via Twilio. P1 sends WhatsApp approval. P2 routes by email. Forge Copilot AI compares vendor quotes vs historical data and suggests counter-offers. ₹3.8L saved across 14 negotiations in early testing.</p>
+      <p class="project-desc">Planned — specced in a PRD, in my build queue. An AI-assisted PO system with P0–P3 priority routing: P0 (critical) triggers an automated call via Twilio, P1 sends WhatsApp approval, P2 routes by email. A Copilot layer would compare vendor quotes against historical data and suggest counter-offers. Not yet built.</p>
       <div class="project-tags">
         <span class="tag">FastAPI</span>
         <span class="tag">Twilio</span>
@@ -394,8 +416,8 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
         <span class="tag">Node.js</span>
       </div>
       <div class="project-metrics">
-        <div class="metric"><div class="metric-val">₹3.8L</div><div class="metric-label">Saved in early testing</div></div>
-        <div class="metric"><div class="metric-val">4</div><div class="metric-label">Approval channels</div></div>
+        <div class="metric"><div class="metric-val">PRD</div><div class="metric-label">Specced &amp; queued</div></div>
+        <div class="metric"><div class="metric-val">4</div><div class="metric-label">Planned approval channels</div></div>
       </div>
     </div>
 
@@ -440,11 +462,11 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
       <div class="tl-role">Automation &amp; Data Analyst (AI &amp; Automation)</div>
       <div class="tl-company">Printo · Bangalore</div>
       <ul class="tl-points">
-        <li>Sole automation POC for 12–13 teams — shipped 6 live products, each used daily</li>
-        <li>ML logistics route optimizer — 10–15% delivery time reduction</li>
-        <li>Nightly ETL pipeline scanning 100K+ SKU rows — zero missed stockouts</li>
-        <li>Migrated Google Sheets to AI + rule-based reporting — 60% manual effort cut</li>
-        <li>Time-series forecasting improved inventory planning accuracy by 20%</li>
+        <li>Sole automation POC for 12–13 teams — shipped multiple live tools, each used daily</li>
+        <li>LLM invoice &amp; PO extraction tool (Streamlit, pdfplumber, OCR) — cut ~45 min/day of manual entry</li>
+        <li>Nightly ETL pipeline scanning 100K+ SKU rows — zero missed stockouts since go-live</li>
+        <li>Selenium PO validator with priority-status hierarchy — auto-flags critical/excess vs reorder</li>
+        <li>Migrated Google Sheets to AI + rule-based reporting — ~60% manual effort cut</li>
       </ul>
     </div>
 
@@ -516,7 +538,7 @@ footer{padding:2rem 3rem;border-top:1px solid var(--line);display:flex;justify-c
       <div class="skill-list">
         <div class="skill-item"><span class="skill-name">SQL (Advanced)</span><div class="skill-bar"><div class="skill-fill teal" style="width:88%"></div></div></div>
         <div class="skill-item"><span class="skill-name">PostgreSQL / Supabase</span><div class="skill-bar"><div class="skill-fill teal" style="width:80%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Power BI / Tableau</span><div class="skill-bar"><div class="skill-fill teal" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Power BI</span><div class="skill-bar"><div class="skill-fill teal" style="width:78%"></div></div></div>
         <div class="skill-item"><span class="skill-name">Excel (Advanced)</span><div class="skill-bar"><div class="skill-fill teal" style="width:85%"></div></div></div>
       </div>
     </div>
