@@ -10,7 +10,17 @@
 <meta property="og:title" content="Mohan Wakchaure — AI &amp; Automation Engineer">
 <meta property="og:description" content="AI tools that know when to ask a human. Production LLM workflows with guardrails, human review and audit trails.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/mohan-suit.jpg">
+<meta property="og:url" content="https://mohanwakchaure.com/">
+<meta property="og:site_name" content="Mohan Wakchaure">
+<meta property="og:image" content="https://mohanwakchaure.com/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mohan Wakchaure, AI and automation engineer. I build AI that asks first.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mohan Wakchaure — AI &amp; Automation Engineer">
+<meta name="twitter:description" content="AI tools that know when to ask a human. Production LLM workflows with guardrails, human review and audit trails.">
+<meta name="twitter:image" content="https://mohanwakchaure.com/assets/og-card.jpg">
+<link rel="canonical" href="https://mohanwakchaure.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..600&display=swap" rel="stylesheet">
@@ -208,6 +218,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:.5rem 2rem;flex-wrap
   *{transition:none!important}
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GCF4P03WLN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GCF4P03WLN');
+
+  // Count clicks on links that matter (shown in Analytics as the contact_click event)
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '', kind = null;
+    if (h.indexOf('github.com') > -1) kind = 'github';
+    else if (h.indexOf('linkedin.com') > -1) kind = 'linkedin';
+    else if (/\.pdf(\?|$)/i.test(h)) kind = 'resume_download';
+    else if (h.indexOf('mailto:') === 0) kind = 'email';
+    else if (h.indexOf('tel:') === 0) kind = 'phone';
+    if (kind) gtag('event', 'contact_click', { method: kind, link_url: h });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -514,8 +545,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:.5rem 2rem;flex-wrap
       <!-- Featured ride, with sound -->
       <div class="reel" style="--ar:1024/448">
         <video muted loop playsinline preload="metadata" poster="assets/ride-poster.jpg" width="1024" height="448" aria-label="Mohan on his motorcycle beside a river and a stone bridge">
-          <source src="assets/ride.webm" type="video/webm">
-          <source src="assets/ride.mp4" type="video/mp4">
+          <source src="assets/ride.mp4?v=4" type="video/mp4">
+          <source src="assets/ride.webm?v=4" type="video/webm">
         </video>
         <div class="ctrl">
           <button type="button" data-act="play" aria-label="Pause video"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3.5" height="10"/><rect x="7.5" y="1" width="3.5" height="10"/></svg><span>Pause</span></button>
@@ -528,8 +559,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:.5rem 2rem;flex-wrap
       <div class="mix">
         <div class="reel" style="--ar:854/480">
           <video muted loop playsinline preload="none" poster="assets/pov-poster.jpg" width="854" height="480" aria-label="Handlebar view of a ride down an empty country road">
-            <source src="assets/pov.webm" type="video/webm">
-            <source src="assets/pov.mp4" type="video/mp4">
+            <source src="assets/pov.mp4?v=4" type="video/mp4">
+            <source src="assets/pov.webm?v=4" type="video/webm">
           </video>
           <div class="ctrl">
             <button type="button" data-act="play" aria-label="Pause video"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3.5" height="10"/><rect x="7.5" y="1" width="3.5" height="10"/></svg><span>Pause</span></button>
@@ -545,8 +576,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:.5rem 2rem;flex-wrap
         <figure class="cell"><img src="assets/elevator.jpg" width="720" height="1280" loading="lazy" alt="A rider in a full-face helmet and riding jacket taking a mirror selfie in an elevator"></figure>
         <div class="reel">
           <video muted loop playsinline preload="none" poster="assets/thumbsup-poster.jpg" width="480" height="848" aria-label="Mohan in his helmet giving a thumbs up">
-            <source src="assets/thumbsup.webm" type="video/webm">
-            <source src="assets/thumbsup.mp4" type="video/mp4">
+            <source src="assets/thumbsup.mp4?v=4" type="video/mp4">
+            <source src="assets/thumbsup.webm?v=4" type="video/webm">
           </video>
           <div class="ctrl">
             <button type="button" data-act="play" aria-label="Pause video"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3.5" height="10"/><rect x="7.5" y="1" width="3.5" height="10"/></svg><span>Pause</span></button>
@@ -554,8 +585,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:.5rem 2rem;flex-wrap
         </div>
         <div class="reel">
           <video muted loop playsinline preload="none" poster="assets/balcony-poster.jpg" width="480" height="848" aria-label="A balcony with a view over apartment blocks, with a bike cleaning kit in the corner">
-            <source src="assets/balcony.webm" type="video/webm">
-            <source src="assets/balcony.mp4" type="video/mp4">
+            <source src="assets/balcony.mp4?v=4" type="video/mp4">
+            <source src="assets/balcony.webm?v=4" type="video/webm">
           </video>
           <div class="ctrl">
             <button type="button" data-act="play" aria-label="Pause video"><svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3.5" height="10"/><rect x="7.5" y="1" width="3.5" height="10"/></svg><span>Pause</span></button>
